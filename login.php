@@ -26,6 +26,18 @@ include_once "header.php";
                       <input type="password" name ="password" class="form-control form-control-user" id="exPassword" placeholder="Password">
                     </div>
                     <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
+                <?php 
+	                  if(isset($_GET['pesan'])){
+		                  if($_GET['pesan'] == "gagal"){
+		          	        echo "Login gagal! username dan password salah!";
+		                  }else if($_GET['pesan'] == "logout"){
+                        echo "Anda telah berhasil logout";
+                      }
+		                /*  else if($_GET['pesan'] == "belum_login"){
+			                  echo "Anda harus login untuk mengakses halaman admin";
+		                  } */
+	                  }
+	                ?>
             </form>
             </div>
             
