@@ -14,23 +14,48 @@ include_once "header.php";
 	              <h2 class="subheading mb-4">Macarina dengan inovasi terbaru</h2>
 	              <p><a href="#" class="btn btn-primary">View Details</a></p>
 	            </div>
-
 	          </div>
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image: url(images/macarinashake.jpg);">
+	      <div class="slider-item" style="background-image: url(images/slide1.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
 	            <div class="col-sm-12 ftco-animate text-center">
-	              <h1 class="mb-2">Shake Shake</h1>
 	              <h2 class="subheading mb-4">Ini trobosan terbaru dari Macarina</h2>
 	              <p><a href="#" class="btn btn-primary">View Details</a></p>
 	            </div>
-
 	          </div>
+	        </div>
+	      </div>
+
+		  
+		
+		<div class="slider-item" style="background-image: url(images/slide2.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+		
+			  <div class="col-sm-12 ftco-animate text-center">
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	          </div>
+			  </div>
+	        </div>
+	      </div>
+
+		
+		
+		<div class="slider-item" style="background-image: url(images/slide3.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+		
+			  <div class="col-sm-12 ftco-animate text-center">
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	          </div>
+			  </div>
 	        </div>
 	      </div>
 	    </div>
@@ -39,6 +64,7 @@ include_once "header.php";
 
    
 <!-- Quick buy -->
+<br>
 		<section class="ftco-section ftco-category ftco-no-pt">
 			<div class="container">
 				<div class="row">
@@ -101,14 +127,13 @@ include_once "header.php";
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
+    						
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Bell Pepper</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="price-sale">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -133,7 +158,6 @@ include_once "header.php";
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Strawberry</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -161,7 +185,6 @@ include_once "header.php";
 	    					<div class="overlay"></div>
 	    				</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Green Beans</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -189,7 +212,6 @@ include_once "header.php";
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Purple Cabbage</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -216,14 +238,13 @@ include_once "header.php";
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-5.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
+    						
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Tomatoe</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="price-sale">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -248,7 +269,6 @@ include_once "header.php";
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Brocolli</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -270,13 +290,13 @@ include_once "header.php";
     					</div>
     				</div>
     			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
+
+				<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-7.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
-	    				</a>
+    						<div class="overlay"></div>
+    					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Carrots</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -298,13 +318,13 @@ include_once "header.php";
     					</div>
     				</div>
     			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
+
+				<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-8.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Fruit Juice</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
@@ -330,7 +350,7 @@ include_once "header.php";
     	</div>
     </section>
 		
-		<section class="ftco-section img" style="background-image: url(images/bdeal.jpg);">
+	<!--	<section class="ftco-section img" style="background-image: url(images/bdeal.jpg);">
     	<div class="container">
 				<div class="row justify-content-end">
           <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
@@ -348,13 +368,13 @@ include_once "header.php";
           </div>
         </div>   		
     	</div>
-    </section>
+    </section> -->
 
     <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Testimony</span>
+          	<!--<span class="subheading">Testimony</span>-->
             <h2 class="mb-4">Our satisfied customer says</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
           </div>
