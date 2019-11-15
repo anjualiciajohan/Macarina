@@ -8,7 +8,7 @@ include_once "header.php";
           <p>Anda belum punya akun ?</p>
 					<p>Dengan bergabung sebagai reseller, Anda akan lebih mudah untuk mengorganisir stok ketersediaan</p>
           <p>dan masih banyak promo untuk Reseller</p><br/>
-          <a href="#" class="btn btn-primary">Daftar Sekarang</a>
+          <a href="daftar.php" class="btn btn-primary">Daftar Sekarang</a>
 					</div>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
