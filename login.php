@@ -1,5 +1,6 @@
 <?php 
 include_once "header.php";
+
 ?>
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
 			<div class="container">
@@ -20,7 +21,7 @@ include_once "header.php";
            
             <form class="user" method="GET" action="plogin.php">
                     <div class="form-group">
-                      <input type="text" name ="username"  class="form-control form-control-user" id="exUser" placeholder="Username">
+                      <input type="email" name ="email"  class="form-control form-control-user" id="exUser" placeholder="Email">
                     </div>
                     <div class="form-group">
                       <input type="password" name ="password" class="form-control form-control-user" id="exPassword" placeholder="Password">

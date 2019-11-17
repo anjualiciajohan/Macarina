@@ -6,15 +6,14 @@ include_once "header.php";
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
-
-    <label for="nama-lengkap"><b>Nama Lengkap</b></label></br>
-    <input type="text" placeholder="Enter Nama Lengkap" name="nama-lengkap" required>
+    <label for="no-ktp"><b>No KTP</b></label></br>
+    <input type="text" placeholder="Enter No KTP" name="no-ktp" required>
     </br>
-    <label for="alamat"><b>Alamat</b></label></br>
-    <input type="text" placeholder="Enter Alamat" name="alamat" required>
+    <label for="nama-lengkap"><b>Nama Lengkap</b></label></br>
+    <input type="text" placeholder="Enter Nama (sesuai KTP)" name="nama-lengkap" required>
     </br>
     <label for="email"><b>Email</b></label></br>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="email" placeholder="Enter Email" name="email" required>
     </br>
     <label for="psw"><b>Password</b></label></br>
     <input type="password" placeholder="Enter Password" name="psw" required>
@@ -22,11 +21,11 @@ include_once "header.php";
     <label for="psw-repeat"><b>Repeat Password</b></label></br>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
     </br>
-    <label for="no-ktp"><b>No KTP</b></label></br>
-    <input type="text" placeholder="Enter No KTP" name="no-ktp" required>
-    </br>
     <label for="no-hp"><b>Nomor HP</b></label></br>
     <input type="text" placeholder="Enter Nomor HP" name="no-hp" required>
+    </br>
+    <label for="alamat"><b>Alamat</b></label></br>
+    <input type="text" placeholder="Enter Alamat" name="alamat" required>
     </br>
     <label for="kecamatan"><b>Pilih Kecamatan</b></label></br>
     <select type="text" placeholder="Pilih Kecamatan" name="kecamatan" required>
