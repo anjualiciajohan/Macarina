@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2019 at 07:57 AM
+-- Generation Time: Nov 20, 2019 at 12:53 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -32,16 +32,17 @@ CREATE TABLE `admin` (
   `kd_admin` varchar(5) NOT NULL,
   `user` varchar(20) NOT NULL,
   `password` varchar(8) NOT NULL,
-  `alamat_admin` varchar(50) NOT NULL
+  `alamat_admin` varchar(50) NOT NULL,
+  `gambar` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`kd_admin`, `user`, `password`, `alamat_admin`) VALUES
-('1', 'hammer', 'sad', '12321'),
-('2', 'ww', '12', 'qwewqe');
+INSERT INTO `admin` (`kd_admin`, `user`, `password`, `alamat_admin`, `gambar`) VALUES
+('1', 'hammer', 'sad', '12321', 'dagytgimage.jpg'),
+('2', 'ww', '12', 'qwewqe', 'usa-flag-wallpaper-united-states-world-170984.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,6 +71,20 @@ CREATE TABLE `barang` (
   `gambar_brg` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`) VALUES
+('1', 'Jagung Manis (150gr)', 6000, 20, 'jagung.jpg'),
+('2', 'Original (150gr)', 2000, 20, 'ori.jpg'),
+('3', 'BBQ (150gr)', 2000, 20, 'bbq.jpg'),
+('4', 'Balado (150gr)', 2000, 20, 'balado.jpg'),
+('5', 'Coklat (150gr)', 6000, 20, 'cokalt.jpg'),
+('6', 'Keju (150gr)', 6000, 20, 'keju.jpg'),
+('7', 'Seawed (150gr)', 6000, 20, 'seawed.jpg'),
+('8', 'Indomie(150gr)', 6000, 20, 'indomie.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +112,13 @@ CREATE TABLE `konten` (
   `video` varchar(25) NOT NULL,
   `kd_admin` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `konten`
+--
+
+INSERT INTO `konten` (`id_konten`, `judul`, `isi`, `gambar`, `video`, `kd_admin`) VALUES
+('1', 'aku', 'asdas', 'xxx', 'xxx', '1');
 
 -- --------------------------------------------------------
 
@@ -138,11 +160,18 @@ CREATE TABLE `reseller` (
   `nama_reseller` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `no_tlp` varchar(13) NOT NULL,
-  `total_point` int(11) NOT NULL,
   `scan_ktp` varchar(25) NOT NULL,
   `no_ktp` varchar(16) NOT NULL,
-  `id_konten` varchar(8) NOT NULL
+  `email` varchar(25) NOT NULL,
+  `password` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reseller`
+--
+
+INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`) VALUES
+('1', 'ham', 'sdfs', '234', 'link<>', '351010123123', 'ham@gmail.com', '1');
 
 -- --------------------------------------------------------
 
@@ -213,8 +242,7 @@ ALTER TABLE `point`
 -- Indexes for table `reseller`
 --
 ALTER TABLE `reseller`
-  ADD PRIMARY KEY (`id_reseller`),
-  ADD KEY `konten` (`id_konten`);
+  ADD PRIMARY KEY (`id_reseller`);
 
 --
 -- Indexes for table `transaksi`
@@ -247,12 +275,6 @@ ALTER TABLE `pembayaran`
   ADD CONSTRAINT `admin1` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`),
   ADD CONSTRAINT `bank` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`),
   ADD CONSTRAINT `transaksi` FOREIGN KEY (`kd_transaksi`) REFERENCES `transaksi` (`kd_transaksi`);
-
---
--- Constraints for table `reseller`
---
-ALTER TABLE `reseller`
-  ADD CONSTRAINT `konten` FOREIGN KEY (`id_konten`) REFERENCES `konten` (`id_konten`);
 
 --
 -- Constraints for table `transaksi`
