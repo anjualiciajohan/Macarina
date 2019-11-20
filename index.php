@@ -131,7 +131,7 @@ include_once "header.php";
 				?>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="../images/barang/<?php $data['gambar_brg']?>" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" <?php echo "src='images/barang/".$data['gambar_brg']."'" ?> alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
