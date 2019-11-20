@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
+
+  
+ 
+
 		<div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -68,7 +72,13 @@
                 <a class="dropdown-item" href="checkout.html">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          	<li class="nav-item dropdown">
+              		<a class="nav-link dropdown-toggle" href="about.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="profilperusahaan.php">Profil Perusahaan</a>
+              	<a class="dropdown-item" href="prosesproduksi.php">Proses Produksi</a>
+              </div>
+            </li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 			  <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>	

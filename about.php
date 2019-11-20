@@ -1,13 +1,12 @@
 <?php 
 include_once "header.php";
 ?>
-
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bdeal.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About us</span></p>
-            <h1 class="mb-0 bread">About us</h1>
+            <h1 class="mb-0 bread">Macarina</h1>
           </div>
         </div>
       </div>
@@ -16,7 +15,7 @@ include_once "header.php";
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about1.jpg);">
 						<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
 							<span class="icon-play"></span>
 						</a>
@@ -24,12 +23,13 @@ include_once "header.php";
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Welcome to Vegefoods an eCommerce website</h2>
+		            <h2 class="mb-4">KENAPA MACARINA?</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
-	          	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+							<p> Nama Macarina yang dipakai tersebut didapat dari singkatan "Makaroni Nagih",karena pada saat mencobakan macaroni pertama kali kepada orang-orang di sekitar,
+              mereka berpendapat bahwa makanan ringannya tersebut membuat mereka merasa nagih atau ketagihan untuk mencicipi terus menerus. oleh karena itu empat orang yaitu
+              Sdr. Helmi dan rekannya sepakat untuk menggunakan nama"Macarina" sebagai nama pada brand produk makanan ringan mereka tersebut. </p><br/>
 							<p><a href="#" class="btn btn-primary">Shop now</a></p>
 						</div>
 					</div>
