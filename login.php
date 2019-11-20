@@ -1,7 +1,7 @@
 <?php 
 include_once "header.php";
-if(isset($_SESSION['email'])) {
-header('location:index.php'); }
+//if(isset($_SESSION['email'])) {
+//header('location:index.php'); }
 require_once("koneksi.php");
 ?>
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
