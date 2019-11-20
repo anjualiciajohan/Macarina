@@ -12,7 +12,7 @@ include_once "header.php";
 	            <div class="col-md-12 ftco-animate text-center">
 	              <h1 class="mb-2">Macarina Shake Shake </h1>
 	              <h2 class="subheading mb-4">Macarina dengan inovasi terbaru</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	              <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
 	            </div>
 	          </div>
 	        </div>
@@ -25,7 +25,7 @@ include_once "header.php";
 
 	            <div class="col-sm-12 ftco-animate text-center">
 	              <h2 class="subheading mb-4">Ini trobosan terbaru dari Macarina</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	              <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
 	            </div>
 	          </div>
 	        </div>
@@ -39,7 +39,7 @@ include_once "header.php";
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 		
 			  <div class="col-sm-12 ftco-animate text-center">
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+			  <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
 	          </div>
 			  </div>
 	        </div>
@@ -53,7 +53,7 @@ include_once "header.php";
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 		
 			  <div class="col-sm-12 ftco-animate text-center">
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+			  <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
 	          </div>
 			  </div>
 	        </div>
@@ -131,13 +131,13 @@ include_once "header.php";
 				?>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" <?php echo "src='images/barang/".$data['gambar_brg']."'" ?> alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" <?php echo "src='admin/img/barang/".$data['gambar_brg']."'" ?> alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale"><?php echo $data['harga']?></span></p>
+		    						<p class="price"><span class="price-sale"><?php echo $data['nama_barang']?>- Rp<?php echo $data['harga']?></span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
