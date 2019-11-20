@@ -57,40 +57,41 @@ include_once "../config/side.php";
               
           ?>  
             <form method ="POST" action="">
-                <table border="1">
+            <table>
+              <tr>
+              <td width ="300"><?php echo "<img src='../img/barang/".$data['gambar_brg']."' width='200px' height='200px'/>" ?></td>
+              <td>
+              <table border="0">
                     <tr>
                         <td>Kode Barang</td>
                         <td>:</td>
                         <td><input type="hidden" name="txt_idbrg" value="<?php echo $data['kd_barang'] ?>"></td>
                     </tr>
                     <tr>
+                        
                         <td>Nama Barang</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_nama_brg" value="<?php echo $data['nama_barang'] ?>"></td>
+                        <td><input disabled type="text" name="txt_nama_brg" value="<?php echo $data['nama_barang'] ?>"></td>
                     </tr>
                     <tr>
+                    
                         <td>Harga</td>
                         <td>:</td>
-                        <td><input type="number" name="txt_harga" value="<?php echo $data['harga'] ?>" ></td>
+                        <td><input disabled type="number" name="txt_harga" value="<?php echo $data['harga'] ?>" ></td>
                     </tr>
                     <tr>
+                    
                         <td>Stok </td>
                         <td>:</td>
-                        <td><input type="number" name="txt_stok" value="<?php echo $data['stok'] ?>"> </td>
+                        <td><input disabled type="number" name="txt_stok" value="<?php echo $data['stok'] ?>"> </td>
                     </tr>
-                    <tr>
-                        <td>Photo </td>
-                        <td>:</td>
-                        <td><?php echo "<img src='../img/barang/".$data['gambar_brg']."' width='100px' height='100px'/>" ?></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                                      
-                
+                    
                 </table>
+
+              </td>
+            </tr>
+            </table>
+                
             </form>
             <?php } ?>
             </div>

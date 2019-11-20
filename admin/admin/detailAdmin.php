@@ -57,7 +57,11 @@ include_once "../config/side.php";
               
           ?>  
             <form method ="POST" action="">
-                <table border="1">
+              <table>
+                <tr>
+                  <td width ="300"><?php echo "<img src='../img/".$data['gambar']."' width='200px' height='200px'/>" ?></td>
+                <td>
+                <table border="0">
                     <tr>
                         <td>Kode Admin</td>
                         <td>:</td>
@@ -66,31 +70,24 @@ include_once "../config/side.php";
                     <tr>
                         <td>User</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_user" value="<?php echo $data['user'] ?>"></td>
+                        <td><input disabled type="text" name="txt_user" value="<?php echo $data['user'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Password</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
+                        <td><input disabled type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
                     </tr>
                     <tr>
                         <td>Alamat </td>
                         <td>:</td>
-                        <td><input type="text" name="txt_almt" value="<?php echo $data['alamat_admin'] ?>"> </td>
+                        <td><input disabled type="textarea" name="txt_almt" value="<?php echo $data['alamat_admin'] ?>"> </td>
                     </tr>
-                    <tr>
-                        <td>Photo </td>
-                        <td>:</td>
-                        <td><?php echo "<img src='../img/".$data['gambar']."' width='100px' height='100px'/>" ?></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                                      
-                
                 </table>
+
+                </td>
+                </tr>
+              </table>
+                
             </form>
             <?php } ?>
             </div>
