@@ -1,8 +1,6 @@
 <?php 
 include_once "header.php";
 
-   if(isset($_SESSION['email'])) {
-   header('location:index.php'); }
 ?>
 
     <form action="action_page.php">

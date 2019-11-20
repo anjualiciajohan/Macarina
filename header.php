@@ -1,3 +1,19 @@
+
+<?php 
+require "config.php";
+session_start();
+ob_start();
+if (!isset($_SESSION['user_login'])) {
+	$user = "";
+}
+else {
+	$user = $_SESSION['user_login'];
+	$result = mysqli_query($koneksi,"SELECT * FROM reseller WHERE email ='$user'");
+		$get_user_email = mysqli_fetch_array($result);
+			$uname_db = $get_user_email['nama_reseller'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,7 +91,7 @@
               </div>
             </li>
 	          	<li class="nav-item dropdown">
-              		<a class="nav-link dropdown-toggle" href="about.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              		<a class="nav-link dropdown-toggle" href="about.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="profilperusahaan.php">Profil Perusahaan</a>
               	<a class="dropdown-item" href="prosesproduksi.php">Proses Produksi</a>
@@ -83,7 +99,31 @@
             </li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-			  <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>	
+			  
+			  <li class="nav-item">
+			  			<?php 
+						if ($user!="") {
+							echo '<a  href="profile.php?id_reseller='.$user.'" class="nav-link"> '.$uname_db.'</a>';
+							
+							echo '<br/>';
+						}
+						else {
+							echo '<a href="login.php" class="nav-link">Masuk</a>';
+						}
+					 	?>
+			  </li>
+			  <li class="nav-item">
+			  			<?php 
+						if ($user!="") {
+							echo '<a href="logout.php" class="nav-link">Keluar</a>';
+							echo '<br/>';
+						}
+						else {
+							echo '<a  href="daftar.php" class="nav-link">Daftar</a>';
+						}
+					 ?>
+			  </li>
+
 	        </ul>
 	      </div>
 	    </div>
