@@ -1,10 +1,10 @@
 <?php
 include '../config/config.php';
 // menyimpan data id kedalam variabel
-$id   = $_GET['txt_idadm'];
+$id   = $_GET['txt_idbrg'];
 // query SQL untuk insert data
-$query="DELETE from admin where kd_admin='$id'";
+$query="DELETE from barang where kd_barang='$id'";
 mysqli_query($koneksi, $query);
-// mengalihkan ke halaman tAdmin.php
-header("location:tAdmin.php");
+
+header("location:tBarang.php");
 ?>
