@@ -3,12 +3,12 @@ include_once "header.php";
 
 ?>
 
-    <form action="action_page.php">
+    
   <div class="container">
     <h1>REGISTER</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
-      <form action="/action_page.php">
+      <form method ="POST" action="php/pdaftar.php" enctype="multipart/form-data">
     <label for="no-ktp"><b>No KTP</b></label></br>
     <input type="text" placeholder="Enter No KTP" name="no-ktp" required>
     </br>
@@ -43,13 +43,15 @@ include_once "header.php";
       <option value>Sukorejo</option>
     </select>
     </br>
+    <label for="scan_ktp"><b>Scan KTP</b></label></br>
+    <input type="file" name="scan_ktp" required />
     <br>
     <label for="kd-reff"><b>Kode Reff (Opsional)</b></label></br>
-    <input type="text" placeholder="Enter Kode Reff" name="kd-reff" required>
+    <input type="text" placeholder="Enter Kode Reff" name="kd-reff">
     </br>
 
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
+    <input type="submit" name ="submit" class="registerbtn" value="Register"></input>
   
   <div class="container signin">
     <p>Already have an account? <a href="login.php">Sign In</a>.</p>
