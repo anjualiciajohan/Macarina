@@ -46,6 +46,9 @@ include_once "header.php";
     <label for="scan_ktp"><b>Scan KTP</b></label></br>
     <input type="file" name="scan_ktp" required />
     <br>
+    <label for="foto"><b>Pas Foto</b></label></br>
+    <input type="file" name="foto" required />
+    <br>
     <label for="kd-reff"><b>Kode Reff (Opsional)</b></label></br>
     <input type="text" placeholder="Enter Kode Reff" name="kd-reff">
     </br>

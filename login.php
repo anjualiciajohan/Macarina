@@ -22,10 +22,10 @@ require_once("koneksi.php");
            
             <form class="user" method="GET" action="plogin.php">
                     <div class="form-group">
-                      <input type="text" name ="email"  class="form-control form-control-user" id="exUser" placeholder="Email">
+                      <input type="email" name ="email"  class="form-control form-control-user" id="email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <input type="password" name ="password" class="form-control form-control-user" id="exPassword" placeholder="Password">
+                      <input type="password" name ="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
                     <label>
                         <input type="checkbox"  name="login"> Remember me</label>
@@ -36,13 +36,10 @@ require_once("koneksi.php");
 	                  if(isset($_GET['pesan'])){
 		                  if($_GET['pesan'] == "gagal"){
 		          	        echo "Login gagal! email dan password salah!";
-		                  }else if($_GET['pesan'] == "logout"){
-                        echo "Anda telah berhasil logout";
+		                  }else if($_GET['pesan'] == "gagalstatus"){
+                        echo "Akun anda belum diaktifkan oleh Admin";
                       }
-		                /*  else if($_GET['pesan'] == "belum_login"){
-			                  echo "Anda harus login untuk mengakses halaman admin";
-		                  } */
-	                  }
+		               }
 	                ?>
             </form>
             </div>
