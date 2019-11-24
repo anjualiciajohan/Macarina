@@ -106,7 +106,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Data :</h6>
       <a class="collapse-item" href="../admin/tAdmin.php">Admin</a>
-      <a class="collapse-item" href="#">Reseller</a>
+      <a class="collapse-item" href="../reseller/tReseller.php">Reseller</a>
       <a class="collapse-item" href="../barang/tBarang.php">Barang</a>
     </div>
   </div>
