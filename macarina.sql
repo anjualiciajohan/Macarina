@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2019 at 12:53 PM
+-- Generation Time: Nov 25, 2019 at 08:05 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -156,22 +156,25 @@ CREATE TABLE `point` (
 --
 
 CREATE TABLE `reseller` (
-  `id_reseller` varchar(5) NOT NULL,
+  `id_reseller` int(11) NOT NULL,
   `nama_reseller` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `no_tlp` varchar(13) NOT NULL,
-  `scan_ktp` varchar(25) NOT NULL,
+  `scan_ktp` varchar(50) NOT NULL,
   `no_ktp` varchar(16) NOT NULL,
   `email` varchar(25) NOT NULL,
-  `password` varchar(8) NOT NULL
+  `password` varchar(8) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `pas_foto` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reseller`
 --
 
-INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`) VALUES
-('1', 'ham', 'sdfs', '234', 'link<>', '351010123123', 'ham@gmail.com', '1');
+INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
+(5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', 'aktif ', 'bruno3.jpg'),
+(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', 'nonaktif ', 'images (1).jpg');
 
 -- --------------------------------------------------------
 
@@ -249,8 +252,17 @@ ALTER TABLE `reseller`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kd_transaksi`),
-  ADD KEY `reseller` (`id_reseller`),
   ADD KEY `admin` (`kd_admin`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `reseller`
+--
+ALTER TABLE `reseller`
+  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -280,8 +292,7 @@ ALTER TABLE `pembayaran`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `admin` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`),
-  ADD CONSTRAINT `reseller` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
+  ADD CONSTRAINT `admin` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
