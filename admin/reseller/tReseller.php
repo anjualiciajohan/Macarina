@@ -95,7 +95,19 @@ include "../config/side.php";
                       <td><?php echo $data ['nama_reseller']; ?></td>
                       <td><?php echo $data ['no_tlp']; ?></td>
                       <td><?php echo "<img src='../img/reseller/".$data['scan_ktp']."' width='100px' height='100px'/>"?></td>
-                      <td><?php echo $data ['status']; ?></td>
+                      <td><?php
+                          $status = $data['status'];
+                          
+                         if ($status == "0"){
+                          ?>NonAktif
+                         
+                        <?php   }
+                        else if ($status == "1") {
+                           ?>Aktif
+                        <?php  }
+                        ?>
+                          
+                    </td>
                       
                       
                       <td><a class="detail" href="detailReseller.php?txt_idrsl=<?php echo $data['id_reseller']; ?>">Detail</a>
