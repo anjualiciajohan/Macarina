@@ -57,7 +57,7 @@ include_once "../config/side.php";
             while($data = mysqli_fetch_array($query_mysql)){
               
           ?>  
-            <form method ="GET" action="editReseller.php">
+            <form method ="POST" action="aktifReseller.php">
               <table>
                 <tr>
                   <td width ="300"><?php echo "<img src='../img/reseller/foto/".$data['pas_foto']."' width='200px' height='200px'/>" ?></td>
@@ -103,24 +103,33 @@ include_once "../config/side.php";
                         <td>:</td>
                         <td><input disabled type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
                     </tr>
+                    <?php
+                    $status1 = $data['status'];
+                    ?>
                     <tr>
                         <td>Status</td>
                         <td>:</td>
-                        <td><label><?php echo $data['status'] ?></td>
+                        <td><label><?php 
+                         if ($status1 == "0"){
+                          ?>NonAktif
+                         
+                        <?php   }
+                        else if ($status1 == "1") {
+                           ?>Aktif
+                        <?php  }
+                        ?></td>
                     </tr>
                     <tr>
                       <td></td>
                       <td></td>
                         <td> <?php 
-                        $status1 = $data['status'];
-                        //echo $status1;
-                        if ($status1 == "nonaktif"){
+                         if ($status1 == "0"){
                           ?><input type="submit" name="aktifkan" value="Aktifkan"/>
-                          
-                        <?php }
-                        else {
+                         
+                        <?php   }
+                        else if ($status1 == "1") {
                            ?> <input type="submit" name="nonaktif" value="NonAktifkan"/>
-                        <?php }
+                        <?php  }
                         ?>
                         
                         
