@@ -103,8 +103,7 @@ else {
 			  <li class="nav-item">
 			  			<?php 
 						if ($user!="") {
-							echo '<a  href="profile.php?id_reseller='.$user.'" class="nav-link"> '.$uname_db.'</a>';
-							
+							echo '<a  href="profil.php?id_reseller='.$user.'" class="nav-link"> '.$uname_db.'</a>';
 							echo '<br/>';
 						}
 						else {
