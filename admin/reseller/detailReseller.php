@@ -57,7 +57,7 @@ include_once "../config/side.php";
             while($data = mysqli_fetch_array($query_mysql)){
               
           ?>  
-            <form method ="GET" action="editReseller.php">
+            <form method ="POST" action="aktifReseller.php">
               <table>
                 <tr>
                   <td width ="300"><?php echo "<img src='../img/reseller/foto/".$data['pas_foto']."' width='200px' height='200px'/>" ?></td>
