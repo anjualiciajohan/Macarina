@@ -15,8 +15,14 @@ $sqldata = mysqli_fetch_array($sqlnama);
           
           <h1>FOTO</h1>
 
+          <label for="no-ktp"><b>No KTP</b></label></br>
+          <input type="text" name="nama" disabled></br>
+
           <label for="nama-lengkap"><b>Nama</b></label></br>
           <input type="text" name="nama" disabled value="<?php echo $sqldata['nama_reseller'] ?>"></br>
+
+          <label for="email"><b>Email</b></label></br>
+          <input type="text" name="nama" disabled></br>
 
           <label for="email"><b>Alamat</b></label></br>
           <input type="text" name="alamat" disabled></br>
@@ -24,8 +30,12 @@ $sqldata = mysqli_fetch_array($sqlnama);
           <label for="no-hp"><b>Nomor HP</b></label></br>
           <input type="text" name="no-hp" disabled></br>
 
-          <label for="psw"><b>Password</b></label></br>
-          <input type="password" name="psw" disabled></br>
+          <label for="kbupaten-kota"><b>Kabupaten/Kota</b></label></br>
+          <input type="text" name="no-hp" disabled></br>
+          
+          <label for="kecamatan"><b>Kecamatan</b></label></br>
+          <input type="text" name="no-hp" disabled></br>
+          
 
           <input type="submit" name ="submit" class="registerbtn" value="Kembali ke Beranda" href="index.php"></input>
 
