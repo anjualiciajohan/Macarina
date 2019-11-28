@@ -17,7 +17,7 @@ $user_login = $_GET ['email'];
                 $password = $get_user_email['password'];
                 $user_login = $get_user_email ['email'];
                 $status = $get_user_email ['status'];
-                if(strcmp($status,"aktif")){
+                if($status=="1"){
                     if (strcmp($password,$pass) or $password==$pass) {
                         $_SESSION['user_login'] = $get_user_uname_db;
                         $_SESSION ['email'] = $user_login;
