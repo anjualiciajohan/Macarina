@@ -30,6 +30,19 @@ include_once "header.php";
     <label for="alamat"><b>Alamat</b></label></br>
     <input type="text" placeholder="Enter Alamat" name="alamat" required>
     </br>
+    <label for="kab/kota"><b>Pilih Kabupaten/Kota</b></label></br>
+    <select>
+      <option value>-</option>
+      <option value>Jember</option>
+      <option value>Malang</option>
+      <option value>Surabaya</option>
+      <option value>Sidaorjo</option>
+      <option value>Banyuwangi</option>
+      <option value>Jombang</option>
+      <option value>Mojokerto</option>
+      <option value>Lumajang</option>
+    </select>
+    </br>
     <label for="kecamatan"><b>Pilih Kecamatan</b></label></br>
     <select>
       <option value>-</option>
