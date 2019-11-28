@@ -9,33 +9,21 @@ $sqldata = mysqli_fetch_array($sqlnama);
     <h1>PROFIL</h1>
     <hr>
     <form method ="POST" action="php/pdaftar.php" enctype="multipart/form-data">
-          <!--<a href="#" class="img-prod"><img class="img-fluid" <?php echo "src='admin/img/reseller/foto/".$data['pas_foto']."'" ?> alt="Colorlib Template">
-    			<div class="overlay"></div>
-    			</a>-->
-          
-          <h1>FOTO</h1>
-
+    
           <label for="no-ktp"><b>No KTP</b></label></br>
-          <input type="text" name="nama" disabled></br>
+          <input type="text" name="nama" disabled value="<?php echo $sqldata['no_ktp'] ?>"></br>
 
           <label for="nama-lengkap"><b>Nama</b></label></br>
           <input type="text" name="nama" disabled value="<?php echo $sqldata['nama_reseller'] ?>"></br>
 
           <label for="email"><b>Email</b></label></br>
-          <input type="text" name="nama" disabled></br>
+          <input type="text" name="nama" disabled value="<?php echo $sqldata['email'] ?>"></br>
 
           <label for="email"><b>Alamat</b></label></br>
-          <input type="text" name="alamat" disabled></br>
+          <input type="text" name="alamat" disabled value="<?php echo $sqldata['alamat'] ?>"></br>
           
           <label for="no-hp"><b>Nomor HP</b></label></br>
-          <input type="text" name="no-hp" disabled></br>
-
-          <label for="kbupaten-kota"><b>Kabupaten/Kota</b></label></br>
-          <input type="text" name="no-hp" disabled></br>
-          
-          <label for="kecamatan"><b>Kecamatan</b></label></br>
-          <input type="text" name="no-hp" disabled></br>
-          
+          <input type="text" name="no-hp" disabled value="<?php echo $sqldata['no_tlp'] ?>"></br>
 
           <input type="submit" name ="submit" class="registerbtn" value="Kembali ke Beranda" href="index.php"></input>
 
