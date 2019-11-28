@@ -1,6 +1,8 @@
 <?php 
 require "config.php";
 include_once "header.php";
+$sqlnama = mysqli_query($koneksi, "SELECT * FROM reseller WHERE email='".$_SESSION['user_login']."'");
+$sqldata = mysqli_fetch_array($sqlnama);
 ?>
 
   <div class="container">
@@ -14,7 +16,7 @@ include_once "header.php";
           <h1>FOTO</h1>
 
           <label for="nama-lengkap"><b>Nama</b></label></br>
-          <input type="text" name="nama" disabled></br>
+          <input type="text" name="nama" disabled value="<?php echo $sqldata['nama_reseller'] ?>"></br>
 
           <label for="email"><b>Alamat</b></label></br>
           <input type="text" name="alamat" disabled></br>
