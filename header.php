@@ -72,7 +72,7 @@ else {
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><img src="images/logo.png" style="float:left;" width="4%"/>Macarina</a>
+	      <a class="navbar-brand" href="index.php"><img src="images/logo.png" style="float:left;" width="4%"/>Macarina</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -97,7 +97,7 @@ else {
               	<a class="dropdown-item" href="prosesproduksi.php">Proses Produksi</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 			  
 			  <li class="nav-item">
