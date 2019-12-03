@@ -66,7 +66,7 @@ include_once "../config/side.php";
                     <tr>
                         <td>Kode Reseller</td>
                         <td>:</td>
-                        <td><input type="hidden" name="txt_idrsl" value="<?php echo $data['id_reseller'] ?>"></td>
+                        <td><label><?php echo $data['id_reseller'] ?><input type="hidden" name="txt_idrsl" value="<?php echo $data['id_reseller'] ?>"></td>
                     </tr>
                     <tr>
                         <td>No KTP</td>
@@ -104,17 +104,17 @@ include_once "../config/side.php";
                         <td><input disabled type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
                     </tr>
                     <?php
-                    $status1 = $data['status'];
+                    $status = $data['status'];
                     ?>
                     <tr>
                         <td>Status</td>
                         <td>:</td>
                         <td><label><?php 
-                         if ($status1 == "0"){
+                         if ($status == "0"){
                           ?>NonAktif
                          
                         <?php   }
-                        else if ($status1 == "1") {
+                        else if ($status == "1") {
                            ?>Aktif
                         <?php  }
                         ?></td>
@@ -123,11 +123,11 @@ include_once "../config/side.php";
                       <td></td>
                       <td></td>
                         <td> <?php 
-                         if ($status1 == "0"){
+                         if ($status == "0"){
                           ?><input type="submit" name="aktifkan" value="Aktifkan"/>
                          
                         <?php   }
-                        else if ($status1 == "1") {
+                        else if ($status == "1") {
                            ?> <input type="submit" name="nonaktif" value="NonAktifkan"/>
                         <?php  }
                         ?>

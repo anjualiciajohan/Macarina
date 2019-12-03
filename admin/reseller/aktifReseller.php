@@ -8,9 +8,9 @@ if (isset($_POST['aktifkan'])){
     // update data 
   
     mysqli_query($koneksi, "UPDATE reseller SET status='$aktif' WHERE id_reseller=$id");
-    
-    echo"<script>alert('Akun Telah diAktifkan !');</script>";
     header("location:tReseller.php");
+    echo"<script>alert('Akun Telah diAktifkan !');</script>";
+    
 }
 if (isset($_POST['nonaktif'])){
     $aktif="0";
@@ -18,9 +18,9 @@ if (isset($_POST['nonaktif'])){
     // update data 
   
     mysqli_query($koneksi, "UPDATE reseller SET status='$aktif' WHERE id_reseller=$id");
-    
-    echo"<script>alert('Akun Telah diNonAktifkan !');</script>";
     header("location:tReseller.php");
+    echo"<script>alert('Akun Telah diNonAktifkan !');</script>";
+    
 }
 
 ?>

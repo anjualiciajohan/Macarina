@@ -38,53 +38,91 @@ include_once "../config/side.php";
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Edit Data Admin</h1>
-          <p class="mb-4">Info akun Admin</p>
+          <h1 class="h3 mb-2 text-gray-800">Edit Data Reseller</h1>
+          <p class="mb-4">Info akun Reseller</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Edit Data Admin</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Edit Data Reseller</h6>
             </div>
             <div class="card-body">
             <?php 
             include "../config/config.php";
-            $id = $_GET['txt_idadm'];
-            $query_mysql = mysqli_query($koneksi,"SELECT admin.* , admin.kd_admin 
-            FROM admin 
-              WHERE admin.kd_admin = $id");
-            //$data = mysqli_fetch_array($query_mysql);
+            $id = $_GET['txt_idrsl'];
+            $query_mysql = mysqli_query($koneksi,"SELECT reseller.* , reseller.id_reseller 
+            FROM reseller 
+              WHERE reseller.id_reseller = $id");
+           
             while($data = mysqli_fetch_array($query_mysql)){
               
           ?>  
-            <form method ="POST" action="editAdmin.php" enctype="multipart/form-data">
+            <form method ="POST" action="editReseller.php" enctype="multipart/form-data">
                 <table border="1">
-                    <tr>
-                        <td>Kode Admin</td>
+                <tr>
+                        <td>Kode Reseller</td>
                         <td>:</td>
-                        <td><input type="hidden" name="txt_idadm" value="<?php echo $data['kd_admin'] ?>"></td>
+                        <td><input type="hidden" name="txt_idrsl" value="<?php echo $data['id_reseller'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>User</td>
+                        <td>No KTP</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_user" value="<?php echo $data['user'] ?>"></td>
+                        <td><input  type="text" name="txt_no_ktp" value="<?php echo $data['no_ktp'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
+                        <td>Nama</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
+                        <td><input  type="text" name="txt_nama" value="<?php echo $data['nama_reseller'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Alamat </td>
                         <td>:</td>
-                        <td><input type="text" name="txt_almt" value="<?php echo $data['alamat_admin'] ?>"> </td>
+                        <td><input  type="textarea" name="txt_almt" value="<?php echo $data['alamat'] ?>"> </td>
+                    </tr>
+                    <tr>
+                        <td>No Telepon </td>
+                        <td>:</td>
+                        <td><input  type="textarea" name="txt_no" value="<?php echo $data['no_tlp'] ?>"> </td>
+                    </tr>
+                    <tr>
+                        <td>Scan KTP </td>
+                        <td>:</td>
+                        <td><?php echo "<img src='../img/reseller/".$data['scan_ktp']."' width='200px' height='100px'/>" ?>
+                        <input type="file" name="sc_ktp"  />
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><input  type="text" name="txt_email" value="<?php echo $data['email'] ?>" ></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input  type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
                     </tr>
                     <tr>
                         <td>Photo </td>
                         <td>:</td>
-                        <td><?php echo "<img src='../img/".$data['gambar']."' width='100px' height='100px'/>" ?>
-                        <input type="file" name="gambar" required />
+                        <td><?php echo "<img src='../img/reseller/foto/".$data['pas_foto']."' width='200px' height='200px'/>" ?>
+                        <input type="file" name="gambar" />
                        </td>
+                    </tr>
+                    <?php
+                    $status1 = $data['status'];
+                    ?>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td><label><?php 
+                         if ($status1 == "0"){
+                          ?>NonAktif
+                         
+                        <?php   }
+                        else if ($status1 == "1") {
+                           ?>Aktif
+                        <?php  }
+                        ?></td>
                     </tr>
                     <tr>
                                               
