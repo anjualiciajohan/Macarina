@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2019 at 08:05 PM
+-- Generation Time: Dec 04, 2019 at 11:58 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -94,9 +94,21 @@ INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`)
 CREATE TABLE `detail_transaksi` (
   `id_detail` varchar(5) NOT NULL,
   `kd_barang` varchar(5) NOT NULL,
+  `id_reseller` varchar(5) NOT NULL,
   `qty_det` int(11) NOT NULL,
-  `subtotal` int(11) NOT NULL
+  `subtotal` int(11) NOT NULL,
+  `status` enum('Added to cart','Confirmed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detail_transaksi`
+--
+
+INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `id_reseller`, `qty_det`, `subtotal`, `status`) VALUES
+('', '5', '5', 0, 0, 'Added to cart'),
+('', '1', '5', 0, 0, 'Added to cart'),
+('', '6', '5', 0, 0, 'Added to cart'),
+('', '3', '5', 0, 0, 'Added to cart');
 
 -- --------------------------------------------------------
 
@@ -129,7 +141,7 @@ INSERT INTO `konten` (`id_konten`, `judul`, `isi`, `gambar`, `video`, `kd_admin`
 CREATE TABLE `pembayaran` (
   `id_pembayaran` varchar(5) NOT NULL,
   `id_bank` varchar(5) NOT NULL,
-  `kd_transaksi` varchar(5) NOT NULL,
+  `kd_transaksi` int(11) NOT NULL,
   `kd_admin` varchar(5) NOT NULL,
   `bukti_bayar` varchar(25) NOT NULL,
   `tgl_bayar` date NOT NULL,
@@ -173,8 +185,8 @@ CREATE TABLE `reseller` (
 --
 
 INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
-(5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', 'aktif ', 'bruno3.jpg'),
-(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', 'nonaktif ', 'images (1).jpg');
+(5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', '1', 'bruno3.jpg'),
+(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '0', 'images (1).jpg');
 
 -- --------------------------------------------------------
 
@@ -183,11 +195,9 @@ INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `sca
 --
 
 CREATE TABLE `transaksi` (
-  `kd_transaksi` varchar(5) NOT NULL,
+  `kd_transaksi` int(11) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `grand_total` int(11) NOT NULL,
-  `id_reseller` varchar(5) NOT NULL,
-  `id_detail` varchar(5) NOT NULL,
   `kd_admin` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -265,6 +275,12 @@ ALTER TABLE `reseller`
   MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -285,8 +301,7 @@ ALTER TABLE `konten`
 --
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `admin1` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`),
-  ADD CONSTRAINT `bank` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`),
-  ADD CONSTRAINT `transaksi` FOREIGN KEY (`kd_transaksi`) REFERENCES `transaksi` (`kd_transaksi`);
+  ADD CONSTRAINT `bank` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`);
 
 --
 -- Constraints for table `transaksi`
