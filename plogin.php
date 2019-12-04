@@ -13,6 +13,7 @@ $user_login = $_GET ['email'];
 		$num = mysqli_num_rows($result);
 		if ($num==1) {
             $get_user_email = mysqli_fetch_array($result);
+                $id=$get_user_email['id_reseller'];
                 $get_user_uname_db = $get_user_email['email'];
                 $password = $get_user_email['password'];
                 $user_login = $get_user_email ['email'];
@@ -21,6 +22,7 @@ $user_login = $_GET ['email'];
                     if (strcmp($password,$pass) or $password==$pass) {
                         $_SESSION['user_login'] = $get_user_uname_db;
                         $_SESSION ['email'] = $user_login;
+                        $_SESSION['id'] = $id;
                             header('location: index.php');
                     }
                     else {

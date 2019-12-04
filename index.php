@@ -1,5 +1,7 @@
 <?php 
 include_once "header.php";
+
+require 'check_if_added.php';
 ?>
 <!-- Slide View -->
     <section id="home-section" class="hero">
@@ -144,10 +146,27 @@ include_once "header.php";
 	    						<div class="m-auto d-flex">
 	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+									</a>
+									<?php if(!isset($_SESSION['user_login'])){  ?>
+	    							<a href="login.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
+									</a>
+									<?php
+											}
+											else{
+												if(check_if_added_to_cart($data['kd_barang'])){
+													echo '<a href="login.php" disabled class="buy-now d-flex justify-content-center align-items-center mx-1">
+													<span><i class="ion-ios-cart"></i></span>
+												</a>';
+												}else{
+													?>
+													<a href="cart_add.php?id=<?php echo $data['kd_barang'];?>" name="add" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    											<span><i class="ion-ios-cart"></i></span>
+													</a>
+													<?php
+													}
+												}
+												?>
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>
 	    							</a>
@@ -164,27 +183,7 @@ include_once "header.php";
     		</div>
     	</div>
     </section>
-		
-	<!--	<section class="ftco-section img" style="background-image: url(images/bdeal.jpg);">
-    	<div class="container">
-				<div class="row justify-content-end">
-          <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-          	<span class="subheading">Best Price For You</span>
-            <h2 class="mb-4">Deal of the day</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <h3><a href="#">Spinach</a></h3>
-            <span class="price">$10 <a href="#">now $5 only</a></span>
-            <div id="timer" class="d-flex mt-5">
-						  <div class="time" id="days"></div>
-						  <div class="time pl-3" id="hours"></div>
-						  <div class="time pl-3" id="minutes"></div>
-						  <div class="time pl-3" id="seconds"></div>
-						</div>
-          </div>
-        </div>   		
-    	</div>
-    </section> -->
-
+	
     <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">

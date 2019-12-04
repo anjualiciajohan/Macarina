@@ -1,12 +1,34 @@
 <?php 
+//session_start();
 include_once "header.php";
+if(!isset($_SESSION['user_login'])){
+	header('location: login.php');
+}
+$user_id=$_SESSION['id'];
+$user_products_query="select barang.kd_barang,barang.nama_barang,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
+$user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
+$no_of_user_products= mysqli_num_rows($user_products_result);
+$sum=0;
+if($no_of_user_products==0){
+	//echo "Add items to cart first.";
+?>
+	<script>
+	window.alert("No items in the cart!!");
+	</script>
+<?php
+}else{
+	while($row=mysqli_fetch_array($user_products_result)){
+		$sum=$sum+$row['harga']; 
+   }
+}
+
 ?>
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bdeal.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Cart</span></p>
             <h1 class="mb-0 bread">My Cart</h1>
           </div>
         </div>
@@ -15,9 +37,11 @@ include_once "header.php";
 
     <section class="ftco-section ftco-cart">
 			<div class="container">
+			<form method="POST">
 				<div class="row">
     			<div class="col-md-12 ftco-animate">
     				<div class="cart-list">
+						
 	    				<table class="table">
 						    <thead class="thead-primary">
 						      <tr class="text-center">
@@ -28,51 +52,41 @@ include_once "header.php";
 						        <th>Quantity</th>
 						        <th>Total</th>
 						      </tr>
-						    </thead>
+							</thead>
+							
 						    <tbody>
+							<?php 
+								$user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
+								$no_of_user_products= mysqli_num_rows($user_products_result);
+								$counter=1;
+							while($row=mysqli_fetch_array($user_products_result)){
+								
+							?>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="cart.php" onclick="return confirm('Are you sure?')"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
+						        <td class="image-prod"><div class="img" style="<?php echo "background-image:url(admin/img/barang/".$row['gambar_brg'].")" ?>;"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
+						        	<h3><?php echo $row['nama_barang']?></h3>
+						        	<p>Desc</p>
 						        </td>
 						        
-						        <td class="price">$4.90</td>
+						        <td class="price">Rp.<?php echo $row['harga']?></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
+					             	<input type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+								</div>
 					          </td>
-						        
-						        <td class="total">$4.90</td>
+								
+						        <td class="total">Rp. </td>
 						      </tr><!-- END TR-->
-
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$15.70</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+							  <?php $counter=$counter+1;}?>
 						    </tbody>
 						  </table>
+						  
+						
 					  </div>
     			</div>
     		</div>
@@ -117,14 +131,16 @@ include_once "header.php";
 	              </div>
 	            </form>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Cek</a></p>
+					<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Cek</a></p>
+					<input id="saveimg" type="image" src="images/save.png" name="update" alt="Save Button">
+					<input type="hidden" name="update">
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Total Keranjang</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$20.60</span>
+    						<span>Rp. <?php echo $sum;?></span>
     					</p>
     					<p class="d-flex">
     						<span>Biaya Kirim</span>
@@ -134,19 +150,17 @@ include_once "header.php";
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$17.60</span>
+    						<span>Rp. </span>
     					</p>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					<p><a href="success.php?id=<?php echo $user_id?>" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					<p><a href="index.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
-    		</div>
+			</div>
+			</form>
 			</div>
 		</section>
-
-	
-<?php 
-include_once "footer.php";
-?>
+		
     
   
 

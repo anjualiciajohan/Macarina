@@ -8,7 +8,8 @@ if (!isset($_SESSION['user_login'])) {
 }
 else {
 	$user = $_SESSION['user_login'];
-	$result = mysqli_query($koneksi,"SELECT * FROM reseller WHERE email ='$user'");
+	$kd= $_SESSION['id'];
+	$result = mysqli_query($koneksi,"SELECT * FROM reseller WHERE email ='$user' AND id_reseller = '$kd'");
 		$get_user_email = mysqli_fetch_array($result);
 			$uname_db = $get_user_email['nama_reseller'];
 }
