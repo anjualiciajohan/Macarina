@@ -63,7 +63,7 @@ if($no_of_user_products==0){
 								
 							?>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="cart.php" onclick="return confirm('Are you sure?')"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="cart_remove.php?id=<?php echo $row['kd_barang']?>" onclick="return confirm('Are you sure?')"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="<?php echo "background-image:url(admin/img/barang/".$row['gambar_brg'].")" ?>;"></div></td>
 						        
