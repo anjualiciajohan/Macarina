@@ -83,7 +83,7 @@ include_once "../config/side.php";
                         <td>Photo </td>
                         <td>:</td>
                         <td><?php echo "<img src='../img/".$data['gambar']."' width='100px' height='100px'/>" ?>
-                        <input type="file" name="gambar" required />
+                        <input type="file" name="gambar" />
                        </td>
                     </tr>
                     <tr>
