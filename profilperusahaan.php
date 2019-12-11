@@ -12,7 +12,111 @@ include_once "header.php";
         </div>
       </div>
     </div>
-		
+
+    <div class="jumbotron">
+    
+    <h2 align="center"> <i>ABOUT US </i></h2>
+    
+    </div>
+    
+    <div class="container">
+    <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Visi dan Misi</h2>
+              <p>Visi : </p>
+              <p>
+              1. Bermanfaat untuk banyak orang </br>
+              
+              2. Memiliki "CORE BISNIS CAMILAN" olahan yang terbesar di Indonesia </br>
+              
+              3. Menjadi penyedia camilan yang inovatif </br>
+
+              4. Menjadi penyedia camilan yang peduli dengan kesehatan
+              </p>
+
+              <p>Misi : <p>
+              <p>
+              1. Menambah pelanggan dengan edukasi pasar yang berkesinambungan </br>
+
+              2. Membuka lapangan pekerjaan untuk orang yang kreatif dan berkompenten </br>
+
+              3. Terus berinovasi menciptakan produk yang aman dan layak untuk dikonsumsi </br>
+
+              4. Menjaga kualitas produksi dengan bahan baku terbaik </br>
+              </p>
+                                        
+              
+            </div>
+          </div>
+          </div>
+          <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Keunggulan Produk</h2>
+              <p> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Sejak terinspirasi oleh snack macaroni 500-an yang dijual di toko-toko kelontong. Ekstensinya bagus karena tidak tergeser oleh zaman.
+              
+              Makarina menjadi saksi bisnis yang aman dan berpotensi tinggi untuk tetap fight dan eksis dalam segala musim. Selain itu Macarina menggunakan bahan baku yang terbilang awet dan berstandart BPOM,sehingga mudah dalam penyimpanan. Jadi tidak ada alasan lagi untuk menekuni bisnis ini.</br>
+              
+              &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Macarina memiliki diferensiasi yang memberikan experience kepada penikmatnya. Selain teksturnya yang renyah, Macarina memiliki 10 varian rasa dan 6 level kepedasan, maka nilai jual dan keunggulan inilah yang kami tawarkan, dengan terus meng-refresh packing dan tawaran promo dan sounding produk secara berkelanjutan.</p>
+              
+          </div>
+          </div>
+          </div>
+          <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Data Usaha</h2>
+              <table >
+              <tr>
+              <td width="150px"><h5>Nama Usaha</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>Macarina (Macaroni nagih)</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Owner</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>Helmy Zambrudiansyah</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Bidang Usaha</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>Snack Makaroni Kering</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Jenis Produk</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>Makanan Ringan</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Alamat</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>Graha Macarina, Jl. Sriwijaya XX No. 11 Karangrejo, Sumbersari, Jember, Jawa Timur</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Nomor Telp</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>081217757777</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Alamat Email</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>macarina.official@gmail.com</h5></td>
+              </tr>
+              <tr>
+              <td width="150px"><h5>Insagram</h5></td>
+              <td width ="10px"><h5>:</h5></td>
+              <td width="500px"><h5>macarina.id</h5></td>
+              </tr>
+              </table>
+              </div>
+              </div>
+              </div>
+              <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">LEGALITAS USAHA</h2>
+          </div>
     		
     	
    
