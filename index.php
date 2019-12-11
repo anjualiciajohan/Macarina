@@ -5,7 +5,7 @@ require 'check_if_added.php';
 ?>
 <!-- Slide View -->
     <section id="home-section" class="hero">
-		  <div class="home-slider owl-carousel">
+		<div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image: url(images/produk.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
