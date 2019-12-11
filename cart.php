@@ -1,6 +1,7 @@
 <?php 
 //session_start();
 include_once "header.php";
+include_once "combo_kelurahan.php";
 if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
@@ -80,7 +81,7 @@ if($no_of_user_products==0){
 								</div>
 					          </td>
 								
-						        <td class="total">Rp. </td>
+						        <td class="total">Rp. <?php //echo $sum?></td>
 						      </tr><!-- END TR-->
 							  <?php $counter=$counter+1;}?>
 						    </tbody>
@@ -102,37 +103,56 @@ if($no_of_user_products==0){
 	              </div>
 	            </form>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Cek</a></p>
+    				<p><a href="cekTracking.php" class="btn btn-primary py-3 px-4">Cek</a></p>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Estimasi Biaya Kirim</h3>
     					<p>Masukkan alamat anda</p>
   						<form action="#" class="info">
+							  <form name="form1" method ="post" id="form_combo">
 	              <div class="form-group">
-	              	<label for="">Provinsi</label>
-	                <input type="text" class="form-control text-left px-3">
-	              </div>
+	              	<label for="country">Provinsi</label>
+	                <input type="text" class="form-control text-left px-4">
+				  </div>
+				
 	              <div class="form-group">
 	              	<label for="country">Kota/Kabupaten</label>
-	                <input type="text" class="form-control text-left px-3">
+	                <input type="text" class="form-control text-left px-4">
 	              </div>
 	              <div class="form-group">
-	              	<label for="country">Kecamatan</label>
-	                <input type="text" class="form-control text-left px-3">
-	              </div>
+					  <label for="country">Kecamatan</label>
+					  <select name ="kecamatan" onchange='showKel()'>
+					  <option value="">pilih Kecamatan</option>
+					  <?php 
+						$track="SELECT DISTINCT kecamatan FROM tracking ";
+						$abc = mysqli_query($koneksi,$track);
+						while ($prov = mysqli_fetch_array($abc)){
+						?>
+						<option nama="kelurahan" value="<?php echo $prov ['kecamatan'];?>"><?php echo $prov ['kecamatan'];?></option>
+						<?php } ?>
+						</select>
+				  </div>
+				  <div class="form-group">
+	              	<label for="country">Kelurahan</label>
+					  <select name="kelurahan" id="kel">
+						<option value="">Pilih Kelurahan</option>
+						
+					</select>
+				  </div>
+							  </form>
 				  <div class="form-group">
 	              	<label for="country">Kode Pos</label>
-	                <input type="text" class="form-control text-left px-3">
+	                <input type="text" class="form-control text-left px-4">
 	              </div>
 				  <div class="form-group">
 	              	<label for="country">Alamat Lengkap</label>
-	                <input type="text" class="form-control text-left px-3">
+	                <input type="text" class="form-control text-left px-4">
 	              </div>
 	            </form>
     				</div>
 					<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Cek</a></p>
-					<input id="saveimg" type="image" src="images/save.png" name="update" alt="Save Button">
+					
 					<input type="hidden" name="update">
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
