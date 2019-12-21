@@ -1,31 +1,46 @@
 <?php 
 include_once "header.php";
+//if(isset($_SESSION['email'])) {
+//header('location:index.php'); }
+require_once("koneksi.php");
 ?>
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 p-md-5" >
-          <p>Anda belum punya akun ?</p>
-					<p>Dengan bergabung sebagai reseller, Anda akan lebih mudah untuk mengorganisir stok ketersediaan</p>
-          <p>dan masih banyak promo untuk Reseller</p><br/>
-          <a href="#" class="btn btn-primary">Daftar Sekarang</a>
+          <p>Anda belum punya akun ? Yuk Join!<p>
+					<p>Dengan bergabung sebagai reseller, Anda akan lebih mudah untuk mengorganisir stok ketersediaan dan masih banyak promo untuk Reseller</p>
+          <a href="daftar.php" class="btn btn-primary">Daftar Sekarang</a>
 					</div>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Welcome to Macarina eCommerce website</h2>
+		            <h2 class="mb-4">Selamat Datang di Macarina e-Commerce Website</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
            
             <form class="user" method="GET" action="plogin.php">
                     <div class="form-group">
-                      <input type="text" name ="username"  class="form-control form-control-user" id="exUser" placeholder="Username">
+                      <input type="email" name ="email"  class="form-control form-control-user" id="email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <input type="password" name ="password" class="form-control form-control-user" id="exPassword" placeholder="Password">
+                      <input type="password" name ="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
+                    <label>
+                        <input type="checkbox"  name="login"> Ingatkan saya</label>
+                              <a href="login.php">Lupa Password?</a>
                     <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
+    
+                <?php 
+	                  if(isset($_GET['pesan'])){
+		                  if($_GET['pesan'] == "gagal"){
+		          	        echo "Login gagal! email dan password salah!";
+		                  }else if($_GET['pesan'] == "gagalstatus"){
+                        echo "Akun anda belum diaktifkan oleh Admin";
+                      }
+		               }
+	                ?>
             </form>
             </div>
             
@@ -62,4 +77,4 @@ include_once "footer.php";
   <script src="js/main.js"></script>
     
   </body>
-</html>
+</html> 
