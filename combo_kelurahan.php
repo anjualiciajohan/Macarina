@@ -5,24 +5,30 @@ function showKel()
 {
 
 <?php
-
 include_once "config.php";
-$query = "SELECT DISTINCT kecamatan FROM tracking ";
+// membaca semua propinsi
+
+$query = "SELECT * FROM tracking";
 
 $hasil = mysqli_query($koneksi,$query);
+
+// membuat if untuk masing-masing pilihan propinsi beserta isi option untuk combobox kedua
 
 while ($data = mysqli_fetch_array($hasil))
 
 {
 
-$kec = $data['kecamatan'];
+$prov = $data['sys_code'];
 
+// membuat IF untuk masing-masing propinsi
 
-echo "if (document.form1.provinsi.value == \"".$kec."\")";
+echo "if (document.form11.kecamatan.value == \"".$prov."\")";
 
 echo "{";
+    
+// membuat option kota untuk masing-masing propinsi
 
-$query2 = "SELECT kelurahan FROM tracking ";
+$query2 = "SELECT * FROM tracking WHERE sys_code = '$prov'";
 
 $hasil2 = mysqli_query($koneksi,$query2);
 
@@ -32,7 +38,7 @@ while ($data2 = mysqli_fetch_array($hasil2))
 
 {
 
-$content .= "<option value='".$data2['kelurahan']."'>".$data2['kelurahan']."</option>";
+$content .= "<option value='".$data2['id_kelurahan']."'>".$data2['kelurahan']."</option>";
 
 }
 

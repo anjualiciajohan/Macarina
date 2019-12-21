@@ -110,7 +110,7 @@ if($no_of_user_products==0){
     					<h3>Estimasi Biaya Kirim</h3>
     					<p>Masukkan alamat anda</p>
   						<form action="#" class="info">
-							  <form name="form1" method ="post" id="form_combo">
+							  <form name="form11" method ="post" id="form_combo">
 	              <div class="form-group">
 	              	<label for="country">Provinsi</label>
 	                <input type="text" class="form-control text-left px-4">
@@ -122,20 +122,20 @@ if($no_of_user_products==0){
 	              </div>
 	              <div class="form-group">
 					  <label for="country">Kecamatan</label>
-					  <select name ="kecamatan" onchange='showKel()'>
+					  <select id ="kecamatan" name ="kecamatan" onchange='showKel()'>
 					  <option value="">pilih Kecamatan</option>
 					  <?php 
-						$track="SELECT DISTINCT kecamatan FROM tracking ";
+						$track="SELECT DISTINCT kecamatan FROM tracking ORDER BY kecamatan asc";
 						$abc = mysqli_query($koneksi,$track);
 						while ($prov = mysqli_fetch_array($abc)){
 						?>
-						<option nama="kelurahan" value="<?php echo $prov ['kecamatan'];?>"><?php echo $prov ['kecamatan'];?></option>
+						<option value="<?php echo $prov ['sys_code'];?>"><?php echo $prov ['kecamatan'];?></option>
 						<?php } ?>
 						</select>
 				  </div>
 				  <div class="form-group">
 	              	<label for="country">Kelurahan</label>
-					  <select name="kelurahan" id="kel">
+					  <select name="kel" id="kel">
 						<option value="">Pilih Kelurahan</option>
 						
 					</select>
