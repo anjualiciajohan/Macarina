@@ -40,53 +40,46 @@ include_once "../config/side.php";
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tambah Data Admin</h1>
-          <p class="mb-4">Info akun Admin</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tambah Data Admin</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Laporan Transaksi</h6>
             </div>
             <div class="card-body">
             <?php 
             include "../config/config.php";
           ?>  
-            <form method ="POST" action="FtamAdmin.php" enctype="multipart/form-data">
-                <table border="1"  class="table table-striped table-bordered table-hover">
-                    <tr class="form-group">
-                        <td>Kode Admin</td>
-                        <td><input type="text" name="txt_idadm" class="form-control"></td>
-                    </tr>
-                    <tr class="form-group">
-                        <td>User</td>
-                        <td><input type="text" name="txt_user"  class="form-control" ></td>
-                    </tr>
-                    <tr class="form-group">
-                        <td>Password</td>
-                        <td><input type="text" name="txt_pwd"  class="form-control" ></td>
-                    </tr>
-                    <tr class="form-group">
-                        <td>Alamat </td>
-                        <td><input type="text" name="txt_almt"  class="form-control"> </td>
-                    </tr>
-                    <tr class="form-group">
-                        <td>Photo(Ukuran Maks = 1 MB) </td>
-                        <td><input type="file" name="gambar" required />
-                        </td>
-                    </tr>
-                   
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                                      <td>    
-                        <td> <input type="submit" name="btn_simpan" value="Simpan"> Jangan lupa di simpan</td>
-                        </td>    
-                    </tr>                   
-                
+            <form method ="POST" action="FtamBarang.php" enctype="multipart/form-data">
+                <table border="1" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>Kode Transaksi</td>
+                            <td>Tanggal</td>
+                            <td>Grand Total</td>
+                            <td>Kode Admin</td>
+                        </tr>        
+                    </thead>
+
+                    <?php
+                     
+                     $query = mysqli_query($koneksi,"SELECT * FROM transaksi");
+            
+                    while ($data = mysqli_fetch_array($query)){
+
+                  ?>
+
+                    <tbody>
+                        <tr>
+                            <td><?php echo $data ['kd_transaksi']; ?></td>
+                            <td><?php echo $data ['tgl_transaksi']; ?></td>
+                            <td><?php echo $data ['grand_total']; ?></td>
+                            <td><?php echo $data ['kd_admin']; ?></td>
+                        </tr>
+                    </tbody>
+                    <?php
+                     }
+                    ?>
                 </table>
             </form>
             

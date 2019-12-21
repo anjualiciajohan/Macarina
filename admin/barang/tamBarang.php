@@ -53,7 +53,7 @@ include_once "../config/side.php";
             include "../config/config.php";
           ?>  
             <form method ="POST" action="FtamBarang.php" enctype="multipart/form-data">
-                <table border="1">
+                <table border="1" class="table table-striped table-bordered table-hover">
                     <tr>
                         <td>Kode Barang</td>
                         <td>:</td>

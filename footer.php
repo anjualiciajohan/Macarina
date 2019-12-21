@@ -14,9 +14,8 @@
               <h2 class="ftco-heading-2">Kenapa Macarina?</h2>
               <p>Nama Macarina yang dipakai tersebut didapat dari singkatan "Makaroni Nagih", karena pada saat mencoba macaroni pertama kali kepada orang-orang di sekitar, mereka berpendapat bahwa makanan ringannya tersebut membuat mereka merasa nagih atau ketagihan untuk mencicipi terus menerus.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/macarina.id/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/macarina.id/"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>

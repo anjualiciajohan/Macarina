@@ -117,6 +117,7 @@ include_once "header.php";
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">LEGALITAS USAHA</h2>
           </div>
+</div>
     		
     	
    

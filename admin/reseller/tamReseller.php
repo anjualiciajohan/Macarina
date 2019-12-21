@@ -53,7 +53,7 @@ include_once "../config/side.php";
             include "../config/config.php";
           ?>  
             <form method ="POST" action="FtamAdmin.php" enctype="multipart/form-data">
-                <table border="1">
+                <table border="1" >
                     <tr>
                         <td>Kode Admin</td>
                         <td>:</td>
