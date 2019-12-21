@@ -35,6 +35,11 @@ include_once "../topNavbar.php";
 include_once "../config/side.php";
 ?>
    
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -44,7 +49,9 @@ include_once "../config/side.php";
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Laporan Transaksi</h6>
+           
+              <h6 class="m-0 font-weight-bold text-primary">Cari berdasarkan tanggal transaksi : <input type="date" name="tanggal" data-date="" data-date-format="DD MMMM YYYY"></h6>
+              
             </div>
             <div class="card-body">
             <?php 
@@ -58,12 +65,13 @@ include_once "../config/side.php";
                             <td>Tanggal</td>
                             <td>Grand Total</td>
                             <td>Kode Admin</td>
+                            <td>Status</td>
                         </tr>        
                     </thead>
 
                     <?php
                      
-                     $query = mysqli_query($koneksi,"SELECT * FROM transaksi");
+                     $query = mysqli_query($koneksi,"SELECT * FROM transaksi JOIN detail_transaksi");
             
                     while ($data = mysqli_fetch_array($query)){
 
@@ -75,6 +83,7 @@ include_once "../config/side.php";
                             <td><?php echo $data ['tgl_transaksi']; ?></td>
                             <td><?php echo $data ['grand_total']; ?></td>
                             <td><?php echo $data ['kd_admin']; ?></td>
+                            <td><?php echo $data ['status']; ?></td>
                         </tr>
                     </tbody>
                     <?php
@@ -128,6 +137,7 @@ include_once "../config/side.php";
     </div>
   </div>
 
+
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -144,6 +154,13 @@ include_once "../config/side.php";
 
   <!-- Page level custom scripts -->
   <script src="../js/demo/datatables-demo.js"></script>
+
+  <script>
+	$('.datepicker').datepicker({
+		dateFormat: 'yyyy-mm-dd',
+	})
+	</script>
+  
 
 </body>
 
