@@ -50,7 +50,11 @@ include "../config/side.php";
             </div>
             <div class="card-body">
               <div class="table-responsive">
-             
+              <a href="cetakReseller.php">
+              <input type="submit" value="To PDF Data Barang"/>
+              </a>
+
+              <a href="cetak.php" target="_blank">CETAK</a>
               <form method ="POST" action="detReseller.php" >
              
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

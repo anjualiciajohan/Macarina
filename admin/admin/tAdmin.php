@@ -53,6 +53,11 @@ include "../config/side.php";
               <a href="tamAdmin.php">
               <input type="submit" value="Tambah Admin"/>
               </a>
+              <a href="cetakAdmin.php">
+              <input type="submit" value="To PDF Data Admin"/>
+              </a>
+
+              <a href="cetak.php" target="_blank">CETAK</a>
               <form method ="POST" action="detAdmin.php" >
              
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
