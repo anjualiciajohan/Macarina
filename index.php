@@ -3,18 +3,21 @@ include_once "header.php";
 
 require 'check_if_added.php';
 ?>
+
 <!-- Slide View -->
-    <section id="home-section" class="hero">
-		<div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(images/produk.jpg);">
+<section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(images/produk0.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
+
+			  	<div data-border-width="1px" style="transform-origin: center 0.5px 0px; left: 230px; width: 520px; position: absolute; top: 416px; height: 5px;" class="hl1" id="FvGrdLnd"></div>
 	            <div class="col-md-12 ftco-animate text-center">
 	              <h1 class="mb-2">Macarina Shake Shake </h1>
 	              <h2 class="subheading mb-4">Macarina dengan inovasi terbaru</h2>
-	              <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
+				  <div data-border-width="1px" style="transform-origin: center 0.5px 0px; left: 231px; width: 520px; position: absolute; top: 507px; height: 5px;" class="hl1" id="ij4iwt60"></div>
 	            </div>
 	          </div>
 	        </div>
@@ -25,10 +28,7 @@ require 'check_if_added.php';
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
-	            <div class="col-sm-12 ftco-animate text-center">
-	              <h2 class="subheading mb-4">Ini trobosan terbaru dari Macarina</h2>
-	              <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
-	            </div>
+	            
 	          </div>
 	        </div>
 	      </div>
@@ -40,9 +40,7 @@ require 'check_if_added.php';
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 		
-			  <div class="col-sm-12 ftco-animate text-center">
-			  <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
-	          </div>
+			  
 			  </div>
 	        </div>
 	      </div>
@@ -54,190 +52,198 @@ require 'check_if_added.php';
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 		
-			  <div class="col-sm-12 ftco-animate text-center">
-			  <p><a href="shop.php" class="btn btn-primary">Shop Now</a></p>
-	          </div>
+			 
 			  </div>
 	        </div>
 	      </div>
 	    </div>
     </section>
+    </section>
 <!-- END Slide -->
 
-   
-<!-- Quick buy -->
-<br>
-		<section class="ftco-section ftco-category ftco-no-pt">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="row">
-							<div class="col-md-6 order-md-last align-items-stretch d-flex">
-								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(images/ms.jpg);">
-									<div class="text text-center">
-										<h2>Pilihan per-Paket</h2>
-										<p>----------------------</p>
-										<p><a href="#" class="btn btn-primary">Shop now</a></p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(images/produk2.jpg);">
-									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Paket 1 <br/>(Pedas, Manis, xxx)</a></h2>
-										
-									</div>
-									
-								</div>
-								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/produk2.jpg);">
-									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Paket 2</a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+<!-- content -->
 
-					<div class="col-md-4">
-						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(images/produk2.jpg);">
-							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Paket 3</a></h2>
-							</div>		
-						</div>
-						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/produk2.jpg);">
-							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Paket 4</a></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-    <section class="ftco-section">
-    	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Quick Buy</span>
-            <h2 class="mb-4">Our Products</h2>
-            
+<section class="section pt-5 top-slant-white2 relative-higher">
+      <div class="container">
+        <div class="row mb-5 justify-content-center" data-aos="fade">
+            <div class="col-md-7 text-center heading-wrap">
+              <h2 data-aos="fade-up">Welcome To Macarina Official Website</h2>
           </div>
-        </div>   		
-    	</div>
-    	<div class="container">
-    		<div class="row">
-				<?php
-				include_once "config.php";
-				$query = mysqli_query($koneksi,"SELECT * FROM barang");
-				while ($data = mysqli_fetch_array($query)){
-				?>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" <?php echo "src='admin/img/barang/".$data['gambar_brg']."'" ?> alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="price-sale"><?php echo $data['nama_barang']?>- Rp<?php echo $data['harga']?></span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-									</a>
-									<?php if(!isset($_SESSION['user_login'])){  ?>
-	    							<a href="login.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-									</a>
-									<?php
-											}
-											else{
-												if(check_if_added_to_cart($data['kd_barang'])){
-													echo '<a href="login.php" disabled class="buy-now d-flex justify-content-center align-items-center mx-1">
-													<span><i class="ion-ios-cart"></i></span>
-												</a>';
-												}else{
-													?>
-													<a href="cart_add.php?id=<?php echo $data['kd_barang'];?>" name="add" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    											<span><i class="ion-ios-cart"></i></span>
-													</a>
-													<?php
-													}
-												}
-												?>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-				</div>
-				<?php
-				}
-				?>
+        </div>
 
-    			
-    		</div>
-    	</div>
-    </section>
-	
-    <section class="ftco-section testimony-section">
+<div id="about" class="about-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+            <figure class="circle-bg">
+            <img src="images/Picture1.jpg" alt="Image" class="img-fluid">
+            </figure>
+          </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title"> What is Macarina? </h2>
+                        <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
+                        <p> Macarina adalah makaroni goreng berkualitas tinggi dan pastinya beda dengan makaroni jenis lainnya. 
+                        Sangat renyah dan bumbunya kerasa banget. Bumbu yang kita gunakan juga olahan sendiri yang menjadikannya keunikan dalam produk kita. 
+				                Karena kita hanya mengunakan bahan bahan berkualitas dan terjamin. </p>
+                        <p> Buat kamu yang ingin join dan sukses bersama Macarina dan ingin membantu kami untuk membuka cabang di kota anda? </p>
+                        <p><a href="daftar.php" class="smoothscroll btn btn-primary">Peluang Bisnis</a></p>
+                    </div>
+                </div>
+                <br>
+  <!-- end col -->
+
+    <div style="clear:both">
+    </div>
+                     <center>
+            <div class="row row-content" style="padding-top:50px;max-width:1024px">
+            <div class="col-lg-6" style="padding-left:10px;padding-right:10px">
+            <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:50px">
+            <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
+                    <h2 style="line-height:50px;color:#fff">Success Story</h2>
+    </div> 
+        <iframe width="420" height="315"src="https://youtube.com/embed/7l00kYjjNe4?autoplay=1"></iframe> 
+                <div class="embed-responsive embed-responsive-16by9" style="margin-bottom:20px">
+    </div>
+    </div>
+    </div> 
+            <div class="col-lg-6" style="padding-left:10px;padding-right:10px">
+            <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:50px">
+            <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
+                    <h2 style="line-height:50px;color:#fff">Level Pedas bikin Nagih</h2>
+    </div> 
+            <div style="padding:15px 10px;line-height:25px;min-height:65px">
+                <span>#KadeudeuhBuOmay<span style="color:#eb1c24">Asin Gurih</span> 
+    </span>
+                <span>#KepretPakEndang <span style="color:#eb1c24">Pedas</span> 
+    </span>
+                <span>#PitnahBuLilis <span style="color:#eb1c24">Pedas Banget</span> 
+    </span>
+                <span>#CiwitBuTina <span style="color:#eb1c24">Pedas Sedang</span> 
+    </span> 
+                <span>#DicuekinPakZaenal <span style="color:#eb1c24">Pedas Sedikit</span> 
+    </span>
+    </div>
+    </div> 
+            <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:30px">
+            <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
+                    <h2 style="line-height:50px;color:#fff">Pesan Sekarang via..</h2>
+                   
+    </div> 
+    </div>
+    </div>
+        </center>
+
+   
+ <!--::review_part start::-->
+ <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-          	<!--<span class="subheading">Testimony</span>-->
-            <h2 class="mb-4">Our satisfied customer says</h2>
+          	<span class="subheading">Testimony</span>
+            <h2 class="mb-4">Testimonial Para Macariners</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
           </div>
-		</div>
-		
+        </div>
         <div class="row ftco-animate">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel">
-
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
                     <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Marketing Manager</span>
+                    <p class="name">Dinda Endy</p>
+                    <span class="position">Macarina Banyuwangi</span>
                   </div>
                 </div>
-			  </div>
-			  
+              </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
                     <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Interface Designer</span>
+                    <p class="name">Febby Eka</p>
+                    <span class="position">Macarina Jember</span>
                   </div>
                 </div>
-			  </div>
-			  
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<p class="name">Alvinda</p>
+                    <span class="position">Macarina Malang</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<p class="name">Dinda Endy</p>
+                    <span class="position">Macarina Banyuwangi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<p class="name">Alvinda</p>
+                    <span class="position">Macarina Malang</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <hr>
-
+    <!--::review_part end::-->
 		
-
+    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+      <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+          <div class="col-md-6">
+          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+          	<span>Get e-mail updates about our latest shops and special offers</span>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <form action="#" class="subscribe-form">
+              <div class="form-group d-flex">
+                <input type="text" class="form-control" placeholder="Enter email address">
+                <input type="submit" value="Subscribe" class="submit px-3">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 		
 	
 	<?php
@@ -266,6 +272,7 @@ require 'check_if_added.php';
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+ <script src="js/modernizer.js"></script> 
+
   </body>
 </html>

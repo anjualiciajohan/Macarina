@@ -45,11 +45,10 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  <script>document.write</script> All rights reserved 2019<i class="icon-heart color-danger" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
+          <div style="color:#27262e;line-height:1.2;padding:15px 15px 15px 25px;font-size:12px">
+          <a href="/" alt="macarina.com" class="nuxt-link-exact-active nuxt-link-active" style="font-size:14px;color:#eb1c24">Macarina.com </a>
+          <br>Graha Macarina, CV.Macarindo Berkah Group
+          <br> © 2015-2019.
           </div>
         </div>
       </div>
