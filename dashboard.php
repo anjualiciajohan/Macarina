@@ -88,6 +88,8 @@ include_once "header.php";
                 </div>
 
                 <br>
+
+</br>
  <!-- end col -->
       
 
@@ -132,7 +134,71 @@ include_once "header.php";
     </div>
         </center>
 
-  
+  <!-- any questions -->
+
+          <div class="col-12 text-center" data-aos="fade">
+            <h2 class="section-title">Frequently Ask questions?</h2>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Apakah Macarina membuka kerjasama dalam bidang Frenchise/Waralaba?</h3>
+            <p>Kami selaku team manajemen resmi Macarina tidak membuat/membuka sistem Frenchise atau Waralaba apapun.</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan secara online? Caranya?</h3>
+              <p>Ya, bisa..</p>
+              <p>Pemesanan Macarina via online bisa dilakukan lewat Whatsapp di No 0821-6666-4343 setiap hari 
+                (Pemesanan via online minimal 6 bungkus/pack atau 2 toples) setelah Macarina order, Macarina bisa melakukan transfer ke no rekening yang sudah ditentukan 
+                kemudian konfirmasikan pembayaran tersebut sebelum pukul 16.00 supaya pesanan Macarina langsung dikirim di hari yang sama.</p>
+            </div>
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Beda Macarina Premium dengan Macarina Regular?</h3>
+            <p>Di Macarina Premium banyak varian rasa yang belum ada & dijual online di outlet Macarina manapun. Untuk Macarina Premium baru hanya terdapat di Hartono Mall Jogja Lantai Lower Ground (LG) (Dekat Resto Solaria).
+                    Harga Macarina Premium dimulai dari Rp 8.000,- s/d Rp 16.000,-</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan antar atau COD?</h3>
+              <p>Sampai saat ini, Kami tidak membuat sistem pesan antar (delivery) atau Cash On Delivery (COD).</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan lewat Go-Food di aplikasi Go-Jek?</h3>
+              <p>Macarina bisa melakukan pemesanan lewat menu Go-Food di aplikasi Go-Jek (tidak ada minimum order), setelah melakukan proses pemesanan, driver Go-Jek yang akan mengantar pesanan Macarina, 
+                kemudian pembayaran dilakukan setelah pesanan Macarina tiba di lokasi tujuan.</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Berapakah lama waktu pengiriman Macarina secara online?</h3>
+              <p>Lama waktu pengiriman Macarina secara online kurang lebih memakan waktu 2 S/D 3 hari kerja. Tapi kembali lagi dilihat kemana lokasi tujuan pengirimannya.</p>
+            </div>
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Apa Macarina bisa dibeli per-Kilo?</h3>
+            <p>Tidak bisa</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah ada kemasan Macarina yang lain selain kemasan plastik?</h3>
+              <p>Selain kemasan plastik yang sudah banyak Macarina ketahui, kami juga menjual kemasan toples (isi kurang lebih 300 gram) seharga Rp 22.000,- s/d Rp 24.000,-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end any questions -->
+
+
  <!--::review_part start::-->
  <section class="ftco-section testimony-section">
       <div class="container">
