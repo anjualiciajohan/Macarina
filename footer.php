@@ -25,7 +25,6 @@
               <ul class="list-unstyled">
                 <li><a href="shop.php" class="py-2 d-block">Shop</a></li>
                 <li><a href="about.php" class="py-2 d-block">Tentang</a></li>
-                <li><a href="#" class="py-2 d-block">Jurnal</a></li>
                 <li><a href="#" class="py-2 d-block">Kontak kami</a></li>
               </ul>
             </div>
@@ -48,7 +47,7 @@
           <div style="color:#27262e;line-height:1.2;padding:15px 15px 15px 25px;font-size:12px">
           <a href="/" alt="macarina.com" class="nuxt-link-exact-active nuxt-link-active" style="font-size:14px;color:#eb1c24">Macarina.com </a>
           <br>Graha Macarina, CV.Macarindo Berkah Group
-          <br> © 2015-2019.
+          
           </div>
         </div>
       </div>

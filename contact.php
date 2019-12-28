@@ -12,61 +12,45 @@ include_once "header.php";
         </div>
       </div>
     </div>
+    <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Outlet 1</h3>
+              <p>
+              Jl. Kalimantan no 39b (Depan mie Rampok) </p>
+              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina?share" class="smoothscroll btn btn-primary">Lihat di Gmaps</a></p>
+	            <p>
+	          </div>
+          </div>
+          <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Outlet 2</h3>
+              <p>
+              Jl. Karimata </p>
+              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina?share" class="smoothscroll btn btn-primary">Lihat di Gmaps</a></p>
+	            <p>
+	          </div>
+          </div>
+         
 
    <!-- breadcrumb start-->
 
     <!-- ================ contact section start ================= -->
-     <section class="contact-section section_padding">
-      <div class="container">
-        <div class="d-none d-sm-block mb-5 pb-4">
-          <div id="map" style="height: 480px;"></div>
-          <script>
-            function initMap() {
-              var uluru = {
-                lat: -25.363,
-                lng: 131.044
-              };
-              var grayStyles = [
-                {
-                  featureType: "all",
-                  stylers: [
-                    {
-                      saturation: -90
-                    },
-                    {
-                      lightness: 50
-                    }
-                  ]
-                },
-                {
-                  elementType: "labels.text.fill",
-                  stylers: [
-                    {
-                      color: "#ccdee9"
-                    }
-                  ]
-                }
-              ];
-              var map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                  lat: -31.197,
-                  lng: 150.744
-                },
-                zoom: 9,
-                styles: grayStyles,
-                scrollwheel: false
-              });
-            }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
-        </div>
+     
 
         <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+           
+           
           </div>
         </div>
 
@@ -76,8 +60,11 @@ include_once "header.php";
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-map-signs"></span>
           		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Jl. Sriwijaya XX No.11 Karangrejo - Sumbersari, JEMBER</p>
+          		<h3 class="mb-4">Alamat</h3>
+              <p>
+              Jl. Sriwijaya XX No.11 Karangrejo - Sumbersari, JEMBER</p>
+              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina?share" class="smoothscroll btn btn-primary">Lihat di Gmaps</a></p>
+	            <p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -85,8 +72,10 @@ include_once "header.php";
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-phone2"></span>
           		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://081 217 757 777">+ 6281 217 757 777</a></p>
+          		<h3 class="mb-4">Kontak Langsung</h3>
+	            <p><a >+ 6281 217 757 777</a></p>
+              <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20dari%20website%20,mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
+	            <p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -94,8 +83,8 @@ include_once "header.php";
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-paper-plane"></span>
           		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:macarina.official@gmail.com">macarina.official@gmail.com</a></p>
+          		<h3 class="mb-4">Alamat Email</h3>
+	            <p><a href="mailto:macarina.official@gmail.com">macarina.idl@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -104,7 +93,7 @@ include_once "header.php";
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Website</h3>
-	            <p><a href="#">macarina.com</a></p>
+	            <p><a href="#">macarinaid.com</a></p>
 	          </div>
           </div>
         </div>
@@ -140,96 +129,7 @@ include_once "header.php";
 		
     <!-- ================ contact section end ================= -->
 
-    <!--::review_part start::-->
-<section class="ftco-section testimony-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4">Testimonial Para Macariners</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel">
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Dinda Endy</p>
-                    <span class="position">Macarina Banyuwangi</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Febby Eka</p>
-                    <span class="position">Macarina Jember</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Alvinda</p>
-                    <span class="position">Macarina Malang</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Dinda Endy</p>
-                    <span class="position">Macarina Banyuwangi</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Alvinda</p>
-                    <span class="position">Macarina Malang</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--::review_part end::-->
+   
 
     <?php 
 include_once "footer.php";

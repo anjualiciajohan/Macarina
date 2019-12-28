@@ -7,7 +7,7 @@ require 'check_if_added.php';
 <!-- Slide View -->
 <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(images/produk0.jpg);">
+	      <div class="slider-item" style="background-image: url(images/kripsus.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -15,15 +15,14 @@ require 'check_if_added.php';
 
 			  	<div data-border-width="1px" style="transform-origin: center 0.5px 0px; left: 230px; width: 520px; position: absolute; top: 416px; height: 5px;" class="hl1" id="FvGrdLnd"></div>
 	            <div class="col-md-12 ftco-animate text-center">
-	              <h1 class="mb-2">Macarina Shake Shake </h1>
-	              <h2 class="subheading mb-4">Macarina dengan inovasi terbaru</h2>
+	              
 				  <div data-border-width="1px" style="transform-origin: center 0.5px 0px; left: 231px; width: 520px; position: absolute; top: 507px; height: 5px;" class="hl1" id="ij4iwt60"></div>
 	            </div>
 	          </div>
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image: url(images/slide1.jpg);">
+	      <div class="slider-item" style="background-image: url(images/image.png);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -35,7 +34,7 @@ require 'check_if_added.php';
 
 		  
 		
-		<div class="slider-item" style="background-image: url(images/slide2.jpg);">
+		<div class="slider-item" style="background-image: url(images/makarinacoklat.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -47,7 +46,7 @@ require 'check_if_added.php';
 
 		
 		
-		<div class="slider-item" style="background-image: url(images/slide3.jpg);">
+		<div class="slider-item" style="background-image: url(images/makarinaori.jpeg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -81,13 +80,12 @@ require 'check_if_added.php';
           </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <h2 class="block-title"> What is Macarina? </h2>
-                        <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
+                        <h2 class="block-title"> Apa itu Macarina? </h2>
                         <p> Macarina adalah makaroni goreng berkualitas tinggi dan pastinya beda dengan makaroni jenis lainnya. 
                         Sangat renyah dan bumbunya kerasa banget. Bumbu yang kita gunakan juga olahan sendiri yang menjadikannya keunikan dalam produk kita. 
 				                Karena kita hanya mengunakan bahan bahan berkualitas dan terjamin. </p>
                         <p> Buat kamu yang ingin join dan sukses bersama Macarina dan ingin membantu kami untuk membuka cabang di kota anda? </p>
-                        <p><a href="daftar.php" class="smoothscroll btn btn-primary">Peluang Bisnis</a></p>
+                        <p><a href="daftar.php" class="smoothscroll btn btn-primary">Daftar Sekarang</a></p>
                     </div>
                 </div>
                 <br>
@@ -102,7 +100,7 @@ require 'check_if_added.php';
             <div class="col-lg-6" style="padding-left:10px;padding-right:10px">
             <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:50px">
             <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
-                    <h2 style="line-height:50px;color:#fff">Success Story</h2>
+                    <h2 style="line-height:50px;color:#fff">Cerita sukses</h2>
     </div> 
         <iframe width="420" height="315"src="https://youtube.com/embed/7l00kYjjNe4?autoplay=1"></iframe> 
                 <div class="embed-responsive embed-responsive-16by9" style="margin-bottom:20px">
@@ -129,7 +127,8 @@ require 'check_if_added.php';
     </div> 
             <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:30px">
             <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
-                    <h2 style="line-height:50px;color:#fff">Pesan Sekarang via..</h2>
+                    <h2 style="line-height:50px;color:#fff"></h2> <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20dari%20website%20,mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
+	            <p>
                    
     </div> 
     </div>
@@ -139,7 +138,7 @@ require 'check_if_added.php';
     <!-- any questions -->
 
     <div class="col-12 text-center" data-aos="fade">
-            <h2 class="section-title">Frequently Ask questions?</h2>
+            <h2 class="section-title">Hal yang sering ditanyakan</h2>
           </div>
         </div>
         <br>
@@ -206,10 +205,9 @@ require 'check_if_added.php';
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Testimony</span>
+          	<span class="subheading">Testimoni</span>
             <h2 class="mb-4">Testimonial Para Macariners</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
+             </div>
         </div>
         <div class="row ftco-animate">
           <div class="col-md-12">
@@ -222,9 +220,9 @@ require 'check_if_added.php';
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Jajanan asik dan enak</p>
                     <p class="name">Dinda Endy</p>
-                    <span class="position">Macarina Banyuwangi</span>
+                    <span class="position">Customer Banyuwangi</span>
                   </div>
                 </div>
               </div>
@@ -236,9 +234,9 @@ require 'check_if_added.php';
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Asli bikin nagih</p>
                     <p class="name">Febby Eka</p>
-                    <span class="position">Macarina Jember</span>
+                    <span class="position">Customer Jember</span>
                   </div>
                 </div>
               </div>
@@ -250,37 +248,37 @@ require 'check_if_added.php';
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Alvinda</p>
-                    <span class="position">Macarina Malang</span>
+                    <p class="mb-5 pl-4 line">Beli 1 kurang beli 2 kenyang wkwk</p>
+					<p class="name">Avinda</p>
+                    <span class="position">Customer Malang</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testii.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Dinda Endy</p>
-                    <span class="position">Macarina Banyuwangi</span>
+                    <p class="mb-5 pl-4 line">Jajanan masa kecil dan pasti higenis</p>
+					<p class="name">Nur Izzah</p>
+                    <span class="position">Customer Surabaya</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi4.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					<p class="name">Alvinda</p>
-                    <span class="position">Macarina Malang</span>
+                    <p class="mb-5 pl-4 line">Oleh-oleh asinan yang wajib dibeli di Jember</p>
+					<p class="name">Adinda Putri</p>
+                    <span class="position">Customer Mojokerto</span>
                   </div>
                 </div>
               </div>
@@ -290,26 +288,7 @@ require 'check_if_added.php';
       </div>
     </section>
 
-    <!--::review_part end::-->
-		
-    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-      <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-          <div class="col-md-6">
-          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 		
 	
 	<?php
