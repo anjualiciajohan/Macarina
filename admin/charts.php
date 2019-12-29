@@ -101,6 +101,7 @@ include_once "topNavbar.php";
   <tbody>
 
     <div class="container">
+        <h2 align="center">GRAFIK BARANG</h2>
         <canvas id="piechart" width="100" height="100"></canvas>
     </div>
 
