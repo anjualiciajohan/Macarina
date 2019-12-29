@@ -38,6 +38,8 @@ include_once "header.php";
 	            <p>
 	          </div>
           </div>
+          </div>
+          </div>
          
 
    <!-- breadcrumb start-->
@@ -46,13 +48,8 @@ include_once "header.php";
      
 
         <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-           
-           
-          </div>
-        </div>
+      <div class="container align-items-center justify-content-center">
+      	
 
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -116,6 +113,7 @@ include_once "header.php";
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
+            
             </form>
           
           </div>
@@ -124,6 +122,7 @@ include_once "header.php";
           	<div class="img" style="background-image: url(images/macarinashake.jpg);"></div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 		
