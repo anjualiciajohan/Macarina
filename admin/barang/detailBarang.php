@@ -85,7 +85,12 @@ include_once "../config/side.php";
                         <td>:</td>
                         <td><input disabled type="number" name="txt_stok" value="<?php echo $data['stok'] ?>"> </td>
                     </tr>
+                    <tr>
                     
+                        <td>Deskripsi </td>
+                        <td>:</td>
+                        <td><input disabled type="textarea" name="txt_desc" value="<?php echo $data['deskripsi'] ?>"> </td>
+                    </tr>
                 </table>
 
               </td>

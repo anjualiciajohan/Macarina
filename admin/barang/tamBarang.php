@@ -75,6 +75,11 @@ include_once "../config/side.php";
                         <td><input type="number" name="txt_stok"> </td>
                     </tr>
                     <tr>
+                        <td>Deskripsi </td>
+                        <td>:</td>
+                        <td><input type="textarea" name="txt_desc" > </td>
+                    </tr>
+                    <tr>
                         <td>Photo(Ukuran Maks = 1 MB) </td>
                         <td>:</td>
                         <td><input type="file" name="gambar" required />

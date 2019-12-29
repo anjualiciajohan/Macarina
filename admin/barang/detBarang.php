@@ -80,6 +80,11 @@ include_once "../config/side.php";
                         <td><input type="number" name="txt_stok" value="<?php echo $data['stok'] ?>"> </td>
                     </tr>
                     <tr>
+                        <td>Deskripsi </td>
+                        <td>:</td>
+                        <td><input type="textarea" name="txt_desc" value="<?php echo $data['deskripsi'] ?>"> </td>
+                    </tr>
+                    <tr>
                         <td>Photo </td>
                         <td>:</td>
                         <td><?php echo "<img src='../img/barang/".$data['gambar_brg']."' width='100px' height='100px'/>" ?>

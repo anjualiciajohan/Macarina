@@ -1,6 +1,6 @@
 <?php
     include "../config/config.php";
-    $Lapor = "SELECT kd_barang,nama_barang,harga,stok FROM barang ORDER by kd_barang asc";
+    $Lapor = "SELECT kd_barang,nama_barang,harga,stok,deskripsi FROM barang ORDER by kd_barang asc";
     $Hasil = mysqli_query($koneksi,$Lapor);
     $Data = array();
     while($row = mysqli_fetch_assoc($Hasil)){
@@ -13,7 +13,7 @@
         array("label"=>"Nama Barang", "length"=>60, "align"=>"L"),
         array("label"=>"Harga", "length"=>40, "align"=>"L"),
         array("label"=>"Stok", "length"=>33, "align"=>"L"),
-        
+        array("label"=>"Deskripsi", "length"=>33, "align"=>"L"),
     );
     require ("../fpdf16/fpdf.php");
     $pdf = new FPDF();
