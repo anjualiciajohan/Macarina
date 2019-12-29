@@ -2,6 +2,10 @@
 define('BASEPATH', dirname(__FILE__));
 //include_once('../config/head.php'); 
 include_once "head.php";
+
+$koneksi    = mysqli_connect("localhost", "root", "", "macarina");
+$penjualan  = mysqli_query($koneksi, "SELECT stok FROM barang");
+$merk       = mysqli_query($koneksi, "SELECT nama_barang FROM barang");
 ?>
 <?php
 include_once "topNavbar.php";
@@ -83,59 +87,58 @@ include_once "topNavbar.php";
 
 </ul>
 
-   
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+<thead>
+    <meta charset="utf-8">
+    <title>Chartjs, PHP dan MySQL Demo Grafik Lingkaran Pie Chart</title>
+    <script src="js/Chart.js"></script>
+    <style type="text/css">
+            .container {
+                width: 40%;
+                margin: 15px auto;
+            }
+    </style>
+  </thead>
+  <tbody>
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Charts</h1>
-          </div>
+    <div class="container">
+        <canvas id="piechart" width="100" height="100"></canvas>
+    </div>
 
-          <!-- Content Row -->
-          <div class="row">
+  </tbody>
+</html>
 
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+<script  type="text/javascript">
+  var ctx = document.getElementById("piechart").getContext("2d");
+  var data = {
+            labels: [<?php while ($p = mysqli_fetch_array($merk)) { echo '"' . $p['nama_barang'] . '",';}?>],
+            datasets: [
+            {
+              label: "Penjualan Barang",
+              data: [<?php while ($p = mysqli_fetch_array($penjualan)) { echo '"' . $p['stok'] . '",';}?>],
+              backgroundColor: [
+                '#29B0D0',
+                '#2A516E',
+                '#F07124',
+                '#CBE0E3',
+                '#979193',
+                '#ff0000',
+                '#f2f542',
+                '#51f542'
+              ]
+            }
+            ]
+            };
 
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
+  var myPieChart = new Chart(ctx, {
+                  type: 'pie',
+                  data: data,
+                  options: {
+                    responsive: true
+                }
+              });
 
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
+</script>
+</div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
