@@ -1,5 +1,6 @@
 <?php 
 include_once "header.php";
+require 'check_if_added.php';
 ?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/Salinan macarina-8.jpg');">
@@ -47,10 +48,27 @@ include_once "header.php";
 	    						<div class="m-auto d-flex">
 	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+									</a>
+									<?php if(!isset($_SESSION['user_login'])){  ?>
+	    							<a href="shop2.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
+									</a>
+									<?php
+											}
+											else{
+												if(check_if_added_to_cart($data['kd_barang'])){
+													echo '<a href="shop2.php" disabled class="buy-now d-flex justify-content-center align-items-center mx-1">
+													<span><i class="ion-ios-cart"></i></span>
+												</a>';
+												}else{
+													?>
+													<a href="cart_add.php?id=<?php echo $data['kd_barang'];?>" name="add" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    											<span><i class="ion-ios-cart"></i></span>
+													</a>
+													<?php
+													}
+												}
+												?>
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>
 	    							</a>
