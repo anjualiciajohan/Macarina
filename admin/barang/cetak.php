@@ -21,7 +21,7 @@
             <th>Nama</th>
             <th>Harga</th>
             <th width="2%">Stok</th>
-            
+            <th>Deskripsi</th>
 		</tr>
 		<?php 
 		$sql = mysqli_query($koneksi,"SELECT * FROM barang");
@@ -32,6 +32,7 @@
 			<td><?php echo $data['nama_barang']; ?></td>
 			<td><?php echo $data['harga']; ?></td>
 			<td><?php echo $data['stok']; ?></td>
+			<td><?php echo $data['deskripsi']; ?></td>
 		</tr>
 		<?php 
 		}
