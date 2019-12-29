@@ -8,7 +8,7 @@ function showKel()
 include_once "config.php";
 // membaca semua propinsi
 
-$query = "SELECT * FROM tracking";
+$query = "SELECT * FROM kec";
 
 $hasil = mysqli_query($koneksi,$query);
 
@@ -28,7 +28,7 @@ echo "{";
     
 // membuat option kota untuk masing-masing propinsi
 
-$query2 = "SELECT * FROM tracking WHERE sys_code = '$prov'";
+$query2 = "SELECT * FROM kel WHERE sys_code = '$prov'";
 
 $hasil2 = mysqli_query($koneksi,$query2);
 
@@ -38,7 +38,7 @@ while ($data2 = mysqli_fetch_array($hasil2))
 
 {
 
-$content .= "<option value='".$data2['id_kelurahan']."'>".$data2['kelurahan']."</option>";
+$content .= "<option value='".$data2['kd_kel']."'>".$data2['kelurahan']."</option>";
 
 }
 

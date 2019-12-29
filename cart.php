@@ -6,7 +6,7 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
-$user_products_query="select barang.kd_barang,barang.nama_barang,barang.deskripsi,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
+$user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
 $user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
 $no_of_user_products= mysqli_num_rows($user_products_result);
 $sum=0;
@@ -38,7 +38,7 @@ if($no_of_user_products==0){
 
     <section class="ftco-section ftco-cart">
 			<div class="container">
-			<form method="POST">
+			
 				<div class="row">
     			<div class="col-md-12 ftco-animate">
     				<div class="cart-list">
@@ -63,10 +63,11 @@ if($no_of_user_products==0){
 							while($row=mysqli_fetch_array($user_products_result)){
 								
 							?>
+							<form method="post" action="save_cart.php">
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="cart_remove.php?id=<?php echo $row['kd_barang']?>" onclick="return confirm('Are you sure?')"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="<?php echo "background-image:url(admin/img/barang/".$row['gambar_brg'].")" ?>;"></div></td>
+						        <td class="image-prod"><div class="img" style="<?php echo "background-image:url(admin/img/barang/".$row['gambar_brg'].")" ;?>"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3><?php echo $row['nama_barang']?></h3>
@@ -77,7 +78,8 @@ if($no_of_user_products==0){
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="number" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" onchange="mySubmit(this.form)">
+									<input type="hidden" name="iddet" value="<?php echo $row['id_detail']; ?>">
+					             	<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" onchange="mySubmit(this.form)">
 								</div>
 								
 					          </td>
@@ -86,9 +88,12 @@ if($no_of_user_products==0){
 									$totals = $h * $q;
 									$grand += $totals;
 							 ?>
-						        <td class="total">Rp. <?php echo $totals;?></td>
+								<input type="hidden" name="harga_" value="<?php echo $h; ?>">
+								<td class="total">Rp. <?php echo $totals;?></td>
 						      </tr><!-- END TR-->
+							  </form>
 							  <?php $counter=$counter+1;}?>
+							
 						    </tbody>
 						  </table>
 						  
@@ -108,7 +113,7 @@ if($no_of_user_products==0){
 	              </div>
 	            </form>
     				</div>
-    				<p><a href="cekTracking.php" class="btn btn-primary py-3 px-4">Cek</a></p>
+    				<p><a href="#" class="btn btn-primary py-3 px-4">Cek</a></p>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
@@ -130,7 +135,7 @@ if($no_of_user_products==0){
 					  <select id ="kecamatan" name ="kecamatan" onchange='showKel()'>
 					  <option value="">pilih Kecamatan</option>
 					  <?php 
-						$track="SELECT DISTINCT kecamatan FROM tracking ORDER BY kecamatan asc";
+						$track="SELECT DISTINCT kecamatan FROM kec ORDER BY kecamatan asc";
 						$abc = mysqli_query($koneksi,$track);
 						while ($prov = mysqli_fetch_array($abc)){
 						?>
@@ -182,7 +187,7 @@ if($no_of_user_products==0){
 					<p><a href="index.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
 			</div>
-			</form>
+			
 			</div>
 		</section>
 		
@@ -221,42 +226,7 @@ if($no_of_user_products==0){
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
-  <script>
-		$(document).ready(function(){
-
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
+  
     
   </body>
 </html>
