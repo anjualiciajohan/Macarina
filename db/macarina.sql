@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2019 at 04:47 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Dec 29, 2019 at 04:54 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,22 +68,23 @@ CREATE TABLE `barang` (
   `nama_barang` varchar(50) NOT NULL,
   `harga` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
-  `gambar_brg` varchar(25) NOT NULL
+  `gambar_brg` varchar(25) NOT NULL,
+  `deskripsi` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`) VALUES
-('1', 'Jagung Manis (150gr)', 6000, 20, 'jagung.jpg'),
-('2', 'Original (150gr)', 2000, 20, 'ori.jpg'),
-('3', 'BBQ (150gr)', 2000, 20, 'bbq.jpg'),
-('4', 'Balado (150gr)', 2000, 20, 'balado.jpg'),
-('5', 'Coklat (150gr)', 6000, 20, 'cokalt.jpg'),
-('6', 'Keju (150gr)', 6000, 20, 'keju.jpg'),
-('7', 'Seawed (150gr)', 6000, 20, 'seawed.jpg'),
-('8', 'Indomie(150gr)', 6000, 20, 'indomie.jpg');
+INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`) VALUES
+('1', 'Jagung Manis (150gr)', 6000, 20, 'jagung.jpg', 'manisnya jagung'),
+('2', 'Original (150gr)', 2000, 20, 'ori.jpg', 'ori polosan'),
+('3', 'BBQ (150gr)', 2000, 20, 'bbq.jpg', 'barbeque'),
+('4', 'Balado (150gr)', 2000, 20, 'balado.jpg', 'balado pedas manis'),
+('5', 'Coklat (150gr)', 6000, 20, 'cokalt.jpg', 'coklat lumerrr'),
+('6', 'Keju (150gr)', 6000, 20, 'keju.jpg', 'keju lumerr'),
+('7', 'Seawed (150gr)', 6000, 20, 'seawed.jpg', 'rumput laut'),
+('8', 'Indomie(150gr)', 6000, 20, 'indomie.jpg', 'indomie goreng seger');
 
 -- --------------------------------------------------------
 

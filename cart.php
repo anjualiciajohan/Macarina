@@ -6,7 +6,7 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
-$user_products_query="select barang.kd_barang,barang.nama_barang,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
+$user_products_query="select barang.kd_barang,barang.nama_barang,barang.deskripsi,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
 $user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
 $no_of_user_products= mysqli_num_rows($user_products_result);
 $sum=0;
@@ -19,7 +19,7 @@ if($no_of_user_products==0){
 <?php
 }else{
 	while($row=mysqli_fetch_array($user_products_result)){
-		$sum=$sum+$row['harga']; 
+		$grand = 0; 
    }
 }
 
@@ -70,18 +70,23 @@ if($no_of_user_products==0){
 						        
 						        <td class="product-name">
 						        	<h3><?php echo $row['nama_barang']?></h3>
-						        	<p>Desc</p>
+						        	<p><?php echo $row['deskripsi']?></p>
 						        </td>
 						        
 						        <td class="price">Rp.<?php echo $row['harga']?></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+					             	<input type="number" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" onchange="mySubmit(this.form)">
 								</div>
-					          </td>
 								
-						        <td class="total">Rp. <?php //echo $sum?></td>
+					          </td>
+							  <?php $h = $row['harga'];
+							  		$q = $row['qty_det'];
+									$totals = $h * $q;
+									$grand += $totals;
+							 ?>
+						        <td class="total">Rp. <?php echo $totals;?></td>
 						      </tr><!-- END TR-->
 							  <?php $counter=$counter+1;}?>
 						    </tbody>
@@ -160,7 +165,7 @@ if($no_of_user_products==0){
     					<h3>Total Keranjang</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>Rp. <?php echo $sum;?></span>
+    						<span>Rp. <?php echo $grand;?></span>
     					</p>
     					<p class="d-flex">
     						<span>Biaya Kirim</span>
@@ -186,7 +191,18 @@ if($no_of_user_products==0){
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+  <script>
+     function mySubmit(theForm) {
+    $.ajax({ // create an AJAX call...
+        data: $(theForm).serialize(), // get the form data
+        type: $(theForm).attr('method'), // GET or POST
+        url: $(theForm).attr('action'), // the file to call
+        success: function (response) { // on success..
+            $('#here').html(response); // update the DIV
+        }
+    });
+}
+    </script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
