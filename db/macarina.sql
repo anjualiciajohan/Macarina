@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2019 at 04:54 PM
+-- Generation Time: Dec 30, 2019 at 05:59 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -93,10 +93,10 @@ INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`,
 --
 
 CREATE TABLE `detail_transaksi` (
-  `id_detail` varchar(5) NOT NULL,
+  `id_detail` int(11) NOT NULL,
   `kd_barang` varchar(5) NOT NULL,
   `id_reseller` varchar(5) NOT NULL,
-  `qty_det` int(11) NOT NULL,
+  `qty_det` int(11) NOT NULL DEFAULT '1',
   `subtotal` int(11) NOT NULL,
   `status` enum('Added to cart','Confirmed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -106,10 +106,11 @@ CREATE TABLE `detail_transaksi` (
 --
 
 INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `id_reseller`, `qty_det`, `subtotal`, `status`) VALUES
-('', '5', '5', 0, 0, 'Added to cart'),
-('', '1', '5', 0, 0, 'Added to cart'),
-('', '6', '5', 0, 0, 'Added to cart'),
-('', '3', '5', 0, 0, 'Added to cart');
+(3, '4', '5', 2, 4000, 'Added to cart'),
+(4, '7', '5', 1, 0, 'Added to cart'),
+(6, '7', '6', 1, 0, 'Added to cart'),
+(7, '2', '5', 1, 0, 'Added to cart'),
+(8, '2', '6', 1, 0, 'Added to cart');
 
 -- --------------------------------------------------------
 
@@ -141,92 +142,93 @@ INSERT INTO `kab` (`kd_kab`, `code`, `provinsi`, `kab_kota`) VALUES
 
 CREATE TABLE `kec` (
   `sys_code` int(11) NOT NULL,
-  `kecamatan` varchar(20) NOT NULL
+  `kecamatan` varchar(20) NOT NULL,
+  `kd_kab` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kec`
 --
 
-INSERT INTO `kec` (`sys_code`, `kecamatan`) VALUES
-(1, 'Ambulu'),
-(2, 'Arjasa'),
-(3, 'Balung'),
-(4, 'Bangsalsari'),
-(5, 'Gumuk Mas'),
-(6, 'Jelbuk'),
-(7, 'Jenggawah'),
-(8, 'Kalisat'),
-(9, 'Kencong'),
-(10, 'Ledokombo'),
-(11, 'Mayang'),
-(12, 'Mumbulsari'),
-(13, 'Pakusari'),
-(14, 'Panti'),
-(15, 'Puger'),
-(16, 'Rambipuji'),
-(17, 'Silo'),
-(18, 'Sukorambi'),
-(19, 'Sukowono'),
-(20, 'Sumber Baru'),
-(21, 'Sumber Jambe'),
-(22, 'Tanggul'),
-(23, 'Tempurejo'),
-(24, 'Umbulsari'),
-(25, 'Wuluhan'),
-(26, 'Ajung'),
-(27, 'Jombang'),
-(28, 'Kaliwates'),
-(29, 'Patrang'),
-(30, 'Semboro'),
-(31, 'Sumber Sari'),
-(32, 'Banyuwangi'),
-(33, 'Bangorejo'),
-(34, 'Cluring'),
-(35, 'Gambiran'),
-(36, 'Genteng'),
-(37, 'Glenmore'),
-(38, 'Kabat'),
-(39, 'Kalibaru'),
-(40, 'Muncar'),
-(41, 'Pesanggaran'),
-(42, 'Purwoharjo'),
-(43, 'Rogojampi'),
-(44, 'Singojuruh'),
-(45, 'Songgon'),
-(46, 'Srono'),
-(47, 'Tegaldlimo'),
-(48, 'Wongsorejo'),
-(49, 'Glagah'),
-(50, 'Giri'),
-(51, 'Kalipuro'),
-(52, 'Licin'),
-(53, 'Sempu'),
-(54, 'Siliragung'),
-(55, 'Tegalsari'),
-(56, 'Bondowoso'),
-(57, 'Cermee'),
-(58, 'Curahdami'),
-(59, 'Grujugan'),
-(60, 'Klabang'),
-(61, 'Maesan'),
-(62, 'Pakem'),
-(63, 'Prajekan'),
-(64, 'Pujer'),
-(65, 'Sempol'),
-(66, 'Sukosari'),
-(67, 'Tamanan'),
-(68, 'Tapen'),
-(69, 'Tegalampel'),
-(70, 'Tenggarang'),
-(71, 'Tlogosari'),
-(72, 'Wonosari'),
-(73, 'Wringin'),
-(74, 'Binakal'),
-(75, 'Sumber Wringin'),
-(76, 'Taman Krocok'),
-(77, 'Jambe Sari Darus Sho'),
-(78, 'Botolinggo');
+INSERT INTO `kec` (`sys_code`, `kecamatan`, `kd_kab`) VALUES
+(1, 'Ambulu', 1),
+(2, 'Arjasa', 1),
+(3, 'Balung', 1),
+(4, 'Bangsalsari', 1),
+(5, 'Gumuk Mas', 1),
+(6, 'Jelbuk', 1),
+(7, 'Jenggawah', 1),
+(8, 'Kalisat', 1),
+(9, 'Kencong', 1),
+(10, 'Ledokombo', 1),
+(11, 'Mayang', 1),
+(12, 'Mumbulsari', 1),
+(13, 'Pakusari', 1),
+(14, 'Panti', 1),
+(15, 'Puger', 1),
+(16, 'Rambipuji', 1),
+(17, 'Silo', 1),
+(18, 'Sukorambi', 1),
+(19, 'Sukowono', 1),
+(20, 'Sumber Baru', 1),
+(21, 'Sumber Jambe', 1),
+(22, 'Tanggul', 1),
+(23, 'Tempurejo', 1),
+(24, 'Umbulsari', 1),
+(25, 'Wuluhan', 1),
+(26, 'Ajung', 1),
+(27, 'Jombang', 1),
+(28, 'Kaliwates', 1),
+(29, 'Patrang', 1),
+(30, 'Semboro', 1),
+(31, 'Sumber Sari', 1),
+(32, 'Banyuwangi', 2),
+(33, 'Bangorejo', 2),
+(34, 'Cluring', 2),
+(35, 'Gambiran', 2),
+(36, 'Genteng', 2),
+(37, 'Glenmore', 2),
+(38, 'Kabat', 2),
+(39, 'Kalibaru', 2),
+(40, 'Muncar', 2),
+(41, 'Pesanggaran', 2),
+(42, 'Purwoharjo', 2),
+(43, 'Rogojampi', 2),
+(44, 'Singojuruh', 2),
+(45, 'Songgon', 2),
+(46, 'Srono', 2),
+(47, 'Tegaldlimo', 2),
+(48, 'Wongsorejo', 2),
+(49, 'Glagah', 2),
+(50, 'Giri', 2),
+(51, 'Kalipuro', 2),
+(52, 'Licin', 2),
+(53, 'Sempu', 2),
+(54, 'Siliragung', 2),
+(55, 'Tegalsari', 2),
+(56, 'Bondowoso', 3),
+(57, 'Cermee', 3),
+(58, 'Curahdami', 3),
+(59, 'Grujugan', 3),
+(60, 'Klabang', 3),
+(61, 'Maesan', 3),
+(62, 'Pakem', 3),
+(63, 'Prajekan', 3),
+(64, 'Pujer', 3),
+(65, 'Sempol', 3),
+(66, 'Sukosari', 3),
+(67, 'Tamanan', 3),
+(68, 'Tapen', 3),
+(69, 'Tegalampel', 3),
+(70, 'Tenggarang', 3),
+(71, 'Tlogosari', 3),
+(72, 'Wonosari', 3),
+(73, 'Wringin', 3),
+(74, 'Binakal', 3),
+(75, 'Sumber Wringin', 3),
+(76, 'Taman Krocok', 3),
+(77, 'Jambe Sari Darus Sho', 3),
+(78, 'Botolinggo', 3);
 
 -- --------------------------------------------------------
 
@@ -237,7 +239,7 @@ INSERT INTO `kec` (`sys_code`, `kecamatan`) VALUES
 CREATE TABLE `kel` (
   `kd_kel` int(11) NOT NULL,
   `sys_code` int(11) NOT NULL,
-  `kecamatan` varchar(20) NOT NULL,
+  `kelurahan` varchar(20) NOT NULL,
   `kode_pos` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `cepat` int(11) NOT NULL,
@@ -248,7 +250,7 @@ CREATE TABLE `kel` (
 -- Dumping data for table `kel`
 --
 
-INSERT INTO `kel` (`kd_kel`, `sys_code`, `kecamatan`, `kode_pos`, `price`, `cepat`, `lama`) VALUES
+INSERT INTO `kel` (`kd_kel`, `sys_code`, `kelurahan`, `kode_pos`, `price`, `cepat`, `lama`) VALUES
 (1, 1, 'Ambulu', 68172, 10000, 2, 3),
 (2, 1, 'Andongsari', 68172, 10000, 3, 6),
 (3, 1, 'Karang Anyar', 68132, 10000, 3, 6),
@@ -1010,7 +1012,7 @@ CREATE TABLE `reseller` (
 
 INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
 (5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', '1', 'bruno3.jpg'),
-(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '0', 'images (1).jpg');
+(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '1', 'images (1).jpg');
 
 -- --------------------------------------------------------
 
@@ -1058,6 +1060,7 @@ ALTER TABLE `barang`
 -- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
+  ADD PRIMARY KEY (`id_detail`),
   ADD KEY `barang` (`kd_barang`);
 
 --
@@ -1070,7 +1073,8 @@ ALTER TABLE `kab`
 -- Indexes for table `kec`
 --
 ALTER TABLE `kec`
-  ADD PRIMARY KEY (`sys_code`);
+  ADD PRIMARY KEY (`sys_code`),
+  ADD KEY `kab` (`kd_kab`);
 
 --
 -- Indexes for table `kel`
@@ -1119,6 +1123,12 @@ ALTER TABLE `transaksi`
 --
 
 --
+-- AUTO_INCREMENT for table `detail_transaksi`
+--
+ALTER TABLE `detail_transaksi`
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `kab`
 --
 ALTER TABLE `kab`
@@ -1157,6 +1167,12 @@ ALTER TABLE `transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD CONSTRAINT `barang` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`);
+
+--
+-- Constraints for table `kec`
+--
+ALTER TABLE `kec`
+  ADD CONSTRAINT `kab` FOREIGN KEY (`kd_kab`) REFERENCES `kab` (`kd_kab`);
 
 --
 -- Constraints for table `kel`
