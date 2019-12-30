@@ -1,7 +1,7 @@
 <?php 
 //session_start();
 include_once "header.php";
-include_once "combo_kelurahan.php";
+
 if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
@@ -38,8 +38,7 @@ if($no_of_user_products==0){
 
     <section class="ftco-section ftco-cart">
 			<div class="container">
-			
-				<div class="row">
+			<div class="row">
     			<div class="col-md-12 ftco-animate">
     				<div class="cart-list">
 						
@@ -61,13 +60,12 @@ if($no_of_user_products==0){
 								$no_of_user_products= mysqli_num_rows($user_products_result);
 								$counter=1;
 							while($row=mysqli_fetch_array($user_products_result)){
-								
 							?>
 							<form method="post" action="save_cart.php">
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="cart_remove.php?id=<?php echo $row['kd_barang']?>" onclick="return confirm('Are you sure?')"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="<?php echo "background-image:url(admin/img/barang/".$row['gambar_brg'].")" ;?>"></div></td>
+						        <td class="image-prod"><div class="img" <?php echo "style='background-image:url(admin/img/barang/".$row['gambar_brg'].")'" ;?>></div></td>
 						        
 						        <td class="product-name">
 						        	<h3><?php echo $row['nama_barang']?></h3>
@@ -101,103 +99,79 @@ if($no_of_user_products==0){
 					  </div>
     			</div>
     		</div>
-    		<div class="row justify-content-end">
+    		<div class="row">
+				
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>Kode Kupon</h3>
-    					<p>Masukkan kode kupon jika ada</p>
-  						<form action="#" class="info">
-	              <div class="form-group">
-	              	<label for="">Kode Kupon</label>
-	                <input type="text" class="form-control text-left px-3" placeholder="">
-	              </div>
-	            </form>
-    				</div>
-    				<p><a href="#" class="btn btn-primary py-3 px-4">Cek</a></p>
+				<h4>Estimasi Biaya Kirim</h4>
+					<p>Masukkan alamat anda</p>
+				<div class="form-group">
+					<label>Provinsi</label>
+					<select class="form-control" name="provinsi" id="provinsi">
+						<option value=""> Pilih Provinsi</option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label>Kabupaten</label>
+					<select class="form-control" name="kabupaten" id="kabupaten">
+						<option value=""></option>
+					</select>
+				</div>	
+				<div class="form-group">
+					<label>Kecamatan</label>
+					<select class="form-control" name="kecamatan" id="kecamatan">
+						<option value=""></option>
+					</select>
+				</div>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>Estimasi Biaya Kirim</h3>
-    					<p>Masukkan alamat anda</p>
-  						<form action="#" class="info">
-							  <form name="form11" method ="post" id="form_combo">
-	              <div class="form-group">
-	              	<label for="country">Provinsi</label>
-	                <input type="text" class="form-control text-left px-4">
-				  </div>
-				
-	              <div class="form-group">
-	              	<label for="country">Kota/Kabupaten</label>
-	                <input type="text" class="form-control text-left px-4">
-	              </div>
-	              <div class="form-group">
-					  <label for="country">Kecamatan</label>
-					  <select id ="kecamatan" name ="kecamatan" onchange='showKel()'>
-					  <option value="">pilih Kecamatan</option>
-					  <?php 
-						$track="SELECT DISTINCT kecamatan FROM kec ORDER BY kecamatan asc";
-						$abc = mysqli_query($koneksi,$track);
-						while ($prov = mysqli_fetch_array($abc)){
-						?>
-						<option value="<?php echo $prov ['sys_code'];?>"><?php echo $prov ['kecamatan'];?></option>
-						<?php } ?>
-						</select>
-				  </div>
-				  <div class="form-group">
-	              	<label for="country">Kelurahan</label>
-					  <select name="kel" id="kel">
-						<option value="">Pilih Kelurahan</option>
-						
+				<div class="form-group">
+					<label>Kelurahan</label>
+					<select class="form-control" name="kelurahan" id="kelurahan">
+						<option value=""></option>
 					</select>
-				  </div>
-							  </form>
-				  <div class="form-group">
-	              	<label for="country">Kode Pos</label>
+				</div>
+	  			  <div class="form-group">
+	              	<label for="country">Kode Pos</label><br/>
 	                <input type="text" class="form-control text-left px-4">
 	              </div>
 				  <div class="form-group">
-	              	<label for="country">Alamat Lengkap</label>
-	                <input type="text" class="form-control text-left px-4">
+	              	<label for="country">Alamat Lengkap</label><br/>
+	                <input type="text" class="form-control text-left px-6">
 	              </div>
-	            </form>
-    				</div>
-					<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Cek</a></p>
-					
-					<input type="hidden" name="update">
+				  									
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Total Keranjang</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>Rp. <?php echo $grand;?></span>
+							<span><label >Rp. <?php echo $grand;?></label>
+						 <input type ="hidden" name="subtotal" id="subtotal" value="<?php echo $grand;?>">
+						</span>
     					</p>
     					<p class="d-flex">
     						<span>Biaya Kirim</span>
-    						<span>$0.00</span>
+    						<span><label name="biayakirim" id="biayakirim"></label></span>
     					</p>
     					
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>Rp. </span>
+    						<span><label name="totalall" id="totalall"></label></span>
     					</p>
     				</div>
 					<p><a href="success.php?id=<?php echo $user_id?>" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
-					<p><a href="index.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
+					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
 			</div>
 			
 			</div>
 		</section>
 		
-    
-  
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-  <script>
-     function mySubmit(theForm) {
+		<script type="text/javascript">
+	function mySubmit(theForm) {
     $.ajax({ // create an AJAX call...
         data: $(theForm).serialize(), // get the form data
         type: $(theForm).attr('method'), // GET or POST
@@ -207,8 +181,12 @@ if($no_of_user_products==0){
         }
     });
 }
-    </script>
+	</script>
+  
+  
+  
 
+  <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -225,7 +203,84 @@ if($no_of_user_products==0){
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript">
+					$(document).ready(function(){
+						$.ajax({
+							type: 'POST',
+							url: "combobox/get_provinsi.php",
+							cache: false, 
+							success: function(msg){
+							$("#provinsi").html(msg);
+							}
+						});
+						$("#provinsi").change(function(){
+          	var provinsi = $("#provinsi").val();
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_kabupaten.php",
+	              	data: {provinsi: provinsi},
+	              	cache: false,
+	              	success: function(msg){
+	                  $("#kabupaten").html(msg);
+	                }
+	            });
+            });
 
+            $("#kabupaten").change(function(){
+          	var kabupaten = $("#kabupaten").val();
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_kecamatan.php",
+	              	data: {kabupaten: kabupaten},
+	              	cache: false,
+	              	success: function(msg){
+	                  $("#kecamatan").html(msg);
+	                }
+	            });
+            });
+
+            $("#kecamatan").change(function(){
+          	var kecamatan = $("#kecamatan").val();
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_kelurahan.php",
+	              	data: {kecamatan: kecamatan},
+	              	cache: false,
+	              	success: function(msg){
+					  $("#kelurahan").html(msg);
+	                }
+				});
+			});
+			$("#kelurahan").change(function(){
+			  var kelurahan = $("#kelurahan").val();
+			  
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_biaya.php",
+	              	data: {kelurahan: kelurahan},
+	              	cache: false,
+	              	success: function(msg){
+					  $("#biayakirim").html(msg);
+					  
+	                }
+	            });
+            });
+			$("#kelurahan").change(function(){
+				var kelurahan = $("#kelurahan").val();
+			  	var subtotal = $("#subtotal").val();
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_total.php",
+	              	data: {kelurahan:kelurahan,subtotal:subtotal},
+	              	cache: false,
+	              	success: function(msg){
+					  $("#totalall").html(msg);
+	                }
+	            });
+            });	
+					});
+					</script>
+  
   
     
   </body>

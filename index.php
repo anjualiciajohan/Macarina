@@ -1,7 +1,6 @@
 <?php 
 include_once "header.php";
 
-require 'check_if_added.php';
 ?>
 
 <!-- Slide View -->
