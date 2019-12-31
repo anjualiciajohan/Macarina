@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Admin-Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,9 +18,10 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-primary">
 
   <div class="container">
 
@@ -33,10 +34,10 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-9">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+                    <p>Please enter your user information.</p>
                   </div>
                   <form class="user" method="GET" action="plogin.php">
                     <div class="form-group">
@@ -48,15 +49,21 @@
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                        <label class="custom-control-label" for="customCheck">Remember Me
+                        <div class="text-right">
+                        <a href="forgotpass.php">Forgot Password?</a></label>
                       </div>
+                    </div>
                     </div>
                     <!--
                     <a href="plogin.php" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>-->
+                    <div>
                     <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
-                    
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                        </div>
                   </form>
                   <hr>
                 </div>

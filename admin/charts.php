@@ -93,7 +93,7 @@ include_once "topNavbar.php";
     <script src="js/Chart.js"></script>
     <style type="text/css">
             .container {
-                width: 40%;
+                width: 30%;
                 margin: 15px auto;
             }
     </style>
@@ -102,7 +102,7 @@ include_once "topNavbar.php";
 
     <div class="container">
         <h2 align="center">GRAFIK BARANG</h2>
-        <canvas id="piechart" width="100" height="100"></canvas>
+        <canvas id="piechart" width="50" height="50"></canvas>
     </div>
 
   </tbody>
@@ -140,6 +140,7 @@ include_once "topNavbar.php";
 
 </script>
 </div>
+
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
