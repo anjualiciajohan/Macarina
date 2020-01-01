@@ -96,7 +96,7 @@ include_once "header.php";
           </div>
         </div>
 
-        <div class="row no-gutters block-9">
+        <!-- <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
             <form action="#" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
@@ -124,7 +124,7 @@ include_once "header.php";
           </div>
         </div>
       </div>
-      </div>
+      </div> -->
     </section>
 		
     <!-- ================ contact section end ================= -->
