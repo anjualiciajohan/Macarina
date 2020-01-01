@@ -24,8 +24,8 @@
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
                 <li><a href="shop.php" class="py-2 d-block">Shop</a></li>
-                <li><a href="about.php" class="py-2 d-block">Tentang</a></li>
-                <li><a href="#" class="py-2 d-block">Kontak kami</a></li>
+                <li><a href="profilperusahaan.php" class="py-2 d-block">Tentang</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Kontak kami</a></li>
               </ul>
             </div>
           </div>
