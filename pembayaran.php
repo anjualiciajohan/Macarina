@@ -6,17 +6,14 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
+
 $trans = "SELECT * FROM transaksi where id_reseller = '$user_id'";
 $Qtrans = mysqli_query($koneksi,$trans);
-$bank = "SELECT * FROM bank ";
-$Qbank = mysqli_query($koneksi,$bank);
-$al = "SELECT * FROM alamat_kirim INNER JOIN kab JOIN kec JOIN kel ON alamat_kirim.kd_kab=kab.kd_kab 
-AND alamat_kirim.sys_code=kec.sys_code AND alamat_kirim.kd_kel=kel.kd_kel WHERE id_reseller = '$user_id'";
-$Qal = mysqli_query($koneksi,$al);
+
 $user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
 barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
 barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id' 
-and detail_transaksi.status='Pending'";
+and detail_transaksi.status='PendingB'";
 $user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
 $no_of_user_products= mysqli_num_rows($user_products_result);
 $sum=0;
@@ -40,7 +37,7 @@ $grand = 0;
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span></span></p>
-            <h1 class="mb-0 bread">CHECKOUT</h1>
+            <h1 class="mb-0 bread">PEMBAYARAN</h1>
           </div>
         </div>
       </div>
@@ -48,29 +45,28 @@ $grand = 0;
 
     <section class="ftco-section ftco-cart">
 			<div class="container">
-			<form method="GET" action="co_pem.php">
-			
 			<div class="row">
 				<div class="col-md-12 ftco-animate">
-				<?php 
-					
-					while ($codeAl = mysqli_fetch_array($Qal)){
-						$kdall =$codeAl['kd_al_kirim'];
-						$prov = $codeAl['provinsi'];
-						$kab = $codeAl['kab_kota'];
-						$kec = $codeAl['kecamatan'];
-						$kel = $codeAl['kelurahan'];
-						$kdpos = $codeAl['kode_pos'];
-						$cepat = $codeAl['cepat'];
-						$lama = $codeAl['lama'];
-						$alLengkap =$codeAl['alamat_lengkap'];
-						?>
-						<input type ="text" name ="kdALL" id ="kdALL" value="<?php echo $kdall;?>" hidden>
-						<span><label >Alamat Kirim :</label></span></br>
-						<span><label ><?php echo $alLengkap .', '.$prov .', '. $kab .', '.$kec.', '.$kel.', '.$kdpos;?></label></span></br>
-						<span><label >Lama Kirim : <?php echo $cepat;?> - <?php echo $lama;?> hari</br>
+					<?php
+					while ($kdTR=mysqli_fetch_array($Qtrans)){
+					$tr=$kdTR['kd_transaksi'];
+					$pem =  "select pembayaran.id_pembayaran,pembayaran.id_bank,pembayaran.kd_transaksi,pembayaran.tgl_bayar,pembayaran.nama_rek_res,pembayaran.no_rek_res, transaksi.grand_total from pembayaran inner join 
+					transaksi on transaksi.kd_transaksi=pembayaran.kd_transaksi where pembayaran.kd_transaksi= '$tr'";
+					$Qpem = mysqli_query($koneksi,$pem);
+					while ($yeah =mysqli_fetch_array($Qpem) ){
+					echo '<span><label >Bukti Pembayaran</label></span></br>';
+					?>
+					<span><label >Nama Rekening Pengirim : <?php echo $yeah['nama_rek_res'];?>
+						</label></span></br>
+						<span><label >No Rekening Pengirim : <?php echo $yeah['no_rek_res'];?></br>
+						</label></span></br>
+						<span><label >Tanggal Kirim : <?php echo $yeah['tgl_bayar'];?></br>
+						</label></span></br>
+						<span><label >Total : <?php echo $yeah['grand_total'];?></br>
 						</label></span>
-					<?php }?>
+						
+				<?php }}
+				?>				
 				</div>
 			</div>
 			<div class="row">
@@ -123,7 +119,7 @@ $grand = 0;
 								<input type="hidden" name="harga_" value="<?php echo $h; ?>">
 								<td class="total">Rp. <?php echo $totals;?></td>
 						      </tr><!-- END TR-->
-							  
+							 
 							  <?php $counter=$counter+1;}?>
 							
 						    </tbody>
@@ -132,74 +128,20 @@ $grand = 0;
 						
 					  </div>
     			</div>
-			</div>
-			
+    		</div>
     		<div class="row">
-			
+				
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-				
     				<div class="cart-total mb-3">
-    					<h3>Total Keranjang</h3>
-    					<p class="d-flex">
-							<span>Total</span>
-							<?php 
-					
-					while ($code = mysqli_fetch_assoc($Qtrans)){
-						//$code21 = mysqli_fetch_assoc($Qal);
-						$kodeT=$code['kd_transaksi'];
-						$grandtotal = $code['grand_total'];
-						//$idAll =$code21['kd_al_kirim'];
-						?>
-							<span><label >Rp. <?php echo $grandtotal;?></label>
-						 <input type ="hidden" name="grandtotal" id="grandtotal" value="<?php echo $grandtotal;?>">
-						 <input type ="hidden" name="kdtr" id="kdtr" value="<?php echo $kodeT;?>">
-						</span>
-    					</p></br>
     					
-					</div>
-					<?php
-						echo '<p><a href="trans_cancel.php?id='.$kodeT.'" class="btn btn-primary py-3 px-5">Batal</a>';
-					}
-					?>
-					<input type="submit" name ="subPem" id ="subPem" value="Lanjut"class="btn btn-primary py-3 px-5">
+							
 					
-				</div>
-				<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-				<h4>Checkout Pembayaran</h4>
-					<p>Masukkan Bukti Transfer Berikut</p>
-				<div class="form-group">
-					<label>Bank Tujuan</label>
-					<select class="form-control" name="bank_tujuan" id="bank_tujuan">
-					<option value=""> Pilih Bank</option>
-						<?php while ($bbank = mysqli_fetch_assoc($Qbank)){
-							$idb= $bbank['id_bank'];
-							$nmbank = $bbank['nama_bank'];
-							$nmrek = $bbank['nama_rek'];
-							$norekbank = $bbank['no_rek'];
-								?><option value="<?php echo $idb;?>"><?php echo $nmbank.'-'.$nmrek.'-'. $norekbank;?></option>	
-
-						<?php }?>
-						
-					</select>
-				</div>
-				
-				<div class="form-group">
-					<label>Bukti Bayar</label>
-					<input type="file" required name="buktiByr" id="buktiByr" >
-				</div>	
-				</div>
-				<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-				<div class="form-group">
-					<label>Nama Rekening Pengirim</label>
-					<input required class="form-control text-left px-12" type="text" id="namarekres" name="namarekres">
-				</div>
-				<div class="form-group">
-					<label>No Rekening Pengirim</label>
-					<input required class="form-control text-left px-12" type="text" id="norekres" name="norekres">
-				</div>
+					</br>
+					<a href="#" class="btn btn-primary py-3 px-5">Print</a></p>
+					
     			</div>
 			</div>
-			</form>
+			
 			</div>
 		</section>
 

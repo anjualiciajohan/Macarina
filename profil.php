@@ -6,6 +6,9 @@ $sqldata = mysqli_fetch_array($sqlnama);
 ?>
 
   <div class="container">
+  <p><a href="pembayaran.php" class="btn btn-primary py-3 px-4">Cek Pembayaran</a></p>
+ 
+    
     <h1>PROFIL</h1>
     <hr>
     <form method ="POST" action="php/pdaftar.php" enctype="multipart/form-data">

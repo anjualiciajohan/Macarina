@@ -84,7 +84,7 @@ $grand = 0;
 									<input type="hidden" name="iddet" value="<?php echo $row['id_detail']; ?>">
 									
 									<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" 
-									onchange="mySubmit(this.form,#stok)">
+									onchange="mySubmit(this.form,stok)">
 									
 								</div>
 								
@@ -140,13 +140,10 @@ $grand = 0;
 						<option value=""></option>
 					</select>
 				</div>
-	  			  <div class="form-group">
-	              	<label for="country">Kode Pos</label><br/>
-	                <input type="text" class="form-control text-left px-4">
-	              </div>
+	  			  
 				  <div class="form-group">
 	              	<label for="country">Alamat Lengkap</label><br/>
-	                <input type="text" class="form-control text-left px-6">
+	                <input require name = "alamatlengkap" id = "alamatlengkap" type="text" class="form-control text-left px-6">
 	              </div>
 				  									
     			</div>
