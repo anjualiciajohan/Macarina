@@ -58,12 +58,7 @@ include_once "../config/side.php";
               
           ?>  
             <form method ="POST" action="editBarang.php" enctype="multipart/form-data">
-                <table border="1">
-                    <tr>
-                        <td>Kode Barang</td>
-                        <td>:</td>
-                        <td><input type="hidden" name="txt_idbrg" value="<?php echo $data['kd_barang'] ?>"></td>
-                    </tr>
+                <table border="1" class="table table-striped table-bordered table-hover">
                     <tr>
                         <td>Nama</td>
                         <td>:</td>
