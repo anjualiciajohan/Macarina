@@ -21,9 +21,6 @@ else {
 		}
 
 
-		$cresult = mysqli_query($koneksi,"SELECT SUBSTRING(nama_reseller, 1, 10) AS ExtractString
-		FROM reseller WHERE id_reseller= '$kd'");
-		$row = mysqli_fetch_array($cresult);
 
 ?>
 
