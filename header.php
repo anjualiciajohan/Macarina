@@ -12,7 +12,7 @@ else {
 	$result = mysqli_query($koneksi,"SELECT * FROM reseller WHERE email ='$user' AND id_reseller = '$kd'");
 		$get_user_email = mysqli_fetch_array($result);
 			$uname_db = $get_user_email['nama_reseller'];
-			$count11 = mysqli_query($koneksi, "SELECT * FROM detail_transaksi WHERE id_reseller='".$kd."'");
+			$count11 = mysqli_query($koneksi, "SELECT * FROM detail_transaksi WHERE id_reseller='".$kd."' AND status = 'Added to cart'");
 			$counting = mysqli_num_rows($count11);
 		}
 
@@ -95,7 +95,7 @@ else {
 			  if ($user!="") {
 				if ($get_user_email!="") {
 					echo '<li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>'.$counting.'</a></li>';
-				  
+					echo '<li class="nav-item"><a href="checkout.php" class="nav-link">Checkout</a></li>';
 				  } 
 			}
 			else {

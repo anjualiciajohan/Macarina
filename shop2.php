@@ -1,6 +1,6 @@
 <?php 
 include_once "header.php";
-require 'check_if_added.php';
+require "check_if_added.php";
 ?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/Salinan macarina-8.jpg');">
@@ -30,6 +30,7 @@ require 'check_if_added.php';
 				$query = mysqli_query($koneksi,"SELECT * FROM barang");
 				while ($data = mysqli_fetch_array($query)){
 					$id = $data ['kd_barang'];
+					$price = $data ['harga'];
 				?>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
@@ -41,15 +42,12 @@ require 'check_if_added.php';
     						<div class="d-flex">
     							<div class="pricing">
 								
-		    						<p class="price"><span class="price-sale">Rp <?php echo $data['harga']?></span></p>
+		    						<p class="price"><span class="price-sale">Rp <?php echo $price?></span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-									</a>
-									<?php if(!isset($_SESSION['user_login'])){  ?>
+	    							<?php if(!isset($_SESSION['user_login'])){  ?>
 	    							<a href="shop2.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 									</a>
@@ -57,21 +55,19 @@ require 'check_if_added.php';
 											}
 											else{
 												if(check_if_added_to_cart($data['kd_barang'])){
-													echo '<a href="shop2.php" disabled class="buy-now d-flex justify-content-center align-items-center mx-1">
+													echo '<a href="shop2.php"  class="buy-now d-flex justify-content-center align-items-center mx-1" disabled>
 													<span><i class="ion-ios-cart"></i></span>
 												</a>';
 												}else{
 													?>
-													<a href="cart_add.php?id=<?php echo $data['kd_barang'];?>" name="add" class="buy-now d-flex justify-content-center align-items-center mx-1">
+													<a href="cart_add.php?id=<?php echo $data['kd_barang'];?>&price=<?php echo $data['harga'];?>" name="add" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    											<span><i class="ion-ios-cart"></i></span>
 													</a>
 													<?php
 													}
 												}
 												?>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
+	    							
     							</div>
     						</div>
     					</div>

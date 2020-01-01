@@ -6,23 +6,28 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
-$user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id'";
+$user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
+barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
+barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id' 
+and detail_transaksi.status='Added to cart'";
 $user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
 $no_of_user_products= mysqli_num_rows($user_products_result);
 $sum=0;
 if($no_of_user_products==0){
-	//echo "Add items to cart first.";
+	
 ?>
 	<script>
+	header('location: shop2.php');
 	window.alert("No items in the cart!!");
+	
 	</script>
 <?php
 }else{
 	while($row=mysqli_fetch_array($user_products_result)){
-		$grand = 0; 
+		
    }
 }
-
+$grand = 0; 
 ?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bdeal.jpg');">
@@ -158,10 +163,16 @@ if($no_of_user_products==0){
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span><label name="totalall" id="totalall"></label></span>
+							<span><label name="totalall"  id="totalall"></label>
+							<select hidden name="tot" id="tot">
+							<option value=""></option>
+					</select>
+						</span>
     					</p>
-    				</div>
-					<p><a href="success.php?id=<?php echo $user_id?>" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					</div>
+					
+					<p><a href="cart_co.php?id=<?php echo $user_id?>&grand=?tot" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					
 					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
 			</div>
@@ -275,6 +286,19 @@ if($no_of_user_products==0){
 	              	cache: false,
 	              	success: function(msg){
 					  $("#totalall").html(msg);
+	                }
+	            });
+			});
+			$("#kelurahan").change(function(){
+				var kelurahan = $("#kelurahan").val();
+			  	var subtotal = $("#subtotal").val();
+	          	$.ajax({
+	          		type: 'POST',
+	              	url: "combobox/get_total2.php",
+	              	data: {kelurahan:kelurahan,subtotal:subtotal},
+	              	cache: false,
+	              	success: function(msg){
+					  $("#tot").html(msg);
 	                }
 	            });
             });	
