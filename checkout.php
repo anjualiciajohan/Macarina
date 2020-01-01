@@ -6,6 +6,8 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
+$trans = "SELECT * FROM transaksi where id_reseller = '$user_id'";
+$Qtrans = mysqli_query($koneksi,$trans);
 $user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
 barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
 barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id' 
@@ -48,7 +50,7 @@ $grand = 0;
 	    				<table class="table">
 						    <thead class="thead-primary">
 						      <tr class="text-center">
-						        <th>&nbsp;</th>
+						        
 						        <th>&nbsp;</th>
 						        <th>Product name</th>
 						        <th>Price</th>
@@ -107,18 +109,20 @@ $grand = 0;
     				<div class="cart-total mb-3">
     					<h3>Total Keranjang</h3>
     					<p class="d-flex">
-    						<span>Total</span>
-							<span><label >Rp. <?php echo $grand;?></label>
-						 <input type ="hidden" name="subtotal" id="subtotal" value="<?php echo $grand;?>">
+							<span>Total</span>
+							<?php 
+					
+					while ($code = mysqli_fetch_array($Qtrans)){
+						$kodeT=$code['kd_transaksi'];
+						$grandtotal = $code['grand_total'];
+						?>
+							<span><label >Rp. <?php echo $grandtotal;?></label>
+						 <input type ="hidden" name="grandtotal" id="grandtotal" value="<?php echo $grandtotal;?>">
 						</span>
     					</p>
     					
 					</div>
-					<?php 
-					$trans = "SELECT * FROM transaksi where id_reseller = '$user_id'";
-					$Qtrans = mysqli_query($koneksi,$trans);
-					while ($code = mysqli_fetch_array($Qtrans)){
-						$kodeT=$code['kd_transaksi'];
+					<?php
 						echo '<p><a href="trans_cancel.php?id='.$kodeT.'" class="btn btn-primary py-3 px-5">Cancel</a>';
 					}
 					?>
