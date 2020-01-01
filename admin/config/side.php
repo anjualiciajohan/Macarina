@@ -33,8 +33,8 @@
   <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Data :</h6>
-      <a class="collapse-item" href="charts.php">Grafik Produk</a>
-      <a class="collapse-item" href="charts2.php">Grafik Reseller</a>
+      <a class="collapse-item" href="../charts.php">Grafik Produk</a>
+      <a class="collapse-item" href="../charts2.php">Grafik Reseller</a>
       <!--<a class="collapse-item" href="charts3.php">Grafik Penjualan</a>-->
     </div>
   </div>
