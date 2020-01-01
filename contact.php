@@ -82,7 +82,7 @@ include_once "header.php";
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Alamat Email</h3>
-	            <p><a href="mailto:macarina.official@gmail.com">macarina.idl@gmail.com</a></p>
+	            <p><a href="mailto:macarina.official@gmail.com">macarina.id@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
