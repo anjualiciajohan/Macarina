@@ -49,9 +49,10 @@ include_once "../config/side.php";
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-           
+            <form action="" method="POST">
               <h6 class="m-0 font-weight-bold text-primary">Cari berdasarkan tanggal transaksi : <input type="date" name="tanggal" data-date="" data-date-format="DD MMMM YYYY"></h6>
-              
+              <input type="submit" value="Cari" name="cari">
+              </form>
             </div>
             <div class="card-body">
             <?php 
@@ -62,32 +63,33 @@ include_once "../config/side.php";
                     <thead>
                         <tr>
                             <td>Kode Transaksi</td>
-                            <td>Tanggal</td>
+                            <td>Tanggal Pesan</td>
+                            <td>Tanggal Bayar</td>
                             <td>Grand Total</td>
-                            <td>Kode Admin</td>
-                            <td>Status</td>
+                            <td>Status Pesan</td>
                         </tr>        
                     </thead>
 
                     <?php
-                     
-                     $query = mysqli_query($koneksi,"SELECT * FROM transaksi JOIN detail_transaksi");
-            
-                    while ($data = mysqli_fetch_array($query)){
-
+                    if (isset($_POST['cari'])){
+                      echo $_POST['tanggal'];
+                    $query = mysqli_query($koneksi,"SELECT transaksi.kd_transaksi, transaksi.tgl_transaksi, transaksi.grand_total, pembayaran.status_pesan, pembayaran.tgl_bayar FROM transaksi, pembayaran WHERE tgl_transaksi='".$_POST['tanggal']."'") or die(mysqli_error($koneksi));            
+                    while ($data = mysqli_fetch_array($query)) {
+                    
                   ?>
 
                     <tbody>
                         <tr>
                             <td><?php echo $data ['kd_transaksi']; ?></td>
                             <td><?php echo $data ['tgl_transaksi']; ?></td>
+                            <td><?php echo $data ['tgl_bayar']; ?></td>
                             <td><?php echo $data ['grand_total']; ?></td>
-                            <td><?php echo $data ['kd_admin']; ?></td>
-                            <td><?php echo $data ['status']; ?></td>
+                            <td><?php echo $data ['status_pesan']; ?></td>
                         </tr>
                     </tbody>
                     <?php
                      }
+                    }
                     ?>
                 </table>
             </form>
