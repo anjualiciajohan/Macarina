@@ -71,6 +71,7 @@ include_once "header.php";
           		</div>
           		<h3 class="mb-4">Kontak Langsung</h3>
 	            <p><a >+ 6281 217 757 777</a></p>
+              <br></br>
               <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20dari%20website%20,mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
 	            <p>
 	          </div>
