@@ -55,11 +55,6 @@ include_once "../config/side.php";
             <form method ="POST" action="FtamBarang.php" enctype="multipart/form-data">
                 <table border="1" class="table table-striped table-bordered table-hover">
                     <tr>
-                        <td>Kode Barang</td>
-                        <td>:</td>
-                        <td><input type="text" name="txt_idbrg"></td>
-                    </tr>
-                    <tr>
                         <td>Nama Barang</td>
                         <td>:</td>
                         <td><input type="text" name="txt_nama_brg" ></td>
