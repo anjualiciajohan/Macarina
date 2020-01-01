@@ -43,6 +43,8 @@
       <a class="collapse-item" href="../admin/tAdmin.php">Admin</a>
       <a class="collapse-item" href="../reseller/tReseller.php">Reseller</a>
       <a class="collapse-item" href="../barang/tBarang.php">Barang</a>
+      <a class="collapse-item" href="../transaksi/transaksi.php">Transaksi</a>
+
     </div>
   </div>
 </li>
