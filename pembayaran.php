@@ -137,7 +137,7 @@ $grand = 0;
 							
 					
 					</br>
-					<a href="#" class="btn btn-primary py-3 px-5">Print</a></p>
+					<a href="co_pemCetak.php" class="btn btn-primary py-3 px-5">Print</a></p>
 					
     			</div>
 			</div>
