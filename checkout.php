@@ -129,6 +129,10 @@ $grand = 0;
 			
 			</div>
 		</section>
+
+		<?php
+			include_once "footer.php";
+		?>
 		
 
   <script src="js/jquery-3.3.1.min.js"></script>
