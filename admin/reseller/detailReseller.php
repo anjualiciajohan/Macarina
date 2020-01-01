@@ -124,11 +124,11 @@ include_once "../config/side.php";
                       <td></td>
                         <td> <?php 
                          if ($status == 0){
-                          ?><input type="submit" name="aktifkan" value="Aktifkan"/>
+                          ?><input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="aktifkan" value="Aktifkan"/>
                          
                         <?php   }
                         else if ($status == 1) {
-                           ?> <input type="submit" name="nonaktif" value="NonAktifkan"/>
+                           ?> <input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="nonaktif" value="NonAktifkan"/>
                         <?php  }
                         ?>
                         
