@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2020 at 07:48 AM
+-- Generation Time: Jan 01, 2020 at 04:10 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -43,6 +43,20 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`kd_admin`, `user`, `password`, `alamat_admin`, `gambar`) VALUES
 ('1', 'hammer', 'sad', '12321', 'dagytgimage.jpg'),
 ('2', 'ww', '12', 'qwewqe', 'usa-flag-wallpaper-united-states-world-170984.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alamat_kirim`
+--
+
+CREATE TABLE `alamat_kirim` (
+  `kd_al_kirim` int(11) NOT NULL,
+  `id_reseller` int(11) NOT NULL,
+  `kd_kab` int(11) NOT NULL,
+  `sys_code` int(11) NOT NULL,
+  `kd_kel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -976,8 +990,7 @@ CREATE TABLE `reseller` (
 
 INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
 (5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', '1', 'bruno3.jpg'),
-(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '1', 'images (1).jpg'),
-(7, '', ' ', '', '', ' ', '  ', '  ', 'nonaktif ', '');
+(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '1', 'images (1).jpg');
 
 -- --------------------------------------------------------
 
@@ -1001,6 +1014,16 @@ CREATE TABLE `transaksi` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`kd_admin`);
+
+--
+-- Indexes for table `alamat_kirim`
+--
+ALTER TABLE `alamat_kirim`
+  ADD PRIMARY KEY (`kd_al_kirim`),
+  ADD KEY `kel` (`kd_kel`),
+  ADD KEY `ress1` (`id_reseller`),
+  ADD KEY `kabupaten` (`kd_kab`),
+  ADD KEY `kecamatan` (`sys_code`);
 
 --
 -- Indexes for table `bank`
@@ -1068,6 +1091,12 @@ ALTER TABLE `transaksi`
 --
 
 --
+-- AUTO_INCREMENT for table `alamat_kirim`
+--
+ALTER TABLE `alamat_kirim`
+  MODIFY `kd_al_kirim` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
@@ -1107,17 +1136,26 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT for table `reseller`
 --
 ALTER TABLE `reseller`
-  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `alamat_kirim`
+--
+ALTER TABLE `alamat_kirim`
+  ADD CONSTRAINT `kabupaten` FOREIGN KEY (`kd_kab`) REFERENCES `kab` (`kd_kab`),
+  ADD CONSTRAINT `kecamatan` FOREIGN KEY (`sys_code`) REFERENCES `kec` (`sys_code`),
+  ADD CONSTRAINT `kel` FOREIGN KEY (`kd_kel`) REFERENCES `kel` (`kd_kel`),
+  ADD CONSTRAINT `ress1` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
 -- Constraints for table `detail_transaksi`
