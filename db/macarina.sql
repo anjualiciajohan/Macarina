@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2020 at 04:10 PM
+-- Generation Time: Jan 01, 2020 at 07:12 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -91,8 +91,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`) VALUES
-(1, 'Jagung Manis (150gr)', 6000, 10, 'jagung.jpg', 'manisnya jagung'),
-(2, 'Original (150gr)', 2000, 20, 'ori.jpg', 'ori polosan'),
+(1, 'Jagung Manis (150gr)', 6000, 9, 'jagung.jpg', 'manisnya jagung'),
+(2, 'Original (150gr)', 2000, 19, 'ori.jpg', 'ori polosan'),
 (3, 'BBQ (150gr)', 2000, 20, 'bbq.jpg', 'barbeque'),
 (4, 'Balado (150gr)', 2000, 20, 'balado.jpg', 'balado pedas manis'),
 (5, 'Coklat (150gr)', 6000, 20, 'cokalt.jpg', 'coklat lumerrr'),
@@ -120,9 +120,21 @@ CREATE TABLE `detail_transaksi` (
 --
 
 INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `id_reseller`, `qty_det`, `subtotal`, `status`) VALUES
-(23, 1, 5, 1, 6000, 'Added to cart'),
-(24, 2, 5, 1, 2000, 'Added to cart'),
-(25, 1, 6, 1, 6000, 'Added to cart');
+(33, 2, 5, 2, 4000, 'Added to cart');
+
+--
+-- Triggers `detail_transaksi`
+--
+DELIMITER $$
+CREATE TRIGGER `stokk` AFTER DELETE ON `detail_transaksi` FOR EACH ROW UPDATE barang SET stok = stok + OLD.qty_det
+WHERE kd_barang = OLD.kd_barang
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `stokplus` AFTER INSERT ON `detail_transaksi` FOR EACH ROW UPDATE barang SET stok = stok - NEW.qty_det
+WHERE kd_barang = NEW.kd_barang
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1094,7 +1106,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `alamat_kirim`
 --
 ALTER TABLE `alamat_kirim`
-  MODIFY `kd_al_kirim` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kd_al_kirim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `barang`
@@ -1106,7 +1118,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `kab`
@@ -1142,7 +1154,7 @@ ALTER TABLE `reseller`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- Constraints for dumped tables
