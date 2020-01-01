@@ -171,7 +171,7 @@ $grand = 0;
     					</p>
 					</div>
 					
-					<p><a href="cart_co.php?id=<?php echo $user_id?>&grand=?tot" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					<p><a href="cart_co.php?id=<?php echo $user_id?>&grand=?$tot" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
 					
 					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>

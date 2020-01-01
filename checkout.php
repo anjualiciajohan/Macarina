@@ -107,24 +107,23 @@ $grand = 0;
     				<div class="cart-total mb-3">
     					<h3>Total Keranjang</h3>
     					<p class="d-flex">
-    						<span>Subtotal</span>
+    						<span>Total</span>
 							<span><label >Rp. <?php echo $grand;?></label>
 						 <input type ="hidden" name="subtotal" id="subtotal" value="<?php echo $grand;?>">
 						</span>
     					</p>
-    					<p class="d-flex">
-    						<span>Biaya Kirim</span>
-    						<span><label name="biayakirim" id="biayakirim"></label></span>
-    					</p>
     					
-    					<hr>
-    					<p class="d-flex total-price">
-    						<span>Total</span>
-    						<span><label name="totalall" id="totalall"></label></span>
-    					</p>
-    				</div>
-					<p><a href="success.php?id=<?php echo $user_id?>" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
-					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
+					</div>
+					<?php 
+					$trans = "SELECT * FROM transaksi where id_reseller = '$user_id'";
+					$Qtrans = mysqli_query($koneksi,$trans);
+					while ($code = mysqli_fetch_array($Qtrans)){
+						$kodeT=$code['kd_transaksi'];
+						echo '<p><a href="trans_cancel.php?id='.$kodeT.'" class="btn btn-primary py-3 px-5">Cancel</a>';
+					}
+					?>
+					<a href="shop2.php" class="btn btn-primary py-3 px-5">Next</a></p>
+					
     			</div>
 			</div>
 			
