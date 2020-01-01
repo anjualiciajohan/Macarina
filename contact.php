@@ -2,7 +2,7 @@
 include_once "header.php";
 ?>
  <!-- breadcrumb start-->
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bgcontact.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/2model.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -14,7 +14,7 @@ include_once "header.php";
     </div>
     
     
-    <div class="row d-flex contact-info mb-5">
+    <!-- <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
@@ -39,7 +39,7 @@ include_once "header.php";
 	          </div>
           </div>
           </div>
-          </div>
+          </div> -->
          
 
    <!-- breadcrumb start-->
@@ -71,6 +71,7 @@ include_once "header.php";
           		</div>
           		<h3 class="mb-4">Kontak Langsung</h3>
 	            <p><a >+ 6281 217 757 777</a></p>
+              <br></br>
               <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20dari%20website%20,mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
 	            <p>
 	          </div>
