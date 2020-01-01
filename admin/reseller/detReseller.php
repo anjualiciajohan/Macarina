@@ -58,12 +58,7 @@ include_once "../config/side.php";
               
           ?>  
             <form method ="POST" action="editReseller.php" enctype="multipart/form-data">
-                <table border="1">
-                <tr>
-                        <td>Kode Reseller</td>
-                        <td>:</td>
-                        <td><input type="hidden" name="txt_idrsl" value="<?php echo $data['id_reseller'] ?>"></td>
-                    </tr>
+                <table border="1" class="table table-striped table-bordered table-hover">
                     <tr>
                         <td>No KTP</td>
                         <td>:</td>
