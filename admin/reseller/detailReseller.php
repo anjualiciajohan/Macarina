@@ -110,11 +110,11 @@ include_once "../config/side.php";
                         <td>Status</td>
                         <td>:</td>
                         <td><label><?php 
-                         if ($status == "0"){
+                         if ($status == 0){
                           ?>NonAktif
                          
                         <?php   }
-                        else if ($status == "1") {
+                        else if ($status == 1) {
                            ?>Aktif
                         <?php  }
                         ?></td>
@@ -123,11 +123,11 @@ include_once "../config/side.php";
                       <td></td>
                       <td></td>
                         <td> <?php 
-                         if ($status == "0"){
+                         if ($status == 0){
                           ?><input type="submit" name="aktifkan" value="Aktifkan"/>
                          
                         <?php   }
-                        else if ($status == "1") {
+                        else if ($status == 1) {
                            ?> <input type="submit" name="nonaktif" value="NonAktifkan"/>
                         <?php  }
                         ?>

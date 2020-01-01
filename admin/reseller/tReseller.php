@@ -102,11 +102,11 @@ include "../config/side.php";
                       <td><?php
                           $status = $data['status'];
                           
-                         if ($status == "0"){
+                         if ($status == 0){
                           ?>NonAktif
                          
                         <?php   }
-                        else if ($status == "1") {
+                        else if ($status == 1) {
                            ?>Aktif
                         <?php  }
                         ?>

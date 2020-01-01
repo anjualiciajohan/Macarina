@@ -115,11 +115,11 @@ include_once "../config/side.php";
                         <td>Status</td>
                         <td>:</td>
                         <td><label><?php 
-                         if ($status1 == "0"){
+                         if ($status1 == 0){
                           ?>NonAktif
                          
                         <?php   }
-                        else if ($status1 == "1") {
+                        else if ($status1 == 1) {
                            ?>Aktif
                         <?php  }
                         ?></td>
