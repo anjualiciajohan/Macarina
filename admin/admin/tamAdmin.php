@@ -55,10 +55,6 @@ include_once "../config/side.php";
             <form method ="POST" action="FtamAdmin.php" enctype="multipart/form-data">
                 <table border="1"  class="table table-striped table-bordered table-hover">
                     <tr class="form-group">
-                        <td>Kode Admin</td>
-                        <td><input type="text" name="txt_idadm" class="form-control"></td>
-                    </tr>
-                    <tr class="form-group">
                         <td>User</td>
                         <td><input type="text" name="txt_user"  class="form-control" ></td>
                     </tr>
