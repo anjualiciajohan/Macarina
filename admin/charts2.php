@@ -1,11 +1,11 @@
 <?php
-define('BASEPATH', dirname(__FILE__));
+
 //include_once('../config/head.php'); 
 include_once "head.php";
 
 $koneksi    = mysqli_connect("localhost", "root", "", "macarina");
-$penjualan  = mysqli_query($koneksi, "SELECT stok FROM barang");
-$merk       = mysqli_query($koneksi, "SELECT nama_barang FROM barang");
+$penjualan  = mysqli_query($koneksi, "SELECT qty_det FROM detail_transaksi");
+$merk       = mysqli_query($koneksi, "SELECT reseller.nama_reseller, detail_transaksi.id_reseller FROM detail_transaksi INNER JOIN reseller on reseller.id_reseller=detail_transaksi.id_reseller");
 ?>
 <?php
 include_once "topNavbar.php";
@@ -43,20 +43,18 @@ include_once "topNavbar.php";
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span>
-    </a>
-    <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <span>Grafik</span>
+  </a>
+  <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Grafik</h6>
+      <h6 class="collapse-header">Data :</h6>
       <a class="collapse-item" href="charts.php">Grafik Produk</a>
       <a class="collapse-item" href="charts2.php">Grafik Reseller</a>
-      <a class="collapse-item" href="charts3.php">Grafik Penjualan</a>
-      
+      <!--<a class="collapse-item" href="charts3.php">Grafik Penjualan</a>-->
     </div>
   </div>
-</li>
 </li>
 
 <!-- Nav Item - Tables -->
@@ -114,7 +112,6 @@ include_once "topNavbar.php";
     <div class="container">
         <h2 align="center">GRAFIK RESELLER</h2>
         <canvas id="piechart" width="50" height="50"></canvas>
-        <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     </div>
 
   </tbody>
@@ -123,11 +120,11 @@ include_once "topNavbar.php";
 <script  type="text/javascript">
   var ctx = document.getElementById("piechart").getContext("2d");
   var data = {
-            labels: [<?php while ($p = mysqli_fetch_array($merk)) { echo '"' . $p['nama_barang'] . '",';}?>],
+            labels: [<?php while ($p = mysqli_fetch_array($merk)) { echo '"' . $p['nama_reseller'] . '",';}?>],
             datasets: [
             {
               label: "Penjualan Barang",
-              data: [<?php while ($p = mysqli_fetch_array($penjualan)) { echo '"' . $p['stok'] . '",';}?>],
+              data: [<?php while ($p = mysqli_fetch_array($penjualan)) { echo '"' . $p['qty_det'] . '",';}?>],
               backgroundColor: [
                 '#29B0D0',
                 '#2A516E',
@@ -152,7 +149,11 @@ include_once "topNavbar.php";
 
 </script>
 </div>
-</div>
+
+<?php
+  include_once "charts2.php";
+?>
+
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">

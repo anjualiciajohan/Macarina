@@ -1,5 +1,5 @@
 <?php
-define('BASEPATH', dirname(__FILE__));
+
 //include_once('../config/head.php'); 
 include_once "head.php";
 
@@ -43,10 +43,20 @@ include_once "topNavbar.php";
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="charts.php">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
+    <span>Grafik</span>
+  </a>
+  <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Data :</h6>
+      <a class="collapse-item" href="">Grafik Produk</a>
+      <a class="collapse-item" href="charts2.php">Grafik Reseller</a>
+      <!--<a class="collapse-item" href="charts3.php">Grafik Penjualan</a>-->
+    </div>
+  </div>
 </li>
+
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
@@ -90,7 +100,6 @@ include_once "topNavbar.php";
 
 <thead>
     <meta charset="utf-8">
-    <title>Chartjs, PHP dan MySQL Demo Grafik Lingkaran Pie Chart</title>
     <script src="js/Chart.js"></script>
     <style type="text/css">
             .container {
@@ -141,6 +150,7 @@ include_once "topNavbar.php";
 
 </script>
 </div>
+
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
