@@ -83,7 +83,7 @@ include_once "../config/side.php";
                     </tr>
                     <tr>
                                       <td>    
-                        <td> <input type="submit" name="btn_simpan" value="Simpan"> Jangan lupa di simpan</td>
+                        <td> <input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="btn_simpan" value="Simpan"> Jangan lupa di simpan</td>
                         </td>    
                     </tr>                   
                 
