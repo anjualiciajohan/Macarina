@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2019 at 05:59 PM
+-- Generation Time: Jan 01, 2020 at 07:48 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -64,7 +64,7 @@ CREATE TABLE `bank` (
 --
 
 CREATE TABLE `barang` (
-  `kd_barang` varchar(5) NOT NULL,
+  `kd_barang` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `harga` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
@@ -77,14 +77,14 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`) VALUES
-('1', 'Jagung Manis (150gr)', 6000, 20, 'jagung.jpg', 'manisnya jagung'),
-('2', 'Original (150gr)', 2000, 20, 'ori.jpg', 'ori polosan'),
-('3', 'BBQ (150gr)', 2000, 20, 'bbq.jpg', 'barbeque'),
-('4', 'Balado (150gr)', 2000, 20, 'balado.jpg', 'balado pedas manis'),
-('5', 'Coklat (150gr)', 6000, 20, 'cokalt.jpg', 'coklat lumerrr'),
-('6', 'Keju (150gr)', 6000, 20, 'keju.jpg', 'keju lumerr'),
-('7', 'Seawed (150gr)', 6000, 20, 'seawed.jpg', 'rumput laut'),
-('8', 'Indomie(150gr)', 6000, 20, 'indomie.jpg', 'indomie goreng seger');
+(1, 'Jagung Manis (150gr)', 6000, 10, 'jagung.jpg', 'manisnya jagung'),
+(2, 'Original (150gr)', 2000, 20, 'ori.jpg', 'ori polosan'),
+(3, 'BBQ (150gr)', 2000, 20, 'bbq.jpg', 'barbeque'),
+(4, 'Balado (150gr)', 2000, 20, 'balado.jpg', 'balado pedas manis'),
+(5, 'Coklat (150gr)', 6000, 20, 'cokalt.jpg', 'coklat lumerrr'),
+(6, 'Keju (150gr)', 6000, 20, 'keju.jpg', 'keju lumerr'),
+(7, 'Seawed (150gr)', 6000, 20, 'seawed.jpg', 'rumput laut'),
+(8, 'Indomie(150gr)', 6000, 20, 'indomie.jpg', 'indomie goreng seger');
 
 -- --------------------------------------------------------
 
@@ -94,11 +94,11 @@ INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`,
 
 CREATE TABLE `detail_transaksi` (
   `id_detail` int(11) NOT NULL,
-  `kd_barang` varchar(5) NOT NULL,
-  `id_reseller` varchar(5) NOT NULL,
+  `kd_barang` int(11) NOT NULL,
+  `id_reseller` int(11) NOT NULL,
   `qty_det` int(11) NOT NULL DEFAULT '1',
   `subtotal` int(11) NOT NULL,
-  `status` enum('Added to cart','Confirmed') NOT NULL
+  `status` enum('Added to cart','Pending') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -106,11 +106,9 @@ CREATE TABLE `detail_transaksi` (
 --
 
 INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `id_reseller`, `qty_det`, `subtotal`, `status`) VALUES
-(3, '4', '5', 2, 4000, 'Added to cart'),
-(4, '7', '5', 1, 0, 'Added to cart'),
-(6, '7', '6', 1, 0, 'Added to cart'),
-(7, '2', '5', 1, 0, 'Added to cart'),
-(8, '2', '6', 1, 0, 'Added to cart');
+(23, 1, 5, 1, 6000, 'Added to cart'),
+(24, 2, 5, 1, 2000, 'Added to cart'),
+(25, 1, 6, 1, 6000, 'Added to cart');
 
 -- --------------------------------------------------------
 
@@ -939,52 +937,18 @@ INSERT INTO `kel` (`kd_kel`, `sys_code`, `kelurahan`, `kode_pos`, `price`, `cepa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konten`
---
-
-CREATE TABLE `konten` (
-  `id_konten` varchar(8) NOT NULL,
-  `judul` varchar(25) NOT NULL,
-  `isi` varchar(25) NOT NULL,
-  `gambar` varchar(25) NOT NULL,
-  `video` varchar(25) NOT NULL,
-  `kd_admin` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `konten`
---
-
-INSERT INTO `konten` (`id_konten`, `judul`, `isi`, `gambar`, `video`, `kd_admin`) VALUES
-('1', 'aku', 'asdas', 'xxx', 'xxx', '1');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
-  `id_pembayaran` varchar(5) NOT NULL,
+  `id_pembayaran` int(11) NOT NULL,
   `id_bank` varchar(5) NOT NULL,
   `kd_transaksi` int(11) NOT NULL,
-  `kd_admin` varchar(5) NOT NULL,
   `bukti_bayar` varchar(25) NOT NULL,
   `tgl_bayar` date NOT NULL,
   `nama_rek_res` varchar(25) NOT NULL,
   `no_rek_res` varchar(25) NOT NULL,
   `status_pesan` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `point`
---
-
-CREATE TABLE `point` (
-  `kd_point` varchar(3) NOT NULL,
-  `point` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1012,7 +976,8 @@ CREATE TABLE `reseller` (
 
 INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
 (5, 'Eilham Wahyu Pratama', 'Banyuwangi ', '08989841713', '8e93f3f5b2cf9507091720964670523c.png', '3510101210990005', 'ham@gmail.com  ', 'ham  ', '1', 'bruno3.jpg'),
-(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '1', 'images (1).jpg');
+(6, 'Luqman H', 'Jember ', '12312312312', '2a25162698cb2f7b1b17779eadb185a9.png', '123456789023 ', 'luqman@gmail.com  ', 'q1  ', '1', 'images (1).jpg'),
+(7, '', ' ', '', '', ' ', '  ', '  ', 'nonaktif ', '');
 
 -- --------------------------------------------------------
 
@@ -1024,15 +989,8 @@ CREATE TABLE `transaksi` (
   `kd_transaksi` int(11) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `grand_total` int(11) NOT NULL,
-  `kd_admin` varchar(5) NOT NULL
+  `id_reseller` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `transaksi`
---
-
-INSERT INTO `transaksi` (`kd_transaksi`, `tgl_transaksi`, `grand_total`, `kd_admin`) VALUES
-(111, '2019-12-21', 10000, '1');
 
 --
 -- Indexes for dumped tables
@@ -1061,7 +1019,8 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `barang` (`kd_barang`);
+  ADD KEY `barang` (`kd_barang`),
+  ADD KEY `reseller` (`id_reseller`);
 
 --
 -- Indexes for table `kab`
@@ -1084,26 +1043,12 @@ ALTER TABLE `kel`
   ADD KEY `kec` (`sys_code`);
 
 --
--- Indexes for table `konten`
---
-ALTER TABLE `konten`
-  ADD PRIMARY KEY (`id_konten`),
-  ADD KEY `admin2` (`kd_admin`);
-
---
 -- Indexes for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
   ADD KEY `bank` (`id_bank`),
-  ADD KEY `transaksi` (`kd_transaksi`),
-  ADD KEY `admin1` (`kd_admin`);
-
---
--- Indexes for table `point`
---
-ALTER TABLE `point`
-  ADD PRIMARY KEY (`kd_point`);
+  ADD KEY `transaksi` (`kd_transaksi`);
 
 --
 -- Indexes for table `reseller`
@@ -1116,17 +1061,23 @@ ALTER TABLE `reseller`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kd_transaksi`),
-  ADD KEY `admin` (`kd_admin`);
+  ADD KEY `res` (`id_reseller`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `kd_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `kab`
@@ -1147,16 +1098,22 @@ ALTER TABLE `kel`
   MODIFY `kd_kel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=685;
 
 --
+-- AUTO_INCREMENT for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `reseller`
 --
 ALTER TABLE `reseller`
-  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- Constraints for dumped tables
@@ -1166,7 +1123,8 @@ ALTER TABLE `transaksi`
 -- Constraints for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `barang` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`);
+  ADD CONSTRAINT `barang` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`),
+  ADD CONSTRAINT `reseller` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
 -- Constraints for table `kec`
@@ -1181,23 +1139,17 @@ ALTER TABLE `kel`
   ADD CONSTRAINT `kec` FOREIGN KEY (`sys_code`) REFERENCES `kec` (`sys_code`);
 
 --
--- Constraints for table `konten`
---
-ALTER TABLE `konten`
-  ADD CONSTRAINT `admin2` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`);
-
---
 -- Constraints for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  ADD CONSTRAINT `admin1` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`),
-  ADD CONSTRAINT `bank` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`);
+  ADD CONSTRAINT `bank` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`),
+  ADD CONSTRAINT `transaksi` FOREIGN KEY (`kd_transaksi`) REFERENCES `transaksi` (`kd_transaksi`);
 
 --
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `admin` FOREIGN KEY (`kd_admin`) REFERENCES `admin` (`kd_admin`);
+  ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
