@@ -8,6 +8,6 @@
 	$dewan1->execute();
 	$res1 = $dewan1->get_result();
 	while ($row = $res1->fetch_assoc()) {
-		echo "<option value='" . $row['provinsi'] . "'>" . $row['provinsi'] . "</option>";
+		echo "<option value='" . $row['kd_kab'] . "'>" . $row['provinsi'] . "</option>";
 	}
 ?>
