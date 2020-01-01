@@ -6,12 +6,12 @@ if(!isset($_SESSION['user_login'])){
 	header('location: login.php');
 }
 $user_id=$_SESSION['id'];
-$trans = "SELECT * FROM transaksi where id_reseller = '$user_id'";
+$trans = "SELECT * FROM transaksi where id_reseller = '$user_id' ORDER BY kd_transaksi DESC LIMIT 1";
 $Qtrans = mysqli_query($koneksi,$trans);
 $bank = "SELECT * FROM bank ";
 $Qbank = mysqli_query($koneksi,$bank);
 $al = "SELECT * FROM alamat_kirim INNER JOIN kab JOIN kec JOIN kel ON alamat_kirim.kd_kab=kab.kd_kab 
-AND alamat_kirim.sys_code=kec.sys_code AND alamat_kirim.kd_kel=kel.kd_kel WHERE id_reseller = '$user_id'";
+AND alamat_kirim.sys_code=kec.sys_code AND alamat_kirim.kd_kel=kel.kd_kel WHERE id_reseller = '$user_id'ORDER BY kd_al_kirim DESC LIMIT 1";
 $Qal = mysqli_query($koneksi,$al);
 $user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
 barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
