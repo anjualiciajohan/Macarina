@@ -12,6 +12,8 @@ include_once "header.php";
         </div>
       </div>
     </div>
+    
+    
     <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
@@ -19,23 +21,21 @@ include_once "header.php";
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Outlet 1</h3>
-              <p>
-              Jl. Kalimantan no 39b (Depan mie Rampok) </p>
-              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina?share" class="smoothscroll btn btn-primary">Lihat di Gmaps</a></p>
+              <p>Jl. Kalimantan No.39B, Krajan Timur, Sumbersari</p>
+              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina-Kalimantan?share" class="smoothscroll btn btn-primary">Maps</a></p>
 	            <p>
 	          </div>
           </div>
-          <div class="row d-flex contact-info mb-5">
+         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Outlet 2</h3>
-              <p>
-              Jl. Karimata </p>
-              <a target="_blank" rel="nofollow"  href="https://g.page/Macarina?share" class="smoothscroll btn btn-primary">Lihat di Gmaps</a></p>
-	            <p>
+              <p>Jl. Mastrip,</p>
+              <a target="_blank" rel="nofollow"  href="https://goo.gl/maps/K2VvcB5CapDRJN4QA" class="smoothscroll btn btn-primary">Maps</a></p>
+	            <p> 
 	          </div>
           </div>
           </div>

@@ -15,7 +15,7 @@ require_once("koneksi.php");
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Selamat Datang di Macarina e-Commerce Website</h2>
+		            <h2 class="mb-4">Selamat Datang di Website Macarina</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
@@ -28,8 +28,8 @@ require_once("koneksi.php");
                       <input type="password" name ="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
                     <label>
-                        <input type="checkbox"  name="login"> Ingatkan saya</label>
-                              <a href="login.php">Lupa Password?</a>
+                        <input type="checkbox"  name="login">Remember Me</label>
+                              <a href="forgotpass.php">Lupa Password?</a>
                     <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
     
                 <?php 

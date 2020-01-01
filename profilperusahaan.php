@@ -6,19 +6,36 @@ include_once "header.php";
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span></p>
+            <h1 class="mb-0 bread">About</h1>
           </div>
         </div>
       </div>
     </div>
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center">
+          <iframe width="420" height="315"src="https://youtube.com/embed/7l00kYjjNe4?autoplay=1"></iframe>
+					</div>
+          </div>
+          </div>
+					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section-bold mb-4 mt-md-5">
+	          	<div class="ml-md-0">
+	            </div>
+	          </div>
+	          <div class="pb-md-5">
+							<p> Nama Macarina yang dipakai tersebut didapat dari singkatan "Makaroni Nagih",karena pada saat mencobakan macaroni pertama kali kepada orang-orang di sekitar,
+              mereka berpendapat bahwa makanan ringannya tersebut membuat mereka merasa nagih atau ketagihan untuk mencicipi terus menerus. oleh karena itu empat orang yaitu
+              Sdr. Helmi dan rekannya sepakat untuk menggunakan nama"Macarina" sebagai nama pada brand produk makanan ringan mereka tersebut. </p><br/>
+							<p><a href="#" class="btn btn-primary">Shop now</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <div class="jumbotron">
-    
-    <h2 align="center"> <i>ABOUT US </i></h2>
-    
-    </div>
-    
     <div class="container">
     <div class="row mb-5">
           <div class="col-md-8">

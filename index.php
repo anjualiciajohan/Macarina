@@ -101,7 +101,7 @@ include_once "header.php";
             <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
                     <h2 style="line-height:50px;color:#fff">Cerita sukses</h2>
     </div> 
-        <iframe width="420" height="315"src="https://youtube.com/embed/7l00kYjjNe4?autoplay=1"></iframe> 
+        <iframe width="420" height="315"src="https://youtube.com/embed/BbS2kUYp7TI"></iframe> 
                 <div class="embed-responsive embed-responsive-16by9" style="margin-bottom:20px">
     </div>
     </div>
