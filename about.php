@@ -23,14 +23,13 @@ include_once "header.php";
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">KENAPA MACARINA?</h2>
+		            <h2 class="mb-4">MACARINA (Macaroni Nagih)</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
 							<p> Nama Macarina yang dipakai tersebut didapat dari singkatan "Makaroni Nagih",karena pada saat mencobakan macaroni pertama kali kepada orang-orang di sekitar,
               mereka berpendapat bahwa makanan ringannya tersebut membuat mereka merasa nagih atau ketagihan untuk mencicipi terus menerus. oleh karena itu empat orang yaitu
               Sdr. Helmi dan rekannya sepakat untuk menggunakan nama"Macarina" sebagai nama pada brand produk makanan ringan mereka tersebut. </p><br/>
-							<p><a href="#" class="btn btn-primary">Shop now</a></p>
 						</div>
 					</div>
 				</div>
@@ -99,85 +98,85 @@ include_once "header.php";
     	</div>
     </section>
 		
-		<section class="ftco-section testimony-section">
+		<!--::review_part start::-->
+ <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4">Our satisfied customer says</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
+          	<span class="subheading">Testimoni</span>
+            <h2 class="mb-4">Testimonial Para Macariners</h2>
+             </div>
         </div>
         <div class="row ftco-animate">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Marketing Manager</span>
+                    <p class="mb-5 pl-4 line">Jajanan asik dan enak</p>
+                    <p class="name">Dinda Endy</p>
+                    <span class="position">Customer Banyuwangi</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Interface Designer</span>
+                    <p class="mb-5 pl-4 line">Asli bikin nagih</p>
+                    <p class="name">Febby Eka</p>
+                    <span class="position">Customer Jember</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">UI Designer</span>
+                    <p class="mb-5 pl-4 line">Beli 1 kurang beli 2 kenyang wkwk</p>
+					<p class="name">Avinda</p>
+                    <span class="position">Customer Malang</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testii.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Web Developer</span>
+                    <p class="mb-5 pl-4 line">Jajanan masa kecil dan pasti higenis</p>
+					<p class="name">Nur Izzah</p>
+                    <span class="position">Customer Surabaya</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi4.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">System Analyst</span>
+                    <p class="mb-5 pl-4 line">Oleh-oleh asinan yang wajib dibeli di Jember</p>
+					<p class="name">Adinda Putri</p>
+                    <span class="position">Customer Mojokerto</span>
                   </div>
                 </div>
               </div>
@@ -186,6 +185,7 @@ include_once "header.php";
         </div>
       </div>
     </section>
+
 
     <section class="ftco-section bg-light">
 			<div class="container">
