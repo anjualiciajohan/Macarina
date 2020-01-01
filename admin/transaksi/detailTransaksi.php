@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +28,7 @@ include_once "../topNavbar.php";
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-<?php 
+  <?php 
 include_once "../config/side.php";
 ?>
    
@@ -38,56 +37,107 @@ include_once "../config/side.php";
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Edit Data Admin</h1>
-          <p class="mb-4">Info akun Admin</p>
+          <h1 class="h3 mb-2 text-gray-800">Data Transaksi</h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Edit Data Admin</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
             </div>
             <div class="card-body">
             <?php 
             include "../config/config.php";
-            $id = $_GET['txt_idadm'];
-            $query_mysql = mysqli_query($koneksi,"SELECT admin.* , admin.kd_admin 
-            FROM admin 
-              WHERE admin.kd_admin = $id");
+            $id = $_GET['txt_idtr'];
+            
+            $query_mysql = mysqli_query($koneksi,"SELECT pembayaran.*,transaksi.kd_transaksi,transaksi.tgl_transaksi,transaksi.grand_total,reseller.nama_reseller
+            from pembayaran inner join transaksi join reseller on pembayaran.kd_transaksi=transaksi.kd_transaksi and transaksi.id_reseller=reseller.id_reseller
+            where transaksi.kd_transaksi= $id");
             //$data = mysqli_fetch_array($query_mysql);
             while($data = mysqli_fetch_array($query_mysql)){
               
           ?>  
-            <form method ="POST" action="editAdmin.php" enctype="multipart/form-data">
-                <table border="1" class="table table-striped table-bordered table-hover">
+            <form method ="POST" action="aktifReseller.php">
+              <table>
+                <tr>
+                <td>
+                <table border="0" class="table table-striped table-bordered table-hover">
                     <tr>
-                        <td>User</td>
+                        <td>Kode Transaksi</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_user" value="<?php echo $data['user'] ?>"></td>
+                        <td><label><?php echo $data['kd_transaksi'] ?><input type="hidden" name="txt_idtr" value="<?php echo $data['kd_transaksi'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
+                        <td>ID Pembayaran</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_pwd" value="<?php echo $data['password'] ?>" ></td>
+                        <td><input disabled type="text" name="txt_id_pembayaran" value="<?php echo $data['id_pembayaran'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>Alamat </td>
+                        <td>Nama Reseller</td>
                         <td>:</td>
-                        <td><input type="text" name="txt_almt" value="<?php echo $data['alamat_admin'] ?>"> </td>
+                        <td><input disabled type="text" name="txt_nama" value="<?php echo $data['nama_reseller'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>Photo </td>
+                        <td>Tanggal Pesan</td>
                         <td>:</td>
-                        <td><?php echo "<img src='../img/".$data['gambar']."' width='100px' height='100px'/>" ?>
-                        <input type="file" name="gambar" />
-                       </td>
+                        <td><input disabled type="textarea" name="txt_tgl_transaksi" value="<?php echo $data['tgl_transaksi'] ?>"> </td>
                     </tr>
                     <tr>
-                                              
-                        <td colspan="3">Jangan lupa di simpan <input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="btn_simpan" value="Simpan"></td>
+                        <td>Tanggal Bayar</td>
+                        <td>:</td>
+                        <td><input disabled type="textarea" name="txt_tgl_bayar" value="<?php echo $data['tgl_bayar'] ?>"> </td>
+                    </tr>
+                    <!--<tr>
+                        <td>Bukti Bayar</td>
+                        <td>:</td>
+                        <td><?php //echo "<img src='#".$data['scan_ktp']."' width='200px' height='100px'/>" ?></td>
+                    </tr>-->
+                    <tr>
+                        <td>Nama Rekening</td>
+                        <td>:</td>
+                        <td><input disabled type="text" name="txt_email" value="<?php echo $data['nama_rek_res'] ?>" ></td>
+                    </tr>
+                    <tr>
+                        <td>No Rekening</td>
+                        <td>:</td>
+                        <td><input disabled type="text" name="txt_pwd" value="<?php echo $data['no_rek_res'] ?>" ></td>
+                    </tr>
+                    <?php
+                    $status = $data['status_pesan'];
+                    ?>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td><label><?php 
+                         if ($status == 0){
+                          ?>Pending
+                         
+                        <?php   }
+                        else if ($status == 1) {
+                           ?>Selesai
+                        <?php  }
+                        ?></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                        <td> <?php 
+                         if ($status == 0){
+                          ?><input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="aktifkan" value="Selesai"/>
+                         
+                        <?php   }
+                        else if ($status == 1) {
+                           ?> <input class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="submit" name="nonaktif" value="Pending"/>
+                        <?php  }
+                        ?>
                         
-                    </tr>                   
-                
+                        
+                    </tr>
                 </table>
+
+                </td>
+                </tr>
+              </table>
+                
             </form>
             <?php } ?>
             </div>

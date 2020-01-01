@@ -81,8 +81,7 @@ include_once "../config/side.php";
                             <td><?php echo $data ['grand_total']; ?></td>
                             <td><?php echo $data ['status_pesan']; ?></td>
                             
-                    <td><a class="detail" href="detailReseller.php?txt_idrsl=<?php echo $data['id_reseller']; ?>">Detail</a>
-                    </td>
+                    <td><a class="detail" href="detailTransaksi.php?txt_idtr=<?php echo $data['kd_transaksi']; ?>">Detail</a></td>
                         </tr>
                     </tbody>
                     <?php

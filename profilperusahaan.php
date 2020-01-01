@@ -22,14 +22,15 @@ include_once "header.php";
           </div>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
-	          	<div class="ml-md-0">
+            <div class="ml-md-0">
+		            <h2 class="mb-4">MACARINA (Macaroni Nagih)</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
 							<p> Nama Macarina yang dipakai tersebut didapat dari singkatan "Makaroni Nagih",karena pada saat mencobakan macaroni pertama kali kepada orang-orang di sekitar,
               mereka berpendapat bahwa makanan ringannya tersebut membuat mereka merasa nagih atau ketagihan untuk mencicipi terus menerus. oleh karena itu empat orang yaitu
               Sdr. Helmi dan rekannya sepakat untuk menggunakan nama"Macarina" sebagai nama pada brand produk makanan ringan mereka tersebut. </p><br/>
-							<p><a href="#" class="btn btn-primary">Shop now</a></p>
+						
 						</div>
 					</div>
 				</div>
