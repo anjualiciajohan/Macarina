@@ -1,5 +1,5 @@
 <?php
-
+define('BASEPATH', dirname(__FILE__));
 //include_once('../config/head.php'); 
 include_once "head.php";
 
@@ -50,13 +50,12 @@ include_once "topNavbar.php";
   <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Data :</h6>
-      <a class="collapse-item" href="">Grafik Produk</a>
+      <a class="collapse-item" href="charts.php">Grafik Produk</a>
       <a class="collapse-item" href="charts2.php">Grafik Reseller</a>
-      <!--<a class="collapse-item" href="charts3.php">Grafik Penjualan</a>-->
+      <a class="collapse-item" href="charts3.php">Grafik Penjualan</a>
     </div>
   </div>
 </li>
-
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
@@ -111,8 +110,9 @@ include_once "topNavbar.php";
   <tbody>
 
     <div class="container">
-        <h2 align="center">GRAFIK BARANG</h2>
+        <h2 align="center">GRAFIK PENJUALAN</h2>
         <canvas id="piechart" width="50" height="50"></canvas>
+        <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     </div>
 
   </tbody>
@@ -150,7 +150,7 @@ include_once "topNavbar.php";
 
 </script>
 </div>
-
+</div>
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">

@@ -26,9 +26,18 @@
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="../charts.php">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
+    <span>Grafik</span>
+  </a>
+  <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Data :</h6>
+      <a class="collapse-item" href="charts.php">Grafik Produk</a>
+      <a class="collapse-item" href="charts2.php">Grafik Reseller</a>
+      <!--<a class="collapse-item" href="charts3.php">Grafik Penjualan</a>-->
+    </div>
+  </div>
 </li>
 
 <!-- Nav Item - Tables -->
