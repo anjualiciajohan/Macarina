@@ -82,7 +82,7 @@ include_once "header.php";
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Alamat Email</h3>
-	            <p><a href="mailto:macarina.official@gmail.com">macarina.idl@gmail.com</a></p>
+	            <p><a href="mailto:macarina.official@gmail.com">macarina.id@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -96,7 +96,7 @@ include_once "header.php";
           </div>
         </div>
 
-        <div class="row no-gutters block-9">
+        <!-- <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
             <form action="#" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
@@ -124,7 +124,7 @@ include_once "header.php";
           </div>
         </div>
       </div>
-      </div>
+      </div> -->
     </section>
 		
     <!-- ================ contact section end ================= -->
