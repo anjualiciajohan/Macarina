@@ -7,7 +7,7 @@ if(!isset($_SESSION['user_login'])){
 }
 $user_id=$_SESSION['id'];
 $user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
-barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
+barang.harga,barang.stok,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
 barang on barang.kd_barang=detail_transaksi.kd_barang where detail_transaksi.id_reseller='$user_id' 
 and detail_transaksi.status='Added to cart'";
 $user_products_result=mysqli_query($koneksi,$user_products_query) or die(mysqli_error($koneksi));
@@ -76,13 +76,16 @@ $grand = 0;
 						        	<h3><?php echo $row['nama_barang']?></h3>
 						        	<p><?php echo $row['deskripsi']?></p>
 						        </td>
-						        
+						        <input type ="hidden" name="stok" id="stok" value="<?php echo $row['stok'];?>">
 						        <td class="price">Rp.<?php echo $row['harga']?></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
 									<input type="hidden" name="iddet" value="<?php echo $row['id_detail']; ?>">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" onchange="mySubmit(this.form)">
+									
+									<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $row['qty_det']?>" 
+									onchange="mySubmit(this.form,#stok)">
+									
 								</div>
 								
 					          </td>
@@ -104,6 +107,7 @@ $grand = 0;
 					  </div>
     			</div>
     		</div>
+			<form method="GET" action="cart_co.php">
     		<div class="row">
 				
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
@@ -153,6 +157,7 @@ $grand = 0;
     						<span>Subtotal</span>
 							<span><label >Rp. <?php echo $grand;?></label>
 						 <input type ="hidden" name="subtotal" id="subtotal" value="<?php echo $grand;?>">
+						 
 						</span>
     					</p>
     					<p class="d-flex">
@@ -171,27 +176,37 @@ $grand = 0;
     					</p>
 					</div>
 					
-					<p><a href="cart_co.php?id=<?php echo $user_id?>&grand=?#tot" class="btn btn-primary py-3 px-4">Checkout Sekarang</a></p>
+					<p><input type="submit" value ="Checkout Sekarang" class="btn btn-primary py-3 px-4"></p>
 					
 					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
 			</div>
-			
+			</form>
 			</div>
 		</section>
 		
 
 		<script type="text/javascript">
-	function mySubmit(theForm) {
-    $.ajax({ // create an AJAX call...
-        data: $(theForm).serialize(), // get the form data
-        type: $(theForm).attr('method'), // GET or POST
-        url: $(theForm).attr('action'), // the file to call
-        success: function (response) { // on success..
-            $('#here').html(response); // update the DIV
-        }
-    });
-}
+	function mySubmit(theForm,stok) {
+		
+		
+		if(stok < theForm){
+		alert('Stok Tidak Mencukupi!');
+		
+		}
+		else{
+		$.ajax({ // create an AJAX call...
+			data: $(theForm).serialize(), // get the form data
+			type: $(theForm).attr('method'), // GET or POST
+			url: $(theForm).attr('action'), // the file to call
+			success: function (response) { // on success..
+				$('#here').html(response); // update the DIV
+			}
+		});
+		}
+		
+   
+	}
 	</script>
   
   
