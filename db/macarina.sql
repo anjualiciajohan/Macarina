@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2020 at 07:12 PM
+-- Generation Time: Jan 02, 2020 at 12:28 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `kd_admin` varchar(5) NOT NULL,
+  `kd_admin` int(11) NOT NULL,
   `user` varchar(20) NOT NULL,
   `password` varchar(8) NOT NULL,
   `alamat_admin` varchar(50) NOT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`kd_admin`, `user`, `password`, `alamat_admin`, `gambar`) VALUES
-('1', 'hammer', 'sad', '12321', 'dagytgimage.jpg'),
-('2', 'ww', '12', 'qwewqe', 'usa-flag-wallpaper-united-states-world-170984.jpg');
+(1, 'hammer', 'sad', '12321', 'dagytgimage.jpg'),
+(2, 'ww', '12', 'qwewqe', 'usa-flag-wallpaper-united-states-world-170984.jpg');
 
 -- --------------------------------------------------------
 
@@ -55,8 +55,17 @@ CREATE TABLE `alamat_kirim` (
   `id_reseller` int(11) NOT NULL,
   `kd_kab` int(11) NOT NULL,
   `sys_code` int(11) NOT NULL,
-  `kd_kel` int(11) NOT NULL
+  `kd_kel` int(11) NOT NULL,
+  `alamat_lengkap` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alamat_kirim`
+--
+
+INSERT INTO `alamat_kirim` (`kd_al_kirim`, `id_reseller`, `kd_kab`, `sys_code`, `kd_kel`, `alamat_lengkap`) VALUES
+(5, 5, 2, 51, 431, 'Jln. Raya Banyuwangi no 6'),
+(6, 5, 3, 67, 574, 'Jalan. Imam Bonjol no 123');
 
 -- --------------------------------------------------------
 
@@ -65,11 +74,19 @@ CREATE TABLE `alamat_kirim` (
 --
 
 CREATE TABLE `bank` (
-  `id_bank` varchar(5) NOT NULL,
+  `id_bank` int(11) NOT NULL,
   `nama_bank` varchar(25) NOT NULL,
   `no_rek` varchar(25) NOT NULL,
   `nama_rek` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bank`
+--
+
+INSERT INTO `bank` (`id_bank`, `nama_bank`, `no_rek`, `nama_rek`) VALUES
+(1, 'BRI', '7770009658688', 'MACARINA_BRI'),
+(2, 'BNI', '55509847867867', 'MACARINA_BNI');
 
 -- --------------------------------------------------------
 
@@ -91,12 +108,12 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`) VALUES
-(1, 'Jagung Manis (150gr)', 6000, 9, 'jagung.jpg', 'manisnya jagung'),
-(2, 'Original (150gr)', 2000, 19, 'ori.jpg', 'ori polosan'),
+(1, 'Jagung Manis (150gr)', 6000, 7, 'jagung.jpg', 'manisnya jagung'),
+(2, 'Original (150gr)', 2000, 24, 'ori.jpg', 'ori polosan'),
 (3, 'BBQ (150gr)', 2000, 20, 'bbq.jpg', 'barbeque'),
 (4, 'Balado (150gr)', 2000, 20, 'balado.jpg', 'balado pedas manis'),
 (5, 'Coklat (150gr)', 6000, 20, 'cokalt.jpg', 'coklat lumerrr'),
-(6, 'Keju (150gr)', 6000, 20, 'keju.jpg', 'keju lumerr'),
+(6, 'Keju (150gr)', 6000, 19, 'keju.jpg', 'keju lumerr'),
 (7, 'Seawed (150gr)', 6000, 20, 'seawed.jpg', 'rumput laut'),
 (8, 'Indomie(150gr)', 6000, 20, 'indomie.jpg', 'indomie goreng seger');
 
@@ -112,7 +129,7 @@ CREATE TABLE `detail_transaksi` (
   `id_reseller` int(11) NOT NULL,
   `qty_det` int(11) NOT NULL DEFAULT '1',
   `subtotal` int(11) NOT NULL,
-  `status` enum('Added to cart','Pending') NOT NULL
+  `status` enum('Added to cart','Pending','PendingB') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -120,7 +137,10 @@ CREATE TABLE `detail_transaksi` (
 --
 
 INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `id_reseller`, `qty_det`, `subtotal`, `status`) VALUES
-(33, 2, 5, 2, 4000, 'Added to cart');
+(5, 1, 5, 3, 18000, ''),
+(6, 2, 5, 1, 2000, ''),
+(7, 1, 5, 1, 6000, 'PendingB'),
+(8, 6, 5, 1, 6000, 'PendingB');
 
 --
 -- Triggers `detail_transaksi`
@@ -968,14 +988,22 @@ INSERT INTO `kel` (`kd_kel`, `sys_code`, `kelurahan`, `kode_pos`, `price`, `cepa
 
 CREATE TABLE `pembayaran` (
   `id_pembayaran` int(11) NOT NULL,
-  `id_bank` varchar(5) NOT NULL,
+  `id_bank` int(5) NOT NULL,
   `kd_transaksi` int(11) NOT NULL,
   `bukti_bayar` varchar(25) NOT NULL,
   `tgl_bayar` date NOT NULL,
   `nama_rek_res` varchar(25) NOT NULL,
   `no_rek_res` varchar(25) NOT NULL,
-  `status_pesan` varchar(25) NOT NULL
+  `status_pesan` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_bank`, `kd_transaksi`, `bukti_bayar`, `tgl_bayar`, `nama_rek_res`, `no_rek_res`, `status_pesan`) VALUES
+(2, 1, 1, '', '2020-01-02', 'Eilham Wahyu', '999085347343', '0'),
+(3, 1, 6, '', '2020-01-02', 'Luqman', '00097586', '0');
 
 -- --------------------------------------------------------
 
@@ -1016,6 +1044,14 @@ CREATE TABLE `transaksi` (
   `grand_total` int(11) NOT NULL,
   `id_reseller` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`kd_transaksi`, `tgl_transaksi`, `grand_total`, `id_reseller`) VALUES
+(1, '2020-01-02', 22000, 5),
+(6, '2020-01-02', 17000, 5);
 
 --
 -- Indexes for dumped tables
@@ -1082,8 +1118,8 @@ ALTER TABLE `kel`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
-  ADD KEY `bank` (`id_bank`),
-  ADD KEY `transaksi` (`kd_transaksi`);
+  ADD KEY `transaksi` (`kd_transaksi`),
+  ADD KEY `bank` (`id_bank`);
 
 --
 -- Indexes for table `reseller`
@@ -1103,10 +1139,22 @@ ALTER TABLE `transaksi`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `kd_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `alamat_kirim`
 --
 ALTER TABLE `alamat_kirim`
-  MODIFY `kd_al_kirim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kd_al_kirim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `bank`
+--
+ALTER TABLE `bank`
+  MODIFY `id_bank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `barang`
@@ -1118,7 +1166,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kab`
@@ -1142,7 +1190,7 @@ ALTER TABLE `kel`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reseller`
@@ -1154,7 +1202,7 @@ ALTER TABLE `reseller`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `kd_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
