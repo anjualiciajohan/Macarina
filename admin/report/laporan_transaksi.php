@@ -67,14 +67,16 @@ include_once "../config/side.php";
                             <td>Tanggal Bayar</td>
                             <td>Grand Total</td>
                             <td>Status Pesan</td>
+                            <td></td>
                         </tr>        
                     </thead>
 
                     <?php
                     if (isset($_POST['cari'])){
                       echo $_POST['tanggal'];
-                    $query = mysqli_query($koneksi,"SELECT transaksi.kd_transaksi, transaksi.tgl_transaksi, transaksi.grand_total, pembayaran.status_pesan, pembayaran.tgl_bayar FROM transaksi, pembayaran WHERE tgl_transaksi='".$_POST['tanggal']."'") or die(mysqli_error($koneksi));            
+                    $query = mysqli_query($koneksi,"SELECT transaksi.id_reseller,transaksi.kd_transaksi, transaksi.tgl_transaksi, transaksi.grand_total  FROM transaksi  WHERE tgl_transaksi='".$_POST['tanggal']."'") or die(mysqli_error($koneksi));            
                     while ($data = mysqli_fetch_array($query)) {
+                      $cek = mysqli_query($koneksi, "SELECT * FROM pembayaran WHERE kd_transaksi = '".$data['kd_transaksi']."'");
                     
                   ?>
 
@@ -82,9 +84,24 @@ include_once "../config/side.php";
                         <tr>
                             <td><?php echo $data ['kd_transaksi']; ?></td>
                             <td><?php echo $data ['tgl_transaksi']; ?></td>
-                            <td><?php echo $data ['tgl_bayar']; ?></td>
+                            <?php
+                            $tgl_bayar=mysqli_fetch_array($cek);
+                            $pembayaran = mysqli_num_rows($cek);
+                            if($pembayaran > 0){
+                              echo '<td>'.$tgl_bayar['tgl_bayar'].'</td>';
+                            }else{
+                              echo'<td>-</td>';
+                            }
+                            ?>
                             <td><?php echo $data ['grand_total']; ?></td>
-                            <td><?php echo $data ['status_pesan']; ?></td>
+                            <?php
+                            if($pembayaran > 0){
+                              echo '<td>Pending</td>';
+                            }else{
+                              echo'<td>-</td>';
+                            }
+                            ?>
+                            <td><a class="detail" href="cetaktransaksi.php?txt_ctkidtr=<?php echo $data['id_reseller']; ?>">Cetak</a></td>
                         </tr>
                     </tbody>
                     <?php
