@@ -62,7 +62,7 @@ include_once "../config/side.php";
                 <tr>
                   <td width ="300"><?php echo "<img src='../img/reseller/foto/".$data['pas_foto']."' width='200px' height='200px'/>" ?></td>
                 <td>
-                <table border="0">
+                <table border="0" class="table table-striped table-bordered table-hover">
                     <tr>
                         <td>Kode Reseller</td>
                         <td>:</td>
