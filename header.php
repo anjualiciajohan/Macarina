@@ -11,10 +11,19 @@ else {
 	$kd= $_SESSION['id'];
 	$result = mysqli_query($koneksi,"SELECT * FROM reseller WHERE email ='$user' AND id_reseller = '$kd'");
 		$get_user_email = mysqli_fetch_array($result);
-			$uname_db = $get_user_email['nama_reseller'];
+			//$uname_db = $get_user_email['nama_reseller'];
+			$cresult = mysqli_query($koneksi,"SELECT SUBSTRING(nama_reseller, 1, 6) AS ExtractString
+		FROM reseller WHERE id_reseller= '$kd'");
+		$row = mysqli_fetch_array($cresult);
+		$uname_db = $row['ExtractString'];
 			$count11 = mysqli_query($koneksi, "SELECT * FROM detail_transaksi WHERE id_reseller='".$kd."' AND status = 'Added to cart'");
 			$counting = mysqli_num_rows($count11);
 		}
+
+
+		$cresult = mysqli_query($koneksi,"SELECT SUBSTRING(nama_reseller, 1, 10) AS ExtractString
+		FROM reseller WHERE id_reseller= '$kd'");
+		$row = mysqli_fetch_array($cresult);
 
 ?>
 
