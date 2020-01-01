@@ -56,7 +56,8 @@ require "check_if_added.php";
 									</a>
 									<?php
 											}
-				w								if(check_if_added_to_cart($data['kd_barang'])){
+											else{
+												if(check_if_added_to_cart($data['kd_barang'])){
 													echo '<a href="shop2.php"  class="buy-now d-flex justify-content-center align-items-center mx-1" disabled>
 													<span><i class="ion-ios-cart"></i></span>
 												</a>';
