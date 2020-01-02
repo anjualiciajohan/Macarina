@@ -48,7 +48,7 @@ require "check_if_added.php";
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
 	    							<?php if(!isset($_SESSION['user_login'])){  ?>
-	    							<a href="shop2.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="login.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>	
 									</a>
 									<a href="shop2.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
