@@ -27,6 +27,7 @@ require_once("koneksi.php");
                     <div class="form-group">
                       <input type="password" name ="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
+                    <p style="text-align:right"><a href="admin/index.php">Login Sebagai Admin</a></p>
                     <label>
                         <input type="checkbox"  name="login">Remember Me</label>
                               <a href="forgotpass.php">Lupa Password?</a>

@@ -1,10 +1,7 @@
 <?php
 session_start();
 include "config/config.php";
-$user = $_SESSION["kode"];
-//$get_unit = $_SESSION["idunit"];
-$grub = $_SESSION["grub"];
-
+$username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

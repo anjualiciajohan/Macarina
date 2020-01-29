@@ -39,7 +39,7 @@
                     <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
                     <p>Please enter your user information.</p>
                   </div>
-                  <form class="user" method="GET" action="plogin.php">
+                  <form class="user" method="POST" action="plogin.php">
                     <div class="form-group">
                       <input type="text" name ="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div>
