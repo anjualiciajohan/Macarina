@@ -1,5 +1,6 @@
 <?php
     include "../config/config.php";
+    session_start();
     $Lapor = "SELECT kd_barang,nama_barang,harga,stok,deskripsi FROM barang ORDER by kd_barang asc";
     $Hasil = mysqli_query($koneksi,$Lapor);
     $Data = array();

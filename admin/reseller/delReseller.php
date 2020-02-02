@@ -1,5 +1,6 @@
 <?php
 include '../config/config.php';
+session_start();
 // menyimpan data id kedalam variabel
 $id   = $_GET['txt_idrsl'];
 // query SQL untuk insert data

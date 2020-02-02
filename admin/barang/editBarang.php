@@ -1,7 +1,7 @@
 <?php
 // include database connection 
 include '../config/config.php';
-
+session_start();
 if (isset($_POST['btn_simpan'])){
     $fileName = $_FILES['gambar']['name'];
     $id = $_POST['txt_idbrg'];

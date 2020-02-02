@@ -23,6 +23,8 @@
 
 </head>
 <?php
+
+session_start();
 include_once "../topNavbar.php";
 ?>
   <!-- Page Wrapper -->

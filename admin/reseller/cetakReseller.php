@@ -1,5 +1,6 @@
 <?php
     include "../config/config.php";
+    session_start();
     $Lapor = "SELECT id_reseller,nama_reseller,alamat,no_tlp,no_ktp,email,password,status FROM reseller ORDER by id_reseller asc";
     $Hasil = mysqli_query($koneksi,$Lapor);
     $Data = array();

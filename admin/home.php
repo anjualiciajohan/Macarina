@@ -1,4 +1,5 @@
 <?php
+require 'koneksi.php';
 define('BASEPATH', dirname(__FILE__));
 //include_once('../config/head.php'); 
 include_once "head.php";
@@ -11,7 +12,7 @@ include_once "topNavbar.php";
   <div id="wrapper">
 
  <!-- Sidebar -->
- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+ <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
@@ -203,41 +204,50 @@ include_once "topNavbar.php";
                   <span class="text-danger">Data Penjualan Produk Tiap Bulan</span>
                 </div>
               </div>
-            </div>            
-          </div>
+            </div>
 
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-5 col-xl-4 mb-4">
        
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Data</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Pembayaran Transaksi Terbaru</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Produk Terjual<span class="float-right">70%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  <?php 
+
+                  $query = "SELECT reseller.nama_reseller, transaksi.grand_total
+                  FROM reseller, transaksi, pembayaran
+                  WHERE transaksi.id_reseller = reseller.id_reseller AND
+                  transaksi.kd_transaksi = pembayaran.kd_transaksi
+                  AND pembayaran.status_pesan = '0'
+                  ORDER BY transaksi.tgl_transaksi DESC LIMIT 5";
+                    
+                    $hasil = mysqli_query($koneksi, $query);
+                    
+                    while ($pembayaran_terbaru = mysqli_fetch_array($hasil)) {
+                                        
+                  ?>
+
+                  <div class="row">
+                    
+                    <div class="col-12">
+                      <h3 class="h6 font-weight-bolder text-dark"><?php echo $pembayaran_terbaru['nama_reseller']; ?></h3>
+                      <p class="text-muted">Rp <?php echo number_format($pembayaran_terbaru['grand_total']); ?></p>
+                    </div>
                   </div>
-                  <h4 class="small font-weight-bold">Reseller <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Customer <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Payout Details<span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                    <?php } ?>
+                  <a href="transaksi/transaksi.php" class="btn btn-outline-primary btn-block">Selengkapnya</a>
                 </div>
               </div>
-
             </div>
+
+          </div>
+
+          <!-- Content Row -->
+          
+          <div class="row">
+            
 
             <div class="col-lg-6 mb-4">
 
@@ -248,13 +258,16 @@ include_once "topNavbar.php";
                   <h6 class="m-0 font-weight-bold text-primary">Macarina</h6>
                 </div>
                 <div class="card-body">
-                  <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                  <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
+                  <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor
+                    page performance. Custom CSS classes are used to create custom components and custom utility
+                    classes.</p>
+                  <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap
+                    framework, especially the utility classes.</p>
                 </div>
               </div>
 
             </div>
-          </div>
+            </div>
 
         </div>
      
@@ -318,25 +331,51 @@ include_once "topNavbar.php";
   <script src="vendor/chart.js/Chart.min.js"></script>
 
   <script>
+Chart.defaults.global.defaultFontFamily = 'Nunito',
+      '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+    Chart.defaults.global.defaultFontColor = '#858796';
 
+    function number_format(number, decimals, dec_point, thousands_sep) {
+      // *     example: number_format(1234.56, 2, ',', ' ');
+      // *     return: '1 234,56'
+      number = (number + '').replace(',', '').replace(' ', '');
+      var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+          var k = Math.pow(10, prec);
+          return '' + Math.round(n * k) / k;
+        };
+      // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+      s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+      if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+      }
+      if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+      }
+      return s.join(dec);
+    }
 var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: [
           <?php 
-            $query = "SELECT SUM(pembayaran.nilai_pembayaran) AS pendapatan_bulanan, DATE_FORMAT(pembayaran.tanggal_pembayaran, '%M %Y') AS bulan
-            FROM pembayaran
-              WHERE
-                pembayaran.id_status = 1
-                  
-                  GROUP BY MONTH(pembayaran.tanggal_pembayaran)
-                  HAVING SUM(pembayaran.nilai_pembayaran)";
+            $query = "SELECT SUM(transaksi.grand_total) AS TOTAL, DATE_FORMAT(transaksi.tgl_transaksi, '%M %Y') AS BULAN
+            FROM transaksi, pembayaran
+            WHERE pembayaran.kd_transaksi = transaksi.kd_transaksi AND pembayaran.status_pesan = '0'
+            GROUP BY MONTH (transaksi.tgl_transaksi)
+            HAVING SUM(transaksi.grand_total)
+            ORDER BY (transaksi.tgl_transaksi) ASC";
 
-            $hasil = mysqli_query($conn, $query);
+            $hasil = mysqli_query($koneksi, $query);
   
             while($data_bulanan = mysqli_fetch_array($hasil)){
-              echo "'".$data_bulanan['bulan']."'".", ";
+              echo "'".$data_bulanan['BULAN']."'".", ";
             }
             ?>
         ],
@@ -355,18 +394,17 @@ var ctx = document.getElementById("myAreaChart");
           pointBorderWidth: 2,
           data: [
             <?php   
-              $query = "SELECT SUM(pembayaran.nilai_pembayaran) AS pendapatan_bulanan, MONTH  (pembayaran.tanggal_pembayaran) AS bulan
-              FROM pembayaran
-                WHERE
-                  pembayaran.id_status = 1
-                    
-                    GROUP BY MONTH(pembayaran.tanggal_pembayaran)
-                    HAVING SUM(pembayaran.nilai_pembayaran)";
+             $query = "SELECT SUM(transaksi.grand_total) AS TOTAL, DATE_FORMAT(transaksi.tgl_transaksi, '%M %Y') AS BULAN
+             FROM transaksi, pembayaran
+             WHERE pembayaran.kd_transaksi = transaksi.kd_transaksi AND pembayaran.status_pesan = '0'
+             GROUP BY MONTH (transaksi.tgl_transaksi)
+             HAVING SUM(transaksi.grand_total)
+             ORDER BY (transaksi.tgl_transaksi) ASC";
 
-              $hasil = mysqli_query($conn, $query);
+              $hasil = mysqli_query($koneksi, $query);
 
               while($data_bulanan = mysqli_fetch_array($hasil)){
-                echo $data_bulanan['pendapatan_bulanan'].', ';
+                echo $data_bulanan['TOTAL'].', ';
               }
               ?>
           ],
@@ -433,7 +471,7 @@ var ctx = document.getElementById("myAreaChart");
           callbacks: {
             label: function (tooltipItem, chart) {
               var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-              return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+              return datasetLabel + ': Rp ' + number_format(tooltipItem.yLabel);
             }
           }
         }

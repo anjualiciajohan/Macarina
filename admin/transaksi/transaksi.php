@@ -1,5 +1,6 @@
 <?php
 include "../config/config.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,25 +61,31 @@ include_once "../config/side.php";
                         <tr>
                             <td>Kode Transaksi</td>
                             <td>Tanggal Pesan</td>
-                            <td>Tanggal Bayar</td>
                             <td>Grand Total</td>
+                            <td>Nama Reseller</td>
                             <td>Status Pesan</td>
                             <td></td>
                         </tr>        
                     </thead>
 
                     <?php
-                    $query = mysqli_query($koneksi,"SELECT transaksi.kd_transaksi, transaksi.tgl_transaksi, transaksi.grand_total, pembayaran.status_pesan, pembayaran.tgl_bayar FROM transaksi, pembayaran");            
-                    while ($data = mysqli_fetch_array($query)) {
-                    
+                    $query = "SELECT transaksi.kd_transaksi, transaksi.tgl_transaksi, reseller.nama_reseller, transaksi.grand_total, pembayaran.status_pesan
+                    FROM reseller, transaksi, pembayaran
+                    WHERE transaksi.id_reseller = reseller.id_reseller AND
+                    transaksi.kd_transaksi = pembayaran.kd_transaksi
+                    AND pembayaran.status_pesan = '0'";
+                      
+                      $hasil = mysqli_query($koneksi, $query);
+                      
+                      while ($data = mysqli_fetch_array($hasil)) {
                   ?>
 
                     <tbody>
                         <tr>
                             <td><?php echo $data ['kd_transaksi']; ?></td>
                             <td><?php echo $data ['tgl_transaksi']; ?></td>
-                            <td><?php echo $data ['tgl_bayar']; ?></td>
                             <td><?php echo $data ['grand_total']; ?></td>
+                            <td><?php echo $data ['nama_reseller']; ?></td>
                             <td><?php echo $data ['status_pesan']; ?></td>
                             
                     <td><a class="detail" href="detailTransaksi.php?txt_idtr=<?php echo $data['kd_transaksi']; ?>">Detail</a></td>

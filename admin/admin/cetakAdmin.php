@@ -1,5 +1,6 @@
 <?php
     include "../config/config.php";
+    session_start();
     $Lapor = "SELECT kd_admin,user,password, alamat_admin FROM admin ORDER by kd_admin asc";
     $Hasil = mysqli_query($koneksi,$Lapor);
     $Data = array();

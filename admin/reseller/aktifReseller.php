@@ -1,7 +1,7 @@
 <?php
 // include database connection 
 include '../config/config.php';
-
+session_start();
 if (isset($_POST['aktifkan'])){
     $aktif="1";
     $id=$_POST ['txt_idrsl'];
