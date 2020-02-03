@@ -58,7 +58,7 @@ include_once "../config/side.php";
             while($data = mysqli_fetch_array($query_mysql)){
               
           ?>  
-            <form method ="POST" action="aktifReseller.php">
+            <form method ="POST" action="selesai.php">
               <table>
                 <tr>
                 <td>
