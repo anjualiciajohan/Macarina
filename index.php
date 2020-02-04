@@ -248,7 +248,7 @@ include_once "header.php";
                   </div>
                   <div class="text text-center">
                     <p class="mb-5 pl-4 line">Beli 1 kurang beli 2 kenyang wkwk</p>
-					<p class="name">Avinda</p>
+					          <p class="name">Avinda</p>
                     <span class="position">Customer Malang</span>
                   </div>
                 </div>

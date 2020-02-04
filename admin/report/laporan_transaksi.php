@@ -48,11 +48,10 @@ include_once "../config/side.php";
 <div class="row">
     <div class="card col-12 mb-3">
       <div class="card-body">
-        <h4 class="card-title">Cetak Laporan Pengeluaran</h4>
-        <p class="card-text">Berisi pengeluaran yang telah terbayar (pajak, listrik, dll) yang tercatat, dan total pengeluaran</p>
+        <h4 class="card-title">Cetak Laporan Transaksi</h4>
         <div class="row">
           <div class="col-md-6 col-sm-12 mt-3">
-          <form action="laporan/cetak-tagihan.php" target="_blank" method="POST">                    
+          <form action="cetak.php" target="_blank" method="POST">                    
             <div class="form-row">
               <div class="col">
                 <select name="tahun" id="tahun" required>
@@ -73,15 +72,15 @@ include_once "../config/side.php";
                 </select>
                 <select name="bulan" id="bulan" required>
                   <option value="">Pilih Bulan</option>
-                  <option value="1">Januari</option>
-                  <option value="2">Februari</option>
-                  <option value="3">Maret</option>
-                  <option value="4">April</option>
-                  <option value="5">Mei</option>
-                  <option value="6">Juni</option>
-                  <option value="7">Juli</option>
-                  <option value="8">Agustus</option>
-                  <option value="9">September</option>
+                  <option value="01">Januari</option>
+                  <option value="02">Februari</option>
+                  <option value="03">Maret</option>
+                  <option value="04">April</option>
+                  <option value="05">Mei</option>
+                  <option value="06">Juni</option>
+                  <option value="07">Juli</option>
+                  <option value="08">Agustus</option>
+                  <option value="09">September</option>
                   <option value="10">Oktober</option>
                   <option value="11">November</option>
                   <option value="12">Desember</option>
@@ -97,7 +96,7 @@ include_once "../config/side.php";
           </form>
           </div>
           <div class="col-md-6 col-sm-12 mt-3">
-          <form action="laporan/cetak-tagihan.php" target="_blank" method="POST">                    
+          <form action="cetak.php" target="_blank" method="POST">                    
             <div class="form-row">
               <div class="col">
                 <select name="tahun" id="tahun" required>

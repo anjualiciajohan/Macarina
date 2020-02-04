@@ -60,10 +60,6 @@ include_once "../config/side.php";
                         <td><input type="text" name="txt_user"  class="form-control" ></td>
                     </tr>
                     <tr class="form-group">
-                        <td>Password</td>
-                        <td><input type="password" name="txt_pwd"  class="form-control" ></td>
-                    </tr>
-                    <tr class="form-group">
                         <td>Alamat </td>
                         <td><input type="text" name="txt_almt"  class="form-control"> </td>
                     </tr>

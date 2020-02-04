@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST['btn_simpan'])){
     $fileName = $_FILES['gambar']['name'];
     $id = $_POST['txt_idadm'];
-
+    $ekstensigambarvalid = ['jpg', 'jpeg', 'png'];
     $user=$_POST['txt_user'];
     $pwd=$_POST['txt_pwd'];
     $almt=$_POST['txt_almt'];

@@ -52,10 +52,10 @@ include "../config/side.php";
             <div class="card-body">
               <div class="table-responsive">
               <a href="tamAdmin.php">
-              <input type="submit" value="Tambah Admin"/>
+              <input class="btn btn-danger mt-2" type="submit" value="Tambah Admin"/>
               </a>
               <a href="cetakAdmin.php">
-              <input type="submit" value="To PDF Data Admin"/>
+              <input class="btn btn-danger mt-2" type="submit" value="To PDF Data Admin"/>
               </a>
 
               <a href="cetak.php" target="_blank">CETAK</a>
@@ -66,7 +66,6 @@ include "../config/side.php";
                     <tr>
                       <th>Kode</th>
                       <th>User</th>
-                      <th>Password</th>
                       <th>Alamat</th>
                       <th>Gambar</th>
                       <th></th>
@@ -76,7 +75,6 @@ include "../config/side.php";
                     <tr>
                       <th>Kode</th>
                       <th>User</th>
-                      <th>Password</th>
                       <th>Alamat</th>
                       <th>Gambar</th>
                       <th></th>
@@ -95,7 +93,6 @@ include "../config/side.php";
                     <tr>
                       <td><?php echo $data ['kd_admin'] ?></td>
                       <td><?php echo $data ['user']; ?></td>
-                      <td><?php echo $data ['password']; ?></td>
                       <td><?php echo $data ['alamat_admin']; ?></td>
                       <td><?php echo "<img src='../img/".$data['gambar']."' width='100px' height='100px'/>"?></td>
                       <td><a class="edit" href="detAdmin.php?txt_idadm=<?php echo $data['kd_admin']; ?>">Edit</a>

@@ -52,7 +52,7 @@ include "../config/side.php";
             <div class="card-body">
               <div class="table-responsive">
               <a href="cetakReseller.php">
-              <input type="submit" value="To PDF Data Barang"/>
+              <input class="btn btn-danger mt-2"  type="submit" value="To PDF Data Barang"/>
               </a>
 
               <a href="cetak.php" target="_blank">CETAK</a>

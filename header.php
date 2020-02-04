@@ -25,7 +25,7 @@ else {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">4
   <head>
     <title>Macarina</title>
     <meta charset="utf-8">
