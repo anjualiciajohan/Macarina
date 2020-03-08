@@ -72,7 +72,8 @@ include_once "../config/side.php";
                     $query = "SELECT transaksi.kd_transaksi, transaksi.tgl_transaksi, reseller.nama_reseller, transaksi.grand_total, pembayaran.status_pesan
                     FROM reseller, transaksi, pembayaran
                     WHERE transaksi.id_reseller = reseller.id_reseller AND
-                    transaksi.kd_transaksi = pembayaran.kd_transaksi";
+                    transaksi.kd_transaksi = pembayaran.kd_transaksi AND
+                    pembayaran.status_pesan = '0'";
                       
                       $hasil = mysqli_query($koneksi, $query);
                       
