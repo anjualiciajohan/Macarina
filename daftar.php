@@ -9,9 +9,6 @@ include_once "header.php";
     <p>Please fill in this form to create an account.</p>
     <hr>
       <form method ="POST" action="php/pdaftar.php" enctype="multipart/form-data">
-    <label for="no-ktp"><b>No KTP</b></label></br>
-    <input type="text" placeholder="Enter No KTP" name="no-ktp" required>
-    </br>
     <label for="nama-lengkap"><b>Nama Lengkap</b></label></br>
     <input type="text" placeholder="Enter Nama (sesuai KTP)"  name="nama-lengkap" required>
     </br>
@@ -26,45 +23,6 @@ include_once "header.php";
     </br>
     <label for="psw-repeat"><b>Repeat Password</b></label></br>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-    </br>
-    <label for="alamat"><b>Alamat</b></label></br>
-    <input type="text" placeholder="Enter Alamat" name="alamat" required>
-    </br>
-    <label for="kab/kota"><b>Pilih Kabupaten/Kota</b></label></br>
-    <select>
-      <option value>-</option>
-      <option value>Jember</option>
-      <option value>Malang</option>
-      <option value>Surabaya</option>
-      <option value>Sidaorjo</option>
-      <option value>Banyuwangi</option>
-      <option value>Jombang</option>
-      <option value>Mojokerto</option>
-      <option value>Lumajang</option>
-    </select>
-    </br>
-    <label for="kecamatan"><b>Pilih Kecamatan</b></label></br>
-    <select>
-      <option value>-</option>
-      <option value>Ambulu</option>
-      <option value>Dukumencek</option>
-      <option value>Gebang</option>
-      <option value>Kalisat</option>
-      <option value>Kebon Agung</option>
-      <option value>Patrang</option>
-      <option value>Rambipuji</option>
-      <option value>Sukorejo</option>
-    </select>
-    </br>
-    <label for="scan_ktp"><b>Scan KTP</b></label></br>
-    <input type="file" name="scan_ktp" required />
-    <br>
-    <label for="foto"><b>Pas Foto</b></label></br>
-    <input type="file" name="foto" required />
-    <br>
-    <label for="kd-reff"><b>Kode Reff (Opsional)</b></label></br>
-    <input type="text" placeholder="Enter Kode Reff" name="kd-reff">
-    </br>
 
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
     <input type="submit" name ="submit" class="registerbtn" value="Register"></input>
