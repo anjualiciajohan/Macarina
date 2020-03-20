@@ -17,148 +17,28 @@ include_once "header.php";
       
 
       <div class="container">
-
         <div class="row mb-3">
-          <div class="col-12 text-center" data-aos="fade">
+          <div class="col-12 text-center" data-aos="fade"><br>
             <h2 class="section-title mb-3">Testimonials</h2>
           </div>
         </div>
-        
         <div id="posts" class="row no-gutter">
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images//testi/a.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images//testi/a.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/b.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/b.jpg">
-            </a>
-          </div>
 
-          <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/c.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/c.jpg">
-            </a>
-          </div>
-
-          <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-
-            <a href="images/testi/d.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/d.jpg">
-            </a>
-
-          </div>
+        <?php
+				include_once "config.php";
+				$query = mysqli_query($koneksi,"SELECT * FROM konten");
+				while ($data = mysqli_fetch_array($query)){
+					$id = $data ['id_konten'];
+					$keterangan = $data ['keterangan'];
+				?>
 
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/e.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/e.jpg">
-            </a>
+              <img class="img-fluid" <?php echo "src='admin/img/konten/".$data['gambar']."'" ?>>
+              <div class="text py-3 pb-4 px-3 text-center">
+    						<h3><?php echo $keterangan?></h3>
+              </div>
           </div>
-
-          <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/f.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/f.jpg">
-            </a>
-          </div>
-
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/g.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/g.jpg">
-            </a>
-          </div>
-
-          <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/h.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/h.jpg">
-            </a>
-          </div>
-
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/i.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/i.jpg">
-            </a>
-          </div>
-
-          <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/j.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/j.jpg">
-            </a>
-          </div>
-
-          <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/k.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/k.jpg">
-            </a>
-          </div>
-
-          <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/l.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/l.jpg">
-            </a>
-          </div>
-
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/m.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/m.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/n.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/n.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/o.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/o.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/p.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/p.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/q.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/q.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/r.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/r.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/s.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/s.jpg">
-            </a>
-          </div>
-          <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/testi/t.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-              <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/testi/t.jpg">
-            </a>
-          </div>
-
+        <?php } ?>
 
         </div>
       </div>
