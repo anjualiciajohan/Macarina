@@ -115,20 +115,20 @@ $grand = 0;
 					<p>Masukkan alamat anda</p>
 				<div class="form-group">
 					<label>Provinsi</label>
-					<select class="form-control" name="provinsi" id="provinsi">
+					<select class="form-control" name="provinsi" id="provinsi" require>
 						<option value=""> Pilih Provinsi</option>
 					</select>
 				</div>
 				
 				<div class="form-group">
 					<label>Kabupaten</label>
-					<select class="form-control" name="kabupaten" id="kabupaten">
+					<select class="form-control" name="kabupaten" id="kabupaten" require>
 						<option value=""></option>
 					</select>
 				</div>	
 				<div class="form-group">
 					<label>Kecamatan</label>
-					<select class="form-control" name="kecamatan" id="kecamatan">
+					<select class="form-control" name="kecamatan" id="kecamatan" require>
 						<option value=""></option>
 					</select>
 				</div>
@@ -136,7 +136,7 @@ $grand = 0;
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 				<div class="form-group">
 					<label>Kelurahan</label>
-					<select class="form-control" name="kelurahan" id="kelurahan">
+					<select class="form-control" name="kelurahan" id="kelurahan" require>
 						<option value=""></option>
 					</select>
 				</div>
@@ -144,6 +144,14 @@ $grand = 0;
 				  <div class="form-group">
 	              	<label for="country">Alamat Lengkap</label><br/>
 	                <input require name = "alamatlengkap" id = "alamatlengkap" type="text" class="form-control text-left px-6">
+	              </div>
+
+				  <div class="form-group">
+	              	<label for="country">Kirim Sebagai</label><br/>
+					  <select class="form-control" name="dropshipper" id="dropshipper" require>
+					  	<option value="personal">Personal</option>
+						<option value="dropshipper">Dropshipper</option>
+					  </select>
 	              </div>
 				  									
     			</div>
@@ -177,6 +185,18 @@ $grand = 0;
 					
 					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
+			</div>
+			<div class="row" id="drop">
+				<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+					<p>Masukkan alamat Dropshipper</p>
+						<div class="form-group">
+						<label>Provinsi</label>
+						<select class="form-control" name="provinsi" id="provinsi" require>
+							<option value=""> Pilih Provinsi</option>
+						</select>
+						</div>
+
+				</div>
 			</div>
 			</form>
 			</div>
