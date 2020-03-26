@@ -64,12 +64,27 @@ $grand = 0;
 						$cepat = $codeAl['cepat'];
 						$lama = $codeAl['lama'];
 						$alLengkap =$codeAl['alamat_lengkap'];
+/*
+						$provdrop = $codeAl['provinsi'];
+						$kabdrop = $codeAl['kab_kota'];
+						$kecdrop = $codeAl['kecamatan'];
+						$keldrop = $codeAl['kelurahan'];
+						$kdposdrop = $codeAl['kode_pos'];
+						$cepatdrop = $codeAl['cepat'];
+						$lamadrop = $codeAl['lama'];
+						$alLengkapdrop =$codeAl['alamat_lengkap_drop'];
+**/
 						?>
 						<input type ="text" name ="kdALL" id ="kdALL" value="<?php echo $kdall;?>" hidden>
-						<span><label >Alamat Kirim :</label></span></br>
+						<span><label >Alamat Saya :</label></span></br>
 						<span><label ><?php echo $alLengkap .', '.$prov .', '. $kab .', '.$kec.', '.$kel.', '.$kdpos;?></label></span></br>
 						<span><label >Lama Kirim : <?php echo $cepat;?> - <?php echo $lama;?> hari</br>
 						</label></span>
+						<!-- drop 
+						<span><label >Alamat Dropshipper :</label></span></br>
+						<span><label ><?php //echo $alLengkapdrop .', '.$provdrop .', '. $kabdrop .', '.$kecdrop.', '.$keldrop.', '.$kdposdrop;?></label></span></br>
+						<span><label >Lama Kirim : <?php //echo $cepatdrop;?> - <?php //echo $lamadrop;?> hari</br>
+						</label></span> -->
 					<?php }?>
 				</div>
 			</div>
