@@ -115,20 +115,20 @@ $grand = 0;
 					<p>Masukkan alamat anda</p>
 				<div class="form-group">
 					<label>Provinsi</label>
-					<select class="form-control" name="provinsi" id="provinsi">
+					<select class="form-control" name="provinsi" id="provinsi" require>
 						<option value=""> Pilih Provinsi</option>
 					</select>
 				</div>
 				
 				<div class="form-group">
 					<label>Kabupaten</label>
-					<select class="form-control" name="kabupaten" id="kabupaten">
+					<select class="form-control" name="kabupaten" id="kabupaten" require>
 						<option value=""></option>
 					</select>
 				</div>	
 				<div class="form-group">
 					<label>Kecamatan</label>
-					<select class="form-control" name="kecamatan" id="kecamatan">
+					<select class="form-control" name="kecamatan" id="kecamatan" require>
 						<option value=""></option>
 					</select>
 				</div>
@@ -136,7 +136,7 @@ $grand = 0;
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 				<div class="form-group">
 					<label>Kelurahan</label>
-					<select class="form-control" name="kelurahan" id="kelurahan">
+					<select class="form-control" name="kelurahan" id="kelurahan" require>
 						<option value=""></option>
 					</select>
 				</div>
@@ -144,6 +144,14 @@ $grand = 0;
 				  <div class="form-group">
 	              	<label for="country">Alamat Lengkap</label><br/>
 	                <input require name = "alamatlengkap" id = "alamatlengkap" type="text" class="form-control text-left px-6">
+	              </div>
+
+				  <div class="form-group">
+	              	<label for="country">Kirim Sebagai</label><br/>
+					  <select class="form-control" name="dropp" id="dropp" require>
+					  	<option name="personal" id="personal" value="personal">Personal</option>
+						<option name="dropshipper" id="dropshipper" value="dropshipper">Dropshipper</option>
+					  </select>
 	              </div>
 				  									
     			</div>
@@ -161,7 +169,7 @@ $grand = 0;
     						<span>Biaya Kirim</span>
     						<span><label name="biayakirim" id="biayakirim"></label></span>
     					</p>
-    					
+								
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
@@ -177,6 +185,44 @@ $grand = 0;
 					
 					<p><a href="shop2.php" class="btn btn-primary py-3 px-4">Continue Shopping</a></p>
     			</div>
+			</div>
+			<div name= "drop" class="row" id="drop">
+				<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+					<p>Masukkan alamat yang dituju</p><p>(Jika anda sebagai Dropshipper)</p>
+					<i>Opsional</i>
+						<div class="form-group">
+						<label>Provinsi</label>
+						<select class="form-control" name="provinsidrop" id="provinsidrop" >
+							<option value=""> Pilih Provinsi</option>
+						</select>
+						</div>
+						<div class="form-group">
+						<label>Kabupaten</label>
+						<select class="form-control" name="kabupatendrop" id="kabupatendrop" >
+							<option value=""></option>
+						</select>
+					</div>	
+					<div class="form-group">
+						<label>Kecamatan</label>
+						<select class="form-control" name="kecamatandrop" id="kecamatandrop" >
+							<option value=""></option>
+						</select>
+					</div>
+					</div>
+					<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+					<div class="form-group">
+						<label>Kelurahan</label>
+						<select class="form-control" name="kelurahandrop" id="kelurahandrop" >
+							<option value=""></option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="country">Alamat Lengkap</label><br/>
+						<input  name = "alamatlengkapdrop" id = "alamatlengkapdrop" type="text" class="form-control text-left px-6">
+					</div>
+
+				</div>
 			</div>
 			</form>
 			</div>
@@ -226,98 +272,10 @@ $grand = 0;
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script type="text/javascript">
-					$(document).ready(function(){
-						$.ajax({
-							type: 'POST',
-							url: "combobox/get_provinsi.php",
-							cache: false, 
-							success: function(msg){
-							$("#provinsi").html(msg);
-							}
-						});
-						$("#provinsi").change(function(){
-          	var provinsi = $("#provinsi").val();
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_kabupaten.php",
-	              	data: {provinsi: provinsi},
-	              	cache: false,
-	              	success: function(msg){
-	                  $("#kabupaten").html(msg);
-	                }
-	            });
-            });
-
-            $("#kabupaten").change(function(){
-          	var kabupaten = $("#kabupaten").val();
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_kecamatan.php",
-	              	data: {kabupaten: kabupaten},
-	              	cache: false,
-	              	success: function(msg){
-	                  $("#kecamatan").html(msg);
-	                }
-	            });
-            });
-
-            $("#kecamatan").change(function(){
-          	var kecamatan = $("#kecamatan").val();
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_kelurahan.php",
-	              	data: {kecamatan: kecamatan},
-	              	cache: false,
-	              	success: function(msg){
-					  $("#kelurahan").html(msg);
-	                }
-				});
-			});
-			$("#kelurahan").change(function(){
-			  var kelurahan = $("#kelurahan").val();
-			  
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_biaya.php",
-	              	data: {kelurahan: kelurahan},
-	              	cache: false,
-	              	success: function(msg){
-					  $("#biayakirim").html(msg);
-					  
-	                }
-	            });
-            });
-			$("#kelurahan").change(function(){
-				var kelurahan = $("#kelurahan").val();
-			  	var subtotal = $("#subtotal").val();
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_total.php",
-	              	data: {kelurahan:kelurahan,subtotal:subtotal},
-	              	cache: false,
-	              	success: function(msg){
-					  $("#totalall").html(msg);
-	                }
-	            });
-			});
-			$("#kelurahan").change(function(){
-				var kelurahan = $("#kelurahan").val();
-			  	var subtotal = $("#subtotal").val();
-	          	$.ajax({
-	          		type: 'POST',
-	              	url: "combobox/get_total2.php",
-	              	data: {kelurahan:kelurahan,subtotal:subtotal},
-	              	cache: false,
-	              	success: function(msg){
-					  $("#tot").html(msg);
-	                }
-	            });
-            });	
-					});
-					</script>
-  
-  
+  <script src="combobox/ajaxDrop2.js"></script>
+  <script src="combobox/ajaxDrop.js"></script>
+  <script src="combobox/configAjax.js"></script>
+    
     
   </body>
 </html>
