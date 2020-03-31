@@ -132,7 +132,3 @@
     </head>
 </html>
 <?php } ?>
-
-<script>
-    window.print();
-</script>

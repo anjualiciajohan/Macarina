@@ -10,8 +10,12 @@ $trans = "SELECT * FROM transaksi where id_reseller = '$user_id' ORDER BY kd_tra
 $Qtrans = mysqli_query($koneksi,$trans);
 $bank = "SELECT * FROM bank ";
 $Qbank = mysqli_query($koneksi,$bank);
-$al = "SELECT * FROM alamat_kirim INNER JOIN kab JOIN kec JOIN kel ON alamat_kirim.kd_kab=kab.kd_kab 
-AND alamat_kirim.sys_code=kec.sys_code AND alamat_kirim.kd_kel=kel.kd_kel WHERE id_reseller = '$user_id'ORDER BY kd_al_kirim DESC LIMIT 1";
+/*$al = "SELECT * FROM alamat_kirim INNER JOIN kab JOIN kec JOIN kel JOIN kab_drop JOIN kec_drop 
+JOIN kel_drop ON alamat_kirim.kd_kab=kab.kd_kab 
+AND alamat_kirim.sys_code=kec.sys_code_drop AND alamat_kirim.kd_kel=kel.kd_kel_drop AND 
+alamat_kirim.kd_kab_drop=kab.kd_kab_drop AND alamat_kirim.sys_code_drop=kec.sys_code 
+AND alamat_kirim.kd_kel_drop=kel.kd_kel_drop WHERE id_reseller = '$user_id'ORDER BY kd_al_kirim DESC LIMIT 1";
+**/
 $Qal = mysqli_query($koneksi,$al);
 $user_products_query="select detail_transaksi.id_detail,barang.kd_barang,barang.nama_barang,barang.deskripsi,
 barang.harga,barang.gambar_brg,detail_transaksi.qty_det from detail_transaksi inner join 
@@ -64,27 +68,27 @@ $grand = 0;
 						$cepat = $codeAl['cepat'];
 						$lama = $codeAl['lama'];
 						$alLengkap =$codeAl['alamat_lengkap'];
-/*
-						$provdrop = $codeAl['provinsi'];
-						$kabdrop = $codeAl['kab_kota'];
-						$kecdrop = $codeAl['kecamatan'];
-						$keldrop = $codeAl['kelurahan'];
-						$kdposdrop = $codeAl['kode_pos'];
-						$cepatdrop = $codeAl['cepat'];
-						$lamadrop = $codeAl['lama'];
+
+						$provdrop = $codeAl['provinsi_drop'];
+						$kabdrop = $codeAl['kab_kota_drop'];
+						$kecdrop = $codeAl['kecamatan_drop'];
+						$keldrop = $codeAl['kelurahan_drop'];
+						$kdposdrop = $codeAl['kode_pos_drop'];
+						$cepatdrop = $codeAl['cepat_drop'];
+						$lamadrop = $codeAl['lama_drop'];
 						$alLengkapdrop =$codeAl['alamat_lengkap_drop'];
-**/
+
 						?>
 						<input type ="text" name ="kdALL" id ="kdALL" value="<?php echo $kdall;?>" hidden>
 						<span><label >Alamat Saya :</label></span></br>
 						<span><label ><?php echo $alLengkap .', '.$prov .', '. $kab .', '.$kec.', '.$kel.', '.$kdpos;?></label></span></br>
 						<span><label >Lama Kirim : <?php echo $cepat;?> - <?php echo $lama;?> hari</br>
 						</label></span>
-						<!-- drop 
+						
 						<span><label >Alamat Dropshipper :</label></span></br>
-						<span><label ><?php //echo $alLengkapdrop .', '.$provdrop .', '. $kabdrop .', '.$kecdrop.', '.$keldrop.', '.$kdposdrop;?></label></span></br>
-						<span><label >Lama Kirim : <?php //echo $cepatdrop;?> - <?php //echo $lamadrop;?> hari</br>
-						</label></span> -->
+						<span><label ><?php echo $alLengkapdrop .', '.$provdrop .', '. $kabdrop .', '.$kecdrop.', '.$keldrop.', '.$kdposdrop;?></label></span></br>
+						<span><label >Lama Kirim : <?php echo $cepatdrop;?> - <?php echo $lamadrop;?> hari</br>
+						</label></span> 
 					<?php }?>
 				</div>
 			</div>

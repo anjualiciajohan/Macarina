@@ -74,14 +74,15 @@ include_once "header.php";
             <div class="row">
             <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
             <figure class="circle-bg">
-            <img class="img-fluid" src="images//home1.jpg">
+            <img src="images/Picture1.jpg" alt="Image" class="img-fluid">
             </figure>
           </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                         <h2 class="block-title"> Apa itu Macarina? </h2>
-                        <p> Macarina adalah produk Olahan Tepung dengan bentuk Macaroni elbow, yang  digoreng kering, menggunakan Minyak yang selalu baru, dan ditiriskan hingga kering, menambah kerenyahan tekstur di setiap gigitanya. Dengan tambahan bumbu cabe bubuk di varian Original dan  tambahan bubuk vanilla ice cream di varian cokelat,
-                         membuat konsumen dapat mengatur selera pedas dan sensasi meracik macaroni sesuai dengan selera masing-masing. </p>
+                        <p> Macarina adalah makaroni goreng berkualitas tinggi dan pastinya beda dengan makaroni jenis lainnya. 
+                        Sangat renyah dan bumbunya kerasa banget. Bumbu yang kita gunakan juga olahan sendiri yang menjadikannya keunikan dalam produk kita. 
+				                Karena kita hanya mengunakan bahan bahan berkualitas dan terjamin. </p>
                         <p> Buat kamu yang ingin join dan sukses bersama Macarina dan ingin membantu kami untuk membuka cabang di kota anda? </p>
                         <p><a href="daftar.php" class="smoothscroll btn btn-primary">Daftar Sekarang</a></p>
                     </div>
@@ -109,11 +110,23 @@ include_once "header.php";
             <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:50px">
             <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
                     <h2 style="line-height:50px;color:#fff">Level Pedas bikin Nagih</h2>
-                    <img class="img-fluid" src="images//home2.jpg">
+    </div> 
+            <div style="padding:15px 10px;line-height:25px;min-height:65px">
+                <span>#KadeudeuhBuOmay<span style="color:#eb1c24">Asin Gurih</span> 
+    </span>
+                <span>#KepretPakEndang <span style="color:#eb1c24">Pedas</span> 
+    </span>
+                <span>#PitnahBuLilis <span style="color:#eb1c24">Pedas Banget</span> 
+    </span>
+                <span>#CiwitBuTina <span style="color:#eb1c24">Pedas Sedang</span> 
+    </span> 
+                <span>#DicuekinPakZaenal <span style="color:#eb1c24">Pedas Sedikit</span> 
+    </span>
+    </div>
     </div> 
             <div class="the-card" style="background:rgba(255,255,255,.85);margin-bottom:30px">
             <div style="padding-top:5px;padding-bottom:5px;max-width:95%;width:94%;border-radius:5px;box-shadow:1px 1px 4px #666;background-color:#ed0d11;color:#fff;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all .5s ease-out;-moz-transition:all .5s ease-out;transition:all .5s ease-out;margin-top:-20px">
-                    <h2 style="line-height:50px;color:#fff"></h2> <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
+                    <h2 style="line-height:50px;color:#fff"></h2> <a target="_blank" rel="nofollow"  href="https://api.whatsapp.com/send?phone=628887116773&text=Kak,%20Saya%20dari%20website%20,mau%20pesan%20Macarina:" class="smoothscroll btn btn-primary">Pesan via Whatsapp</a></p>
 	            <p>
                    
     </div> 
@@ -121,7 +134,69 @@ include_once "header.php";
     </div>
         </center>
 
-    
+    <!-- any questions -->
+
+    <div class="col-12 text-center" data-aos="fade">
+            <h2 class="section-title">Hal yang sering ditanyakan</h2>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Apakah Macarina membuka kerjasama dalam bidang Frenchise/Waralaba?</h3>
+            <p>Kami selaku team manajemen resmi Macarina tidak membuat/membuka sistem Frenchise atau Waralaba apapun.</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan secara online? Caranya?</h3>
+              <p>Ya, bisa..</p>
+              <p>Pemesanan Macarina via online bisa dilakukan lewat Whatsapp di No 0821-6666-4343 setiap hari 
+                (Pemesanan via online minimal 6 bungkus/pack atau 2 toples) setelah Macarina order, Macarina bisa melakukan transfer ke no rekening yang sudah ditentukan 
+                kemudian konfirmasikan pembayaran tersebut sebelum pukul 16.00 supaya pesanan Macarina langsung dikirim di hari yang sama.</p>
+            </div>
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Beda Macarina Premium dengan Macarina Regular?</h3>
+            <p>Di Macarina Premium banyak varian rasa yang belum ada & dijual online di outlet Macarina manapun. Untuk Macarina Premium baru hanya terdapat di Hartono Mall Jogja Lantai Lower Ground (LG) (Dekat Resto Solaria).
+                    Harga Macarina Premium dimulai dari Rp 8.000,- s/d Rp 16.000,-</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan antar atau COD?</h3>
+              <p>Sampai saat ini, Kami tidak membuat sistem pesan antar (delivery) atau Cash On Delivery (COD).</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah Macarina bisa dipesan lewat Go-Food di aplikasi Go-Jek?</h3>
+              <p>Macarina bisa melakukan pemesanan lewat menu Go-Food di aplikasi Go-Jek (tidak ada minimum order), setelah melakukan proses pemesanan, driver Go-Jek yang akan mengantar pesanan Macarina, 
+                kemudian pembayaran dilakukan setelah pesanan Macarina tiba di lokasi tujuan.</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Berapakah lama waktu pengiriman Macarina secara online?</h3>
+              <p>Lama waktu pengiriman Macarina secara online kurang lebih memakan waktu 2 S/D 3 hari kerja. Tapi kembali lagi dilihat kemana lokasi tujuan pengirimannya.</p>
+            </div>
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h5 mb-4">Apa Macarina bisa dibeli per-Kilo?</h3>
+            <p>Tidak bisa</p>
+            </div>
+            
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-black h5 mb-4">Apakah ada kemasan Macarina yang lain selain kemasan plastik?</h3>
+              <p>Selain kemasan plastik yang sudah banyak Macarina ketahui, kami juga menjual kemasan toples (isi kurang lebih 300 gram) seharga Rp 22.000,- s/d Rp 24.000,-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end any questions -->S
 
 
  <!--::review_part start::-->
@@ -138,27 +213,27 @@ include_once "header.php";
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/footer1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">"Camilan Favorit Aku Banget"</p>
-                    <p class="name">Inez</p>
+                    <p class="mb-5 pl-4 line">Jajanan asik dan enak</p>
+                    <p class="name">Dinda Endy</p>
                     <span class="position">Customer Banyuwangi</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/footer2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">"Banyak varian, Favorit banget"</p>
+                    <p class="mb-5 pl-4 line">Asli bikin nagih</p>
                     <p class="name">Febby Eka</p>
                     <span class="position">Customer Jember</span>
                   </div>
@@ -166,32 +241,48 @@ include_once "header.php";
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/footer3.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testi1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">"Makaroninya gurih, enak, renyah, dan pedasnya bisa diatur sendiri"</p>
-					          <p class="name">Aldila</p>
-                    <span class="position">Customer Banyuwamgi</span>
+                    <p class="mb-5 pl-4 line">Beli 1 kurang beli 2 kenyang wkwk</p>
+					          <p class="name">Avinda</p>
+                    <span class="position">Customer Malang</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/footer4.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(images/testii.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">"Buruan rasain sekarang, dijamin gak nyesel"</p>
-					<p class="name">Setya Permana</p>
-                    <span class="position">Customer Jember</span>
+                    <p class="mb-5 pl-4 line">Jajanan masa kecil dan pasti higenis</p>
+					<p class="name">Nur Izzah</p>
+                    <span class="position">Customer Surabaya</span>
                   </div>
                 </div>
               </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/testi4.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Oleh-oleh asinan yang wajib dibeli di Jember</p>
+					<p class="name">Adinda Putri</p>
+                    <span class="position">Customer Mojokerto</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
